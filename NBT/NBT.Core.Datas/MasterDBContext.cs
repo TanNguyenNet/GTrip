@@ -1,0 +1,42 @@
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using NBT.Core.Datas.Extensions;
+using NBT.Core.Domain.Identity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.Entity;
+
+namespace NBT.Core.Datas
+{
+    public class MasterDBContext : IdentityDbContext<AppUser>, IDBContextExtension
+    {
+        public MasterDBContext() : base("MasterDBContext")
+        {
+
+        }
+
+        public DbSet<AppUserGroup> AppUserGroups { set; get; }
+        public DbSet<AppRoleGroup> AppRoleGroups { set; get; }
+        public DbSet<AppRole> AppRoles { set; get; }
+        public DbSet<AppGroup> AppGroups { set; get; }
+
+
+        public static MasterDBContext Create()
+        {
+            return new MasterDBContext();
+        }
+        protected override void OnModelCreating(DbModelBuilder builder)
+        {
+            builder.Entity<IdentityRole>().HasKey<string>(r => r.Id).ToTable("AppRoles");
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("AppUserRoles");
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId).ToTable("AppUserLogins");
+            builder.Entity<IdentityUserClaim>().HasKey(i => i.UserId).ToTable("AppUserClaims");
+        }
+        IDbSet<TEntity> IDBContextExtension.Set<TEntity>()
+        {
+            return base.Set<TEntity>();
+        }
+    }
+}
