@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../libs/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../libs/Swiper-4.0.6/dist/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/jquery.mmenu/jquery.mmenu.css"/>
 
     <!-- Template CSS-->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -56,19 +57,18 @@
           <div class="container">
             <div class="row">
               <div class="col-md-6">
-                <div class="col-md-3">
+                <div class="col-md-3 pull-left">
                   <div class="header-logo">
                     <h1><a href="index.html"><img src="../images/icon/Logo.png" alt="logo"/></a></h1>
                   </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 pull-left">
                   <div class="header-slogan">Global Trip <span class="slogan">Explore the world by your own creation</span></div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="main-nav-wrapper">
-                  <div class="header-left">
-                    <nav id="primary-menu" class="main-nav">
+                    <nav id="primary-menu" class="main-nav pull-left">
                       <ul class="nav">
                         <li class="menu-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
                         </li>
@@ -82,34 +82,38 @@
                         </li>
                       </ul>
                     </nav>
-                  </div>
-                  <div class="header-right">
-                    <div class="magnification"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></div>
-                    <div class="searchbox"><input type="text" name="search" id="search" placeholder="search"></div>
+                    <div class="icon-search-menu">
+                      <i class="wicon fa fa-search"></i>
+                      <div id="searchBox" class="hide-search">
+                        <input id="search-ajax" placeholder="Search" type="search"/>
+                        <button><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-       <!-- <div class="mobile-menu">
-          <div class="col-3 text-left"><a href="#primary-menu"><i class="fa fa-bars"></i></a></div>
+       <div class="mobile-menu">
+          <div class="col-3 text-left"><a id="primary-menu" href="#"><i class="fa fa-bars"></i></a></div>
           <div class="col-3 text-center">
             <div class="logo">
-              <h1><a href="index.html"><img src="../images/icon/Logo.png" alt="logo"/></a></h1>
+              <h1><a href="index.html"><img src="../images/icon/mobile-logo.png" alt="logo"/></a></h1>
             </div>
           </div>
           <div class="col-3 text-right">
             <div class="header-right">
               <div class="search-button-wrapper header-customize-item style-default">
-                <div class="icon-search-menu"><i class="wicon fa fa-search"></i></div>
-                <div class="yolo-search-wrapper">
-                  <input id="search-ajax" placeholder="Enter keyword to search" type="search"/>
-                  <button class="search"><i class="fa fa-search"></i></button>
-                  <button class="close"><i class="pe-7s-close"></i></button>
+                <div class="icon-search-menu">
+                  <i class="wicon1 fa fa-search"></i>
+                  <div id="searchBox1" class="hide-search" >
+                    <input id="search-ajax" placeholder="Search" type="search"/>
+                    <button><i class="fa fa-search"></i></button>
+                  </div>
                 </div>
               </div>
-              <div class="shopping-cart-wrapper header-customize-item with-price">
+              <!-- <div class="shopping-cart-wrapper header-customize-item with-price">
                 <div class="widget_shopping_cart_content">
                   <div class="widget_shopping_cart_icon"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></div>
                   <div class="cart_list_wrapper">
@@ -123,75 +127,80 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
-        </div> -->
+        </div>
+        <nav id="my-menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a>
+              <ul>
+                <li><a href="#">History</a></li>
+                <li><a href="#">The team</a></li>
+                <li><a href="#">Our address</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
       </header>
       <div id="example-wrapper">
-        <div class="div-box mt">
+        <div class="div-box mt mb">
           <div class="home-navigation">
             <div class="container">
               <div class="row">
-                <div class="col-md-2 col-sm-2">
-                  <div class="home-navigation-content domestic">
-                    <a href="">
-                      <img src="../images/icon/vietnam.png" alt="product1" class=""/><span class="home-navigation-text">Tour </br> Trong Nước</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-2 col-sm-2">
-                  <div class="home-navigation-content oversea">
-                    <a href="#">
-                      <img src="../images/icon/earth.png" alt="product1" class=""/>
-                      <span class="home-navigation-text">Tour </br> Ngoai Nuoc</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                  <div class="col-md-12 col-sm-12 cbt">
-                    <div class="home-navigation-content plane mb20">
-                      <a href="">
-                        <img src="../images/icon/plane.png" alt="product1" class=""/>
-                        <span class="home-navigation-text">Ve May Bay</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-6 cpr">
-                    <div class="home-navigation-content train">
-                      <a href="">
-                        <img src="../images/icon/train.png" alt="product1" class=""/>
-                        <span class="home-navigation-text">Book Vé</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-6 cpl">
-                    <div class="home-navigation-content bus">
-                      <a href="">
-                        <img src="../images/icon/bus.png" alt="product1" class=""/><span class="home-navigation-text">Book Vé</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2 col-sm-2">
-                  <div class="home-navigation-content ticket">
-                    <a href=""><span class="home-navigation-text">Ve tham quan / Ghep tour tai diem</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-2 col-sm-2">
-                  <div class="col-md-12">
-                    <div class="home-navigation-content visa mb20">
-                      <a href="">
-                        <img src="../images/icon/visa.png" alt="product1" class=""/>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="home-navigation-content hotel">
-                      <a href="">
-                        <img src="../images/icon/hotel.png" alt="product1" class=""/><span class="home-navigation-text">Khach San</span>
-                      </a>
+                <div class="col-md-12 col-sm-12">
+                  <div class="home-services-scroll">
+                    <div class="home-services-scrollx">
+                      <div class="home-navigation-content domestic pull-left">
+                        <a href="">
+                          <img src="../images/icon/vietnam.png" alt="product1" class=""/><span class="home-navigation-text">Tour </br> Trong Nước</span>
+                        </a>
+                      </div>
+                      <div class="home-navigation-content oversea pull-left">
+                        <a href="#">
+                          <img src="../images/icon/earth.png" alt="product1" class=""/>
+                          <span class="home-navigation-text">Tour </br> Ngoai Nuoc</span>
+                        </a>
+                      </div>
+                      <div class="home-navigation-content booking pull-left">
+                        <div class="plane mb20">
+                          <a href="">
+                            <img src="../images/icon/plane.png" alt="product1" class=""/>
+                            <span class="home-navigation-text">Ve May Bay</span>
+                          </a>
+                        </div>
+                        <div class="clearfix">
+                          <div class="train pull-left">
+                            <a href="">
+                              <img src="../images/icon/train.png" alt="product1" class=""/>
+                              <span class="home-navigation-text">Book Vé</span>
+                            </a>
+                          </div>
+                          <div class="bus pull-right">
+                            <a href="">
+                              <img src="../images/icon/bus.png" alt="product1" class=""/><span class="home-navigation-text">Book Vé</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="home-navigation-content ticket pull-left">
+                        <a href=""><span class="home-navigation-text">Ve tham quan / Ghep tour tai diem</span>
+                        </a>
+                      </div>
+                      <div class="home-navigation-content information" style="margin-right: 0px;">
+                        <div class="visa mb20">
+                          <a href="">
+                            <img src="../images/icon/visa.png" alt="product1" class=""/>
+                          </a>
+                        </div>
+                        <div class="hotel">
+                          <a href="">
+                            <img src="../images/icon/hotel.png" alt="product1" class=""/><span class="home-navigation-text">Khach San</span>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -207,7 +216,7 @@
                 <div class="col-md-12 col-sm-12">
                   <div class="contact-wrap-content">
                     <div class="contact-content">
-                      <div class="col-md-4">
+                      <div class="col-md-4 col-sm-4">
                         <h2>Hỗ Trợ</h2>
                         <div class="contact-skype">
                           <div class="skype-img pull-left">
@@ -234,7 +243,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-4 col-sm-4">
                         <h2>Social</h2>
                         <div class="contact-social text-center">
                           <ul>
@@ -245,7 +254,7 @@
                           </ul>
                         </div>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-4 col-sm-4">
                         <h2>Địa Chỉ</h2>
                         <div class="contact-info">
                           <ul>
@@ -326,7 +335,7 @@
             <div class="footer-top">
               <div class="container">
                 <div class="row">
-                  <div class="col-md-4 col-sm-4">
+                  <div class="col-md-4 col-sm-4 mt40-1">
                     <div>
                       <h4>CÔNG TY TNHH THƯƠNG MẠI & DỊCH VỤ DU LỊCH LỮ HÀNH TOÀN CẦU</h4>
                       <div class="icon-info">
@@ -349,7 +358,7 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="col-md-4 col-sm-4">
+                  <div class="col-md-4 col-sm-4 mt40-1">
                     <div class="footer-col footer-1-col-2">
                       <h4>CÔNG TY TNHH THƯƠNG MẠI & DỊCH VỤ DU LỊCH LỮ HÀNH TOÀN CẦU</h4>
                       <div class="icon-info">
@@ -362,7 +371,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4 col-sm-4">
+                  <div class="col-md-4 col-sm-4 mt40-1">
                     <div class="footer-col footer-1-col-2">
                       <h4>CÔNG TY TNHH THƯƠNG MẠI & DỊCH VỤ DU LỊCH LỮ HÀNH TOÀN CẦU</h4>
                       <div class="icon-info">
@@ -391,25 +400,9 @@
     <!-- .mv-site-->
 
     <!-- Vendor jQuery-->
-    <script type="text/javascript" src="../libs/jquery/jquery.min.js"></script>
-
+    <script type="text/javascript" src="../libs/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../libs/jquery.mmenu/jquery.mmenu.js"></script>
     <script type="text/javascript" src="../libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="libs/animate/wow.min.js"></script>
-    <script type="text/javascript" src="libs/jquery.mmenu.all/jquery.mmenu.all.min.js"></script>
-    <script type="text/javascript" src="libs/countdown/jquery.countdown.min.js"></script>
-    <script type="text/javascript" src="libs/jquery-appear/jquery.appear.min.js"></script>
-    <script type="text/javascript" src="libs/jquery-countto/jquery.countTo.min.js"></script>
-    <script type="text/javascript" src="libs/direction/js/jquery.hoverdir.js"></script>
-    <script type="text/javascript" src="libs/direction/js/modernizr.custom.97074.js"></script>
-    <script type="text/javascript" src="libs/isotope/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="libs/isotope/fit-columns.js"></script>
-    <script type="text/javascript" src="libs/isotope/isotope-docs.min.js"></script>
-    <script type="text/javascript" src="libs/mansory/mansory.js"></script>
-    <script type="text/javascript" src="libs/prettyphoto-master/js/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="libs/slick-sider/slick.min.js"></script>
-    <script type="text/javascript" src="libs/countdown-timer/js/jquery.final-countdown.min.js"></script>
-    <script type="text/javascript" src="libs/countdown-timer/js/kinetic.js"></script>
-    <script type="text/javascript" src="libs/owl.carousel.min/owl.carousel.min.js"></script> -->
     <script type="text/javascript" src="../js/main.js"></script>
   </body>
 </html>
