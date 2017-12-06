@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationServices\System\IErrorService.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="DomainServices\Security\IAppGroupRepository.cs" />
@@ -48,12 +49,11 @@
     <Compile Include="DomainServices\Security\IAppRoleRepository.cs" />
     <Compile Include="DomainServices\Security\IAppUserGroupRepository.cs" />
     <Compile Include="DomainServices\Security\IAppUserRepository.cs" />
+    <Compile Include="DomainServices\System\IErrorRepository.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ApplicationServices\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\NBT.Core.Domain\NBT.Core.Domains.csproj">
       <Project>{E3A4AA22-C7AA-47C2-8EDD-249227069DF9}</Project>

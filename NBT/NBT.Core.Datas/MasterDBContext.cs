@@ -12,7 +12,7 @@ namespace NBT.Core.Datas
 {
     public class MasterDBContext : IdentityDbContext<AppUser>, IDBContextExtension
     {
-        public MasterDBContext() : base("MasterDBContext")
+        public MasterDBContext() : base("MasterDBConnection")
         {
 
         }
