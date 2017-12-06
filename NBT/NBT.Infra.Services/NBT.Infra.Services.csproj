@@ -80,6 +80,8 @@
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="Identity\ApplicationUserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AppGroupService.cs" />
+    <Compile Include="Security\AppRoleService.cs" />
     <Compile Include="ServiceBase.cs" />
     <Compile Include="System\ErrorService.cs" />
   </ItemGroup>

@@ -12,9 +12,15 @@ namespace NBT.Web.Controllers
     [Authorize]
     public class AdminController : Controller
     {
-        private ApplicationUserManager _userManager;
+        ApplicationUserManager _userManager;
+        public AdminController(ApplicationUserManager userManager)
+        {
+            _userManager = userManager;
+        }
         public async Task<ActionResult> Index(ApplicationUserManager userManager)
         {
+            if (!Request.IsAuthenticated)
+                RedirectToAction("Account", "Test");
             var user = await _userManager.FindByIdAsync(User.Identity.GetUserId());
             if (!user.IsSystemAccount)
                 return RedirectToAction("Index", "Home");

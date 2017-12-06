@@ -46,7 +46,7 @@ namespace NBT.Web.App_Start
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 CookieSecure = CookieSecureOption.Always,
-                LoginPath = new PathString("/Login"),
+                LoginPath = new PathString("/Account/Login"),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.

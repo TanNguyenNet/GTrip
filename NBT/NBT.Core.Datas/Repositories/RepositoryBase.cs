@@ -26,7 +26,7 @@ namespace NBT.Core.Datas.Repositories
         {
             get
             {
-                return this.DbQueryNotracking;
+                return this.DbSet;
             }
         }
 
@@ -34,7 +34,7 @@ namespace NBT.Core.Datas.Repositories
         {
             get
             {
-                return this.DbSet;
+                return this.DbQueryNotracking;
             }
         }
         public IEnumerable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null)
@@ -49,7 +49,14 @@ namespace NBT.Core.Datas.Repositories
 
             return DbContext.Set<T>().Where<T>(predicate).AsQueryable<T>();
         }
-       
+
+        public T Delete(T entity)
+        {
+            entity = DbSet.Remove(entity);
+            DbContext.SaveChanges();
+            return entity;
+                
+        }
 
         public async Task DeleteAsync(T entity)
         {
@@ -112,7 +119,34 @@ namespace NBT.Core.Datas.Repositories
             }
 
         }
+        public T Insert(T entity)
+        {
+            try
+            {
+                DbSet.Add(entity);
+                DbContext.SaveChanges();
+                return entity;
+            }
+            catch
+            {
+                throw;
+            }
+        }
 
+        public T Update(T entity)
+        {
+            try
+            {
+                DbSet.Attach(entity);
+                DbContext.Entry(entity).State = EntityState.Modified;
+                DbContext.SaveChanges();
+                return entity;
+            }
+            catch
+            {
+                throw;
+            }
+        }
         public async Task<T> UpdateAsync(T entity)
         {
             try
@@ -149,6 +183,11 @@ namespace NBT.Core.Datas.Repositories
         protected override void DisposeCore()
         {
             this.DbContext.Dispose();
+        }
+
+        public bool CheckContains(Expression<Func<T, bool>> predicate)
+        {
+            return DbQueryNotracking.Count(predicate) > 0;
         }
 
         

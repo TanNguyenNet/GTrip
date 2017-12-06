@@ -23,6 +23,7 @@ using NBT.Core.Datas.Repositories.System;
 using NBT.Infra.Services.System;
 using System.Web.Mvc;
 using System.Web.Http;
+using System.Reflection;
 
 [assembly: OwinStartup(typeof(NBT.Web.App_Start.Startup))]
 
@@ -41,7 +42,8 @@ namespace NBT.Web.App_Start
         private void ConfigAutofac(IAppBuilder app)
         {
             var builder = new ContainerBuilder();
-            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            //builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());
             var assembliesGtripWebApi = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName.Contains("NBT.Web.Api"));
             builder.RegisterApiControllers(assembliesGtripWebApi.ToArray());
 

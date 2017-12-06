@@ -14,7 +14,7 @@ namespace NBT.Infra.Services.Identity
 {
     public class ApplicationSignInManager : SignInManager<AppUser, string>
     {
-        public ApplicationSignInManager(UserManager<AppUser, string> userManager, IAuthenticationManager authenticationManager)
+        public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)
         {
         }

@@ -21,8 +21,10 @@ namespace NBT.Web.Controllers
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
+            _signInManager = signInManager;
+            _userManager = userManager;
+            //UserManager = userManager;
+            //SignInManager = signInManager;
         }
 
         public ApplicationSignInManager SignInManager

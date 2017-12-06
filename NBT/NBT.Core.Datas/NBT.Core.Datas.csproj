@@ -65,6 +65,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\Security\AppGroupRepository.cs" />
+    <Compile Include="Repositories\Security\AppRoleGroupRepository.cs" />
+    <Compile Include="Repositories\Security\AppRoleRepository.cs" />
+    <Compile Include="Repositories\Security\AppUserGroupRepository.cs" />
     <Compile Include="Repositories\System\ErrorRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
@@ -86,9 +90,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\Security\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712051012321_init_database.resx">
       <DependentUpon>201712051012321_init_database.cs</DependentUpon>

@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationServices\Security\IAppGroupService.cs" />
+    <Compile Include="ApplicationServices\Security\IAppRoleService.cs" />
     <Compile Include="ApplicationServices\System\IErrorService.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
