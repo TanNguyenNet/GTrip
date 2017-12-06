@@ -348,7 +348,9 @@ select {
         position: absolute;
         top: -5px;
         right: 18px;
-        color: #000; }
+        color: #000;
+        background-color: transparent;
+        border: none; }
     .main-nav-wrapper .icon-search-menu .hide-search {
       padding: 0;
       display: none; }
@@ -376,11 +378,15 @@ select {
   .swiper-slide .slider-content {
     position: absolute;
     z-index: 110;
-    top: 40%;
+    top: 65.5vh;
     left: 15%;
     color: #fff; }
     .swiper-slide .slider-content .btn-container {
       margin-top: 25px; }
+    .swiper-slide .slider-content h2 {
+      font-size: 3.4vw; }
+    .swiper-slide .slider-content h1 {
+      font-size: 4.50vw; }
 
 .swiper-container1 {
   width: 100%;
@@ -408,7 +414,7 @@ select {
 .home-navigation-content {
   text-align: center;
   color: #fff;
-  margin-right: 25px;
+  margin-right: 21px;
   display: inline-block; }
 
 .domestic {
@@ -603,6 +609,9 @@ select {
   src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+.blog-content {
+  margin-bottom: 20px; }
 
 .blog-info {
   padding: 10px 10px 0px 10px; }
@@ -833,7 +842,9 @@ select {
         position: absolute;
         top: -5px;
         right: 18px;
-        color: #000; }
+        color: #000;
+        background-color: transparent;
+        border: none; }
     .main-nav-wrapper .icon-search-menu .hide-search {
       padding: 0;
       display: none; }
@@ -863,7 +874,7 @@ select {
 .home-navigation-content {
   text-align: center;
   color: #fff;
-  margin-right: 25px;
+  margin-right: 21px;
   display: inline-block; }
 
 .domestic {
@@ -1378,7 +1389,7 @@ select {
 
 .tour-category-content {
   border: 1px solid #dedede;
-  padding: 15px 25px; }
+  padding: 15px 15px; }
 
 .tour-title {
   font-size: 1rem;
@@ -1682,7 +1693,9 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
         position: absolute;
         top: -5px;
         right: 18px;
-        color: #000; }
+        color: #000;
+        background-color: transparent;
+        border: none; }
     .main-nav-wrapper .icon-search-menu .hide-search {
       padding: 0;
       display: none; }
@@ -1712,7 +1725,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
 .home-navigation-content {
   text-align: center;
   color: #fff;
-  margin-right: 25px;
+  margin-right: 21px;
   display: inline-block; }
 
 .domestic {
@@ -1957,6 +1970,22 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
       font-size: 0.5rem; }
     .next-blog .next-blog-content .next-blog-info p {
       font-size: 0.5rem; }
+  .tour-detail-category-content .tour-category-info {
+    padding: 10px 10px; }
+    .tour-detail-category-content .tour-category-info h5 {
+      font-size: 0.75rem; }
+    .tour-detail-category-content .tour-category-info .tour-category-list {
+      font-size: 0.75rem; }
+  .tour-content .col-md-4 {
+    margin-bottom: 30px; }
+  .tour-content .tour-img .country-title {
+    font-size: 0.5rem;
+    padding: 10px 20px; }
+  .tour-content .tour-info h5 {
+    font-size: 0.75rem;
+    line-height: 15px; }
+  .tour-content .tour-info .tour-price {
+    font-size: 0.5rem; }
   .main-nav-wrapper .icon-search-menu {
     position: relative; }
     .main-nav-wrapper .icon-search-menu .wicon {
@@ -1996,7 +2025,37 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     .contact-wrapper .contact-content .skype-info span.service-apartment {
       font-size: 0.5rem; }
     .contact-wrapper .contact-content .skype-info span {
-      font-size: 0.5rem; } }
+      font-size: 0.5rem; }
+  .visa-cate-wrap {
+    border: 1px solid #dedede;
+    padding: 10px 15px; }
+    .visa-cate-wrap .visa-title {
+      border-bottom: 1px solid #dedede; }
+      .visa-cate-wrap .visa-title .icon {
+        background: url(../images/earth1.png) no-repeat left center;
+        background-size: 40px 40px;
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+        text-indent: -999px;
+        display: inline-block;
+        background-position-y: 4px; }
+      .visa-cate-wrap .visa-title .country {
+        font-size: 0.75rem;
+        font-weight: 500;
+        vertical-align: super; }
+    .visa-cate-wrap .flag-wrapper {
+      padding: 20px 5px; }
+      .visa-cate-wrap .flag-wrapper li {
+        padding-bottom: 5px;
+        padding-top: 5px;
+        border-bottom: 1px solid #ededed; }
+        .visa-cate-wrap .flag-wrapper li:first-child {
+          padding-top: 0; }
+        .visa-cate-wrap .flag-wrapper li a {
+          padding-left: 10px;
+          font-size: 0.75rem;
+          line-height: 25px; } }
   @media only screen and (max-width: 767px) {
   .mb40-1 {
     margin-bottom: 40px; }
@@ -2054,6 +2113,8 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     .mobile-menu .col-3 {
       width: 33.33%;
       float: left; }
+  .tour-wrap {
+    margin-top: 40px; }
   .promotion {
     display: none; }
   .blog-wrap {

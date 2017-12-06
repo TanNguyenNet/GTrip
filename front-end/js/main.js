@@ -40,6 +40,17 @@ $(document).ready(function() {
   $(".mobile-menu .text-left #primary-menu").click(function() {
     API.open();
   });
+
+  //pagination: change active class
+  $(".pagination1 li").click(function() {
+    $('.pagination1 li.active').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $("#primary-menu li").click(function (){
+    $("#primary-menu li.active").removeClass('active');
+    $(this).addClass('active');
+  });
   //search button
   var isOpen = false;
   $(".icon-search-menu .wicon").click(function(){
@@ -86,6 +97,8 @@ $(document).ready(function() {
       $("#searchBox1").removeClass('unhide-search').addClass('hide-search');
     }
   });
+
+
   //update date tour
   $('#datetimepicker4').datetimepicker({
       format: 'DD/MM/YYYY'
@@ -93,5 +106,36 @@ $(document).ready(function() {
   $('#datetimepicker5').datetimepicker({
       format: 'DD/MM/YYYY'
     });
+
+  //accordion menu
+  var accordionsMenu = $('.cd-accordion-menu');
+
+  if( accordionsMenu.length > 0 ) {
+
+    accordionsMenu.each(function(){
+      var accordion = $(this);
+      //detect change in the input[type="checkbox"] value
+      accordion.on('change', 'input[type="checkbox"]', function(){
+        var checkbox = $(this);
+        console.log(checkbox.prop('checked'));
+        ( checkbox.prop('checked') ) ? checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300) : checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
+      });
+    });
+  }
+
+  var accordionsMenu1 = $('.cd-accordion-menu1');
+
+  if( accordionsMenu1.length > 0 ) {
+
+    accordionsMenu1.each(function(){
+      var accordion1 = $(this);
+      //detect change in the input[type="checkbox"] value
+      accordion1.on('change', 'input[type="checkbox"]', function(){
+        var checkbox1 = $(this);
+        console.log(checkbox1.prop('checked'));
+        ( checkbox1.prop('checked') ) ? checkbox1.siblings('ul').attr('style', 'display:none;').slideDown(300) : checkbox1.siblings('ul').attr('style', 'display:block;').slideUp(300);
+      });
+    });
+  }
 });
 

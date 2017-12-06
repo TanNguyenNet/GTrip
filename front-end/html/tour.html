@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="../css/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../libs/Swiper-4.0.6/dist/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="../libs/jquery.mmenu/jquery.mmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="../libs/accordion-menu/css/style.css"/>
 
     <!-- Template CSS-->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -217,61 +218,95 @@
                   <div class="tour-category-wrapper">
                     <div class="tour-category-content">
                       <div class="tour-title"><span class="country">du lịch trong nước</span></div>
-                      <div class="nav-side-menu">
-                        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-                        <div class="menu-list">
-                          <ul id="menu-content" class="menu-content collapse out">
-                            <li>
-                              <a href="#">miền bắc</a>
-                            </li>
-                            <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                              <a href="#">miền trung- tây nguyên<span class="arrow"></span></a>
-                            </li>
-                            <ul class="sub-menu collapse" id="products" data-toggle="collapse" data-target="#sub-products">
-                              <li class="active"><a href="#">Kontum</a></li>
-                              <li><a href="#">Datlat</a><span class="arrow"></span></li>
-                              <ul class="sub-menu1 collapse" id="sub-products">
-                                <li class="active"><a href="#">khu vuc a</a></li>
-                                <li><a href="#">khu vuc b</a></li>
-                                <li><a href="#">khu vuc c</a></li>
-                              </ul>
-                              <li><a href="#">Pleiku</a></li>
+                      <ul class="cd-accordion-menu animated">
+                        <li class="has-children">
+                          <input type="checkbox" name ="group-1" id="group-1" checked>
+                          <label for="group-1">Miền Bắc</label>
+                            <ul>
+                              <li class="has-children">
+                                <input type="checkbox" name ="sub-group-1" id="sub-group-1">
+                                <label for="sub-group-1">Sub Group 1</label>
+                                <ul>
+                                  <li><a href="#0">Image</a></li>
+                                  <li><a href="#0">Image</a></li>
+                                  <li><a href="#0">Image</a></li>
+                                </ul>
+                              </li>
+                              <li class="has-children">
+                                <input type="checkbox" name ="sub-group-2" id="sub-group-2">
+                                <label for="sub-group-2">Sub Group 2</label>
+                                <ul>
+                                  <li><a href="#0">Image</a></li>
+                                  <li><a href="#0">Image</a></li>
+                                </ul>
+                              </li>
+                              <li><a href="#0">Vịnh Hạ Long</a></li>
+                              <li><a href="#0">Sapa</a></li>
                             </ul>
-                            <li data-toggle="collapse" data-target="#service" class="collapsed">
-                              <a href="#">miền nam <span class="arrow"></span></a>
-                            </li>
+                        </li>
+                        <li class="has-children">
+                          <input type="checkbox" name ="group-2" id="group-2">
+                          <label for="group-2">Miền Trung - Tây Nguyên</label>
+                          <ul>
+                            <li><a href="#0">Kontum</a></li>
+                            <li><a href="#0">Huế</a></li>
                           </ul>
-                       </div>
-                    </div>
+                        </li>
+                        <li class="has-children">
+                          <input type="checkbox" name ="group-2" id="group-2">
+                          <label for="group-2">Miền Nam</label>
+                          <ul>
+                            <li><a href="#0">Cà Mau</a></li>
+                            <li><a href="#0">Đồng Nai</a></li>
+                          </ul>
+                        </li>
+                      </ul> <!-- cd-accordion-menu -->
                     </div>
                     <div class="tour-category-content mt20">
                       <div class="tour-title"><span class="country">du lịch ngoài nước</span></div>
-                      <div class="nav-side-menu">
-                        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-                        <div class="menu-list">
-                          <ul id="menu-content" class="menu-content collapse out">
-                            <li>
-                              <a href="#">miền bắc</a>
-                            </li>
-                            <li  data-toggle="collapse" data-target="#domestic" class="collapsed active">
-                              <a href="#">miền trung- tây nguyên<span class="arrow"></span></a>
-                            </li>
-                            <ul class="sub-menu collapse" id="products" data-toggle="collapse" data-target="#sub-products">
-                              <li class="active"><a href="#">Kontum</a></li>
-                              <li><a href="#">Datlat</a><span class="arrow"></span></li>
-                              <ul class="sub-menu1 collapse" id="sub-products">
-                                <li class="active"><a href="#">khu vuc a</a></li>
-                                <li><a href="#">khu vuc b</a></li>
-                                <li><a href="#">khu vuc c</a></li>
-                              </ul>
-                              <li><a href="#">Pleiku</a></li>
+                      <ul class="cd-accordion-menu1 animated">
+                        <li class="has-children">
+                          <input type="checkbox" name ="groups-1" id="groups-1" checked>
+                          <label for="groups-1">Miền Bắc</label>
+                            <ul>
+                              <li class="has-children">
+                                <input type="checkbox" name ="sub-groups-1" id="sub-groups-1">
+                                <label for="sub-groups-1">Sub Groups 1</label>
+                                <ul>
+                                  <li><a href="#0">Image</a></li>
+                                  <li><a href="#0">Image</a></li>
+                                  <li><a href="#0">Image</a></li>
+                                </ul>
+                              </li>
+                              <li class="has-children">
+                                <input type="checkbox" name ="sub-groups-2" id="sub-groups-2">
+                                <label for="sub-groups-2">Sub Groups 2</label>
+                                <ul>
+                                  <li><a href="#0">Image</a></li>
+                                  <li><a href="#0">Image</a></li>
+                                </ul>
+                              </li>
+                              <li><a href="#0">Vịnh Hạ Long</a></li>
+                              <li><a href="#0">Sapa</a></li>
                             </ul>
-                            <li data-toggle="collapse" data-target="#service" class="collapsed">
-                              <a href="#">miền nam <span class="arrow"></span></a>
-                            </li>
+                        </li>
+                        <li class="has-children">
+                          <input type="checkbox" name ="groups-2" id="groups-2">
+                          <label for="groups-2">Miền Trung - Tây Nguyên</label>
+                          <ul>
+                            <li><a href="#0">Kontum</a></li>
+                            <li><a href="#0">Huế</a></li>
                           </ul>
-                       </div>
-                    </div>
+                        </li>
+                        <li class="has-children">
+                          <input type="checkbox" name ="groups-2" id="groups-2">
+                          <label for="groups-2">Miền Nam</label>
+                          <ul>
+                            <li><a href="#0">Cà Mau</a></li>
+                            <li><a href="#0">Đồng Nai</a></li>
+                          </ul>
+                        </li>
+                      </ul> <!-- cd-accordion-menu -->
                     </div>
                   </div>
                 </div>
@@ -369,7 +404,7 @@
                           <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
                         </div>
                         <div class="tour-info">
-                          <5h><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></5h>
+                          <h5><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
                           <div class="tour-price">
                             <span class="pull-left">thời gian</span>
                             <span class="pull-right">giá từ</span>
@@ -386,7 +421,7 @@
                           <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
                         </div>
                         <div class="tour-info">
-                          <5h><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></5h>
+                          <h5><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
                           <div class="tour-price">
                             <span class="pull-left">thời gian</span>
                             <span class="pull-right">giá từ</span>
@@ -403,7 +438,7 @@
                           <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
                         </div>
                         <div class="tour-info">
-                          <5h><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></5h>
+                          <h5><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
                           <div class="tour-price">
                             <span class="pull-left">thời gian</span>
                             <span class="pull-right">giá từ</span>
@@ -420,7 +455,7 @@
                           <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
                         </div>
                         <div class="tour-info">
-                          <5h><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></5h>
+                          <h5><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
                           <div class="tour-price">
                             <span class="pull-left">thời gian</span>
                             <span class="pull-right">giá từ</span>
