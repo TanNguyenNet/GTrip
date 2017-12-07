@@ -137,5 +137,28 @@ $(document).ready(function() {
       });
     });
   }
+
+
+  //block time-zone
+ function countryTime() {
+    var usdate = moment().tz("America/New_York").format('dddd, MMM DD, YYYY');
+    var ustime = moment().tz("America/New_York").format('hh:mm');
+    var audate = moment().tz("Australia/Sydney").format('dddd, MMM DD, YYYY');
+    var autime = moment().tz("Australia/Sydney").format('hh:mm');
+    var hkdate = moment().tz("Asia/Hong_Kong").format('dddd, MMM DD, YYYY');
+    var hktime = moment().tz("Asia/Hong_Kong").format('hh:mm');
+    var jpdate = moment().tz("Asia/Tokyo").format('dddd, MMM DD, YYYY');
+    var jptime = moment().tz("Asia/Tokyo").format('hh:mm');
+    document.getElementById("usa-date").innerHTML = usdate;
+    document.getElementById("usa-time").innerHTML = ustime;
+    document.getElementById("au-date").innerHTML = audate;
+    document.getElementById("au-time").innerHTML = autime;
+    document.getElementById("hk-date").innerHTML = hkdate;
+    document.getElementById("hk-time").innerHTML = hktime;
+    document.getElementById("jp-date").innerHTML = jpdate;
+    document.getElementById("jp-time").innerHTML = jptime;
+  }
+  countryTime();
+  setInterval(countryTime, 10000);
 });
 

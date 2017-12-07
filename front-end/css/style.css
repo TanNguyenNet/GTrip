@@ -203,7 +203,9 @@ select {
 
 /* Small Devices, Phones */
 /* Extra Small Devices, Phones */
+
 /* Custom, iPhone Retina */
+
 /* --------------------------------------------------------------------- */
 /* HEADER
 /* --------------------------------------------------------------------- */
@@ -365,20 +367,15 @@ select {
   font-weight: normal;
   font-style: normal; }
 
-.main-slider {
-  width: 100%;
-  height: 768px; }
-
-.service-slider {
-  width: 100%;
-  height: 400px; }
+.swiper-container {
+  width: 100%; }
 
 .swiper-slide {
   position: relative; }
   .swiper-slide .slider-content {
     position: absolute;
     z-index: 110;
-    top: 65.5vh;
+    top: 40%;
     left: 15%;
     color: #fff; }
     .swiper-slide .slider-content .btn-container {
@@ -387,10 +384,8 @@ select {
       font-size: 3.4vw; }
     .swiper-slide .slider-content h1 {
       font-size: 4.50vw; }
-
-.swiper-container1 {
-  width: 100%;
-  height: 300px; }
+    .swiper-slide .slider-content h5 {
+      font-size: 2.4vw; }
 
 @font-face {
   font-family: 'signpainter';
@@ -571,7 +566,7 @@ select {
     color: #fff; }
 
 .block-content {
-  padding: 2px 15px 2px 15px;
+  padding: 6px 15px 6px 15px;
   color: #fff;
   font-weight: 400; }
   .block-content.b1 {
@@ -582,7 +577,7 @@ select {
     background-color: rgba(110, 187, 67, 0.8); }
   .block-content.b4 {
     background-color: #6ebb43; }
-  .block-content .information {
+  .block-content .information1 {
     font-size: 0.5rem;
     text-transform: uppercase;
     float: left;
@@ -590,13 +585,13 @@ select {
     left: 50%;
     -webkit-transform: translate(0%, 30%);
     transform: translate(0%, 30%); }
-    .block-content .information .block-time {
+    .block-content .information1 .block-time {
       display: block; }
   .block-content .block {
     position: relative;
     float: right; }
     .block-content .block .timing {
-      font-size: 3.35rem; }
+      font-size: 3rem; }
     .block-content .block .milestone {
       font-size: 0.5rem;
       position: absolute;
@@ -1941,6 +1936,25 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .click-back-top-body button.on {
     -webkit-transform: translateX(0px);
             transform: translateX(0px); }
+  @media only screen and (max-width: 1200px) {
+  .block-content {
+    padding: 3px 15px 6px 15px;
+    color: #fff;
+    font-weight: 400; }
+    .block-content .information1 .block-country {
+      font-size: 0.75rem; }
+    .block-content .information1 .block-time {
+      font-size: 0.4rem; }
+    .block-content .block {
+      position: relative;
+      float: right; }
+      .block-content .block .timing {
+        font-size: 2.5rem; }
+      .block-content .block .milestone {
+        font-size: 0.5rem;
+        position: absolute;
+        top: 5px;
+        right: -5px; } }
   @media only screen and (max-width: 991px) {
   .mobile-menu {
     display: none; } }
@@ -1958,6 +1972,26 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     margin-top: 0px; }
     .main-nav-wrapper .main-nav > ul.nav > li, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li {
       font-size: 0.75rem; }
+  .block-content {
+    padding: 8px 15px 8px 15px;
+    color: #fff;
+    font-weight: 400; }
+    .block-content .information1 {
+      font-size: 0.25rem; }
+      .block-content .information1 .block-country {
+        font-size: 0.5rem; }
+      .block-content .information1 .block-time {
+        font-size: 0.35rem; }
+    .block-content .block {
+      position: relative;
+      float: right; }
+      .block-content .block .timing {
+        font-size: 1.5rem; }
+      .block-content .block .milestone {
+        font-size: 0.5rem;
+        position: absolute;
+        top: 5px;
+        right: -5px; }
   .new-blog h5 {
     font-size: 0.75rem; }
   .next-blog .next-blog-content .next-blog-img {
@@ -2057,6 +2091,8 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
           font-size: 0.75rem;
           line-height: 25px; } }
   @media only screen and (max-width: 767px) {
+  .block-content.b1 {
+    margin-top: 20px; }
   .mb40-1 {
     margin-bottom: 40px; }
   .mt40-1 {
@@ -2124,7 +2160,33 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .tour-detail-category-wrapper {
     margin-bottom: 40px; }
   #footer-wrapper h4 {
+    font-size: 1rem; }
+  .swiper-slide .slider-content {
+    top: 30%;
+    left: 15%; }
+  .button {
+    padding: 20px 40px;
     font-size: 1rem; } }
+  @media only screen and (max-width: 480px) {
+  .swiper-slide .slider-content {
+    position: absolute;
+    z-index: 110;
+    top: 25%;
+    left: 15%;
+    color: #fff; }
+  .button {
+    padding: 10px 20px;
+    font-size: 0.75rem; } }
+  @media only screen and (max-width: 320px) {
+  .swiper-container {
+    width: 100%;
+    height: 225px; }
+  .swiper-slide .slider-content {
+    top: 15%;
+    left: 15%; }
+  .button {
+    padding: 10px 20px;
+    font-size: 0.75rem; } }
   @media (max-width: 767px) {
   .nav-side-menu {
     position: relative;
