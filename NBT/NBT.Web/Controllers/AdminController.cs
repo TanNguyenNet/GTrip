@@ -17,14 +17,13 @@ namespace NBT.Web.Controllers
         {
             _userManager = userManager;
         }
-        public async Task<ActionResult> Index(ApplicationUserManager userManager)
+        public async Task<ActionResult> Index()
         {
-            if (!Request.IsAuthenticated)
-                RedirectToAction("Account", "Test");
-            var user = await _userManager.FindByIdAsync(User.Identity.GetUserId());
-            if (!user.IsSystemAccount)
-                return RedirectToAction("Index", "Home");
+            //var user = await _userManager.FindByIdAsync(User.Identity.GetUserId());
+            //if (!user.IsSystemAccount)
+            //    return RedirectToAction("Index", "Home");
             return View();
         }
+        
     }
 }

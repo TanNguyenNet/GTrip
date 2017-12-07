@@ -21,10 +21,8 @@ namespace NBT.Web.Controllers
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
-            _signInManager = signInManager;
-            _userManager = userManager;
-            //UserManager = userManager;
-            //SignInManager = signInManager;
+            UserManager = userManager;
+            SignInManager = signInManager;
         }
 
         public ApplicationSignInManager SignInManager
@@ -72,7 +70,7 @@ namespace NBT.Web.Controllers
                     AuthenticationProperties props = new AuthenticationProperties();
                     props.IsPersistent = false;
                     authenticationManager.SignIn(props, identity);
-                    if(user.IsSystemAccount)
+                    if (user.IsSystemAccount)
                         return RedirectToAction("Index", "Admin");
                     if (Url.IsLocalUrl(returnUrl))
                     {

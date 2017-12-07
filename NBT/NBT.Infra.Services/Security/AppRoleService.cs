@@ -15,12 +15,15 @@ namespace NBT.Infra.Services.Security
     {
         IAppRoleRepository _appRoleRepo;
         IAppRoleGroupRepository _appRoleGroupRepo;
+        IPermissionProvider _permissionProvider;
         public AppRoleService(IUnitOfWork unitOfWork
             , IAppRoleRepository appRoleRepo
-            , IAppRoleGroupRepository appRoleGroupRepo) : base(unitOfWork, appRoleRepo)
+            , IAppRoleGroupRepository appRoleGroupRepo
+            , IPermissionProvider permissionProvider) : base(unitOfWork, appRoleRepo)
         {
             _appRoleRepo = appRoleRepo;
             _appRoleGroupRepo = appRoleGroupRepo;
+            _permissionProvider = permissionProvider;
         }
 
         public bool AddRolesToGroup(IEnumerable<AppRoleGroup> roleGroups, int groupId)
@@ -72,6 +75,28 @@ namespace NBT.Infra.Services.Security
             if (_appRoleRepo.CheckContains(x => x.Name == appRole.Name))
                 throw new NameDuplicatedException("Tên không được trùng");
             return _appRoleRepo.Insert(appRole);
+        }
+
+        public void InsertRoleFromSystem()
+        {
+            var permissionDefault = _permissionProvider.GetPermissions();
+            var modelRole = _appRoleRepo.TableNoTracking.ToList();
+
+            permissionDefault = permissionDefault.Where(x => !modelRole.Select(b => b.Name).Contains(x.Name));
+            if(permissionDefault.Count()>0)
+            {
+                var appRoles = new List<AppRole>();
+                foreach (var item in permissionDefault)
+                {
+                    var newAppRole = new AppRole();
+                    newAppRole.Id = Guid.NewGuid().ToString();
+                    newAppRole.Name = item.Name;
+                    newAppRole.Description = item.Description;
+                    appRoles.Add(newAppRole);
+                }
+                _appRoleRepo.InsertAsync(appRoles);
+            }
+
         }
 
         public void Update(AppRole AppRole)

@@ -45,7 +45,7 @@ namespace NBT.Web.App_Start
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                CookieSecure = CookieSecureOption.Always,
+                //CookieSecure = CookieSecureOption.Always,
                 LoginPath = new PathString("/Account/Login"),
                 Provider = new CookieAuthenticationProvider
                 {

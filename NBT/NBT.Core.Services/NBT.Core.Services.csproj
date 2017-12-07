@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ApplicationServices\Security\IAppGroupService.cs" />
     <Compile Include="ApplicationServices\Security\IAppRoleService.cs" />
+    <Compile Include="ApplicationServices\Security\IAppUserService.cs" />
     <Compile Include="ApplicationServices\System\IErrorService.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="DomainServices\Security\IAppRoleRepository.cs" />
     <Compile Include="DomainServices\Security\IAppUserGroupRepository.cs" />
     <Compile Include="DomainServices\Security\IAppUserRepository.cs" />
+    <Compile Include="DomainServices\Security\IPermissionProvider.cs" />
     <Compile Include="DomainServices\System\IErrorRepository.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

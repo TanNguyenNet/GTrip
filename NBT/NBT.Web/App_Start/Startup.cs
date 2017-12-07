@@ -24,6 +24,7 @@ using NBT.Infra.Services.System;
 using System.Web.Mvc;
 using System.Web.Http;
 using System.Reflection;
+using NBT.Core.Services.DomainServices.Security;
 
 [assembly: OwinStartup(typeof(NBT.Web.App_Start.Startup))]
 
@@ -51,8 +52,10 @@ namespace NBT.Web.App_Start
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
 
             builder.RegisterType<MasterDBContext>().AsSelf().InstancePerRequest();
-            builder.RegisterType<RoleStore<AppRole>>().As<IRoleStore<AppRole, string>>();
 
+            builder.RegisterType<PermissionProvider>().As<IPermissionProvider>().InstancePerRequest();
+
+            builder.RegisterType<RoleStore<AppRole>>().As<IRoleStore<AppRole, string>>();
             builder.RegisterType<ApplicationUserStore>().As<IUserStore<AppUser>>().InstancePerRequest();
             builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
             builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();

@@ -112,6 +112,12 @@
     <Compile Include="Models\Security\LoginVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NBT.Core.Domain\NBT.Core.Domains.csproj">
+      <Project>{E3A4AA22-C7AA-47C2-8EDD-249227069DF9}</Project>
+      <Name>NBT.Core.Domains</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
