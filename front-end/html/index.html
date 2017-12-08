@@ -34,30 +34,6 @@
 
     -->
     <script type="text/javascript" src="../libs/Swiper-4.0.6/dist/js/swiper.min.js"></script>
-    <script>
-      // function countryTime() {
-      //   var today = new Date();
-      //   var h = today.getHours();
-      //   var m = today.getMinutes();
-      //   var format = formatAMPM(h);
-      //   h = checkTime(h);
-      //   m = checkTime(m);
-      //   document.getElementById('timing').innerHTML =
-      //   h + ":" + m;
-      //   function checkTime(i) {
-      //     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-      //     return i;
-      //   }
-      //   function formatAMPM(hours) {
-      //     var ampm = hours >= 12 ? 'pm' : 'am';
-      //     hours = hours % 12;
-      //     hours = hours ? hours : 12;
-      //     return hours;
-      //   }
-      // }
-      // setInterval(countryTime, 1000);
-
-    </script>
   </head>
   <body class="home main-home">
     <!-- <div id="timing">asdasd</div> -->
@@ -111,12 +87,19 @@
                         </li>
                       </ul>
                     </nav>
+                    <div class="pull-right">
                     <div class="icon-search-menu">
                       <i class="wicon fa fa-search"></i>
                       <div id="searchBox" class="hide-search">
                         <input id="search-ajax" placeholder="Search" type="search"/>
                         <button><i class="fa fa-search"></i></button>
                       </div>
+                    </div>
+                    <div class="shopping-cart-icon">
+                      <div class="widget_shopping_cart_content">
+                        <div class="widget_shopping_cart_icon"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></div>
+                      </div>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -142,21 +125,6 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="shopping-cart-wrapper header-customize-item with-price">
-                <div class="widget_shopping_cart_content">
-                  <div class="widget_shopping_cart_icon"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></div>
-                  <div class="cart_list_wrapper">
-                    <div class="scroll-wrapper cart_list product_list_widget scrollbar-inner">
-                      <ul class="cart_list product_list_widget scrollbar-inner scroll-content">
-                        <li class="empty">
-                          <h4>An empty cart</h4>
-                          <p>You have no item in your shopping cart</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@
     <!-- Web Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=vietnamese" rel="stylesheet">
 
-    <!-- Vendor CSS-->
+     <!-- Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../libs/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../libs/Swiper-4.0.6/dist/css/swiper.min.css">
@@ -36,6 +36,7 @@
     <script type="text/javascript" src="../libs/Swiper-4.0.6/dist/js/swiper.min.js"></script>
   </head>
   <body class="home main-home">
+    <!-- <div id="timing">asdasd</div> -->
     <div id="preloaderKDZ"></div>
     <div class="gtrip-site">
       <header class="header header-style-2">
@@ -206,54 +207,64 @@
         </div>
 
         <div class="div-box mb">
-          <div class="tour-detail-wrapper">
+          <div class="shopping-cart">
             <div class="container">
               <div class="row">
-                <div class="col-md-3 col-sm-3 col-md-push-9">
-                  <div class="tour-detail-category-wrapper">
-                    <div class="tour-detail-category-content">
-                      <img class="img-responsive" src="../images/0002682_bangkok.jpeg" alt="">
-                      <div class="tour-category-info">
-                        <h5>Tour Bankok - Thai Lan 5ND4</h5>
-                        <div class="tour-category-list"><span><i class="fa fa-barcode" aria-hidden="true"></i> <strong>Code:</strong> USD320342</span></div>
-                        <div class="tour-category-list"><span><i class="fa fa-calendar" aria-hidden="true"></i> <strong>Ngày Đi:</strong> 24-12-1017</span></div>
-                        <div class="tour-category-list"><span><i class="fa fa-calendar" aria-hidden="true"></i> <strong>Ngày Đi:</strong> 24-12-1017</span></div>
-                        <div class="tour-category-list"><span><i class="fa fa-calculator" aria-hidden="true"></i> <strong>Thời Gian:</strong> 4 Ngày 3 Đêm</span></div>
-                        <div class="tour-category-list"><span><i class="fa fa-money" aria-hidden="true"></i> <strong>Gia:</strong> 15.000.000 x 1</span></div>
-                        <div class="total"><span class="pull-left">Total:</span><span class="pull-right">15.000.000 D</span></div>
-                        <div class="tour-btn" style="text-align: center; margin-top: 20px"><button>Đặt Vé</button></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-9 col-sm-9 col-md-pull-3">
-                  <div class="tour-detail-wrap">
-                    <div class="tour-detail-content">
-                      <h3>Tour Bankok - Thai Lan 5N4D</h2>
-                      <div class="tour-detail-option">
-                        <h4>Thông Tin</h4>
-                        <div class="check-ticket"><span class="pull-left"><i class="fa fa-check-circle" aria-hidden="true"></i> xuất trình vé</span><span class="pull-right">Qua điện thoại</span></div>
-                        <div class="refund"><span class="pull-left"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Đổi trả vé</span><span class="pull-right">Không được phép</span></div>
-                        <div class="expiration"><span class="pull-left"><i class="fa fa-window-close-o" aria-hidden="true"></i> Hạng sử dụng voucher</span><span class="pull-right">Đúng ngày đăng kí</span></div>
-                      </div>
-                      <div class="tour-detail-date">
-                        <h4>Chọn Ngày Sử Dụng Tour</h4>
-                        <span>Ngày đi và ngày về:</span>
-                        <div class="start-date">
-                          <input type='text' class="form-control" id='datetimepicker4' /><i class="fa fa-calendar" aria-hidden="true"></i>
+                <div class="col-md-12 col-sm-12">
+                  <div class="shopping-cart-wrap">
+                    <form class="cart-form">
+                      <table>
+                        <tr>
+                          <th>Product</th>
+                          <th> </th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Total</th>
+                          <th> </th>
+                        </tr>
+                        <tr>
+                          <td data-title="Product"><a href="#" class="image-product"><img class="img-responsive" src="../images/product-1.jpg" alt="tab-1" width="180" height="220"/></a></td>
+                          <td data-title="Name"><a href="#" class="name-product">Sicily Chair </a></td>
+                          <td data-title="Price"><span class="price">$799.00</span></td>
+                          <td data-title="Quantity"><span class="quanlity">Quantity:</span>
+                            <input type="number" value="1" min="0"/>
+                          </td>
+                          <td data-title="Total"><span class="total">$799.00</span></td>
+                          <td data-title="Remove"><i class="fa fa-times"></i></td>
+                        </tr>
+                        <tr>
+                          <td data-title="Product"><a href="#" class="image-product"><img class="img-responsive" src="../images/product-1.jpg" alt="tab-1" width="180" height="220"/></a></td>
+                          <td data-title="Name"><a href="#" class="name-product">Sicily Chair </a></td>
+                          <td data-title="Price"><span class="price">$799.00</span></td>
+                          <td data-title="Quantity"><span class="quanlity">Quantity:</span>
+                            <input type="number" value="1" min="0"/>
+                          </td>
+                          <td data-title="Total"><span class="total">$799.00</span></td>
+                          <td data-title="Remove"><i class="fa fa-times"></i></td>
+                        </tr>
+                      </table>
+                      <div class="button-cart">
+                        <div class="button-cart-left">
+                          <input type="text" placeholder="Coupon code"/><a href="#" class="coupon">Apply Coupon</a>
                         </div>
-                        <div class="end-date">
-                          <input type='text' class="form-control" id='datetimepicker5' /><i class="fa fa-calendar" aria-hidden="true"></i>
-                        </div>
-                        <div class="tour-btn"><button>Cập Nhập</button></div>
+                        <div class="button-cart-right"><a href="#" class="update-cart">Update Cart</a><a href="#" class="process">Proceed to Checkout</a></div>
                       </div>
-                      <div class="tour-detail-desc">
-                        <strong>Tổng quan</strong>
-                        <p>Tour Tham Quan Ayutthaya Bằng Xe Bus  là chuyến hành trình khám phá cố đô của Thái Lan bằng đường bộ. Bạn sẽ có được khoảng thời gian thoải mái nhất để dạo quanh những phế tích còn sót lại sau cuộc tàn phá của người Miến (Myanmar), chiêm ngưỡng những đường nét tinh xảo trong nghệ thuật xây dựng đền chùa thời xưa.</p>
-                        <p>Một số công trình kiến trúc như Cung điện mùa hè Bang Pa-In, Chùa Phật Nằm Wat Chai Mongkol, đầu Phật trong gốc cây tại Chùa Wat Mahathat sẽ là những điểm tham quan đặc biệt cho bạn và gia đình. Công viên lịch sử Ayutthaya, điểm đến cuối cùng của chuyến đi hứa hẹn mang lại nhiều trải nghiệm và kiến thức thú vị, giúp tăng thêm giá trị cho cả cuộc hành trình.</p>
-                        <strong>Điểm nổi bật</strong>
-                        <p>Vé Ayutthaya – Ancient Capital of Thailand by Road, khám phá Vương quốc cổ Ayutthaya. Chiêm ngưỡng nhiều công trình kiến trúc văn hóa độc đáo, tìm hiểu về quá trình xây dựng những ngôi đền, chùa, cung điện nổi tiếng như Bang Pa-In Summer Palace, Wat Na Phra Meru, Wat Mahathat, …
-                        Thưởng thức bữa trưa tại nhà hàng. Tham quan Công viên lịch sử Ayutthaya, đền Wat Pra Sri Sanphet, Wihan Phramongkhon Bophit.</p>
+                    </form>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <form class="cart-total">
+                          <h4>Cart Totals</h4>
+                          <table>
+                            <tr>
+                              <td>Subtotal</td>
+                              <td><span class="subtotal">$890.00</span></td>
+                            </tr>
+                            <tr>
+                              <td>Total</td>
+                              <td><span class="total">$890.00</span></td>
+                            </tr>
+                          </table>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -331,11 +342,19 @@
       </div>
     </div>
     <!-- .mv-site-->
+    <div class="popup-wrapper">
+    </div>
+    <!-- .popup-wrapper-->
+    <div class="click-back-top-body">
+      <button type="button" class="sn-btn sn-btn-style-17 sn-back-to-top fixed-right-bottom"><i class="btn-icon fa fa-angle-up"></i></button>
+    </div>
 
     <!-- Vendor jQuery-->
     <script type="text/javascript" src="../libs/jquery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../libs/bootstrap-datetimepicker/js/moment.js"></script>
+    <script type="text/javascript" src="../libs/jquery/moment-timezone.min.js"></script>
+    <script type="text/javascript" src="../libs/jquery/moment-timezone-with-data.min.js"></script>
     <script type="text/javascript" src="../libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="../libs/jquery.mmenu/jquery.mmenu.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
