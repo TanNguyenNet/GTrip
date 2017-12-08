@@ -70,6 +70,11 @@ namespace NBT.Web.Api.Controllers
             return response;
         }
 
+        protected DateTimeOffset GetDateTimeNowUTC()
+        {
+            return DateTimeOffset.UtcNow;
+        }
+
         private void LogError(Exception ex)
         {
             try

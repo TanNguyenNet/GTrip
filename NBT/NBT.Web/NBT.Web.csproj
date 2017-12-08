@@ -193,6 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\app.js" />
+    <Content Include="App\components\appRoles\appRoles.module.js" />
     <Content Include="App\components\home\homeController.js" />
     <Content Include="App\components\home\homeView.html" />
     <Content Include="App\components\home\rootController.js" />
@@ -2081,6 +2082,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\components\appUsers\" />
     <Folder Include="Assets\libs\checklist-model\test\" />
     <Folder Include="Models\" />
   </ItemGroup>

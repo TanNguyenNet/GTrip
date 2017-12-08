@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using NBT.Core.Domain.Identity;
+using NBT.Web.Framework.Models.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,8 @@ namespace NBT.Web.Framework.Mapping
         {
             Mapper.Initialize(cfg =>
             {
-                
+                cfg.CreateMap<AppUser, AppUserVm>();
+                cfg.CreateMap<AppGroup, AppGroupVm>();
             });
         }
     }
