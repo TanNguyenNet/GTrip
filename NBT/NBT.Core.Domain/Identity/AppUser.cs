@@ -21,6 +21,10 @@ namespace NBT.Core.Domain.Identity
         public bool Gender { set; get; }
         public bool IsActive { set; get; }
         public bool IsSystemAccount { set; get; }
+        public DateTimeOffset CreatedDate { set; get; }
+        public DateTimeOffset UpdatedDate { set; get; }
+        [MaxLength(64)]
+        public string CreatedBy { set; get; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
