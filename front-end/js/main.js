@@ -138,27 +138,34 @@ $(document).ready(function() {
     });
   }
 
+  //validation
 
-  //block time-zone
- function countryTime() {
-    var usdate = moment().tz("America/New_York").format('dddd, MMM DD, YYYY');
-    var ustime = moment().tz("America/New_York").format('HH:mm');
-    var audate = moment().tz("Australia/Sydney").format('dddd, MMM DD, YYYY');
-    var autime = moment().tz("Australia/Sydney").format('HH:mm');
-    var hkdate = moment().tz("Asia/Hong_Kong").format('dddd, MMM DD, YYYY');
-    var hktime = moment().tz("Asia/Hong_Kong").format('HH:mm');
-    var jpdate = moment().tz("Asia/Tokyo").format('dddd, MMM DD, YYYY');
-    var jptime = moment().tz("Asia/Tokyo").format('HH:mm');
-    document.getElementById("usa-date").innerHTML = usdate;
-    document.getElementById("usa-time").innerHTML = ustime;
-    document.getElementById("au-date").innerHTML = audate;
-    document.getElementById("au-time").innerHTML = autime;
-    document.getElementById("hk-date").innerHTML = hkdate;
-    document.getElementById("hk-time").innerHTML = hktime;
-    document.getElementById("jp-date").innerHTML = jpdate;
-    document.getElementById("jp-time").innerHTML = jptime;
-  }
-  countryTime();
-  setInterval(countryTime, 10000);
+  $("#customerForm").validate({
+      rules: {
+        fullname: {
+          required: true,
+          minlength: 6
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        phone: {
+          required: true,
+          minlength: 6
+        }
+      },
+      messages: {
+        username: {
+          required: "Vui lòng nhập họ tên",
+          minlength: "vui lòng nhập họ tên đầy đủ"
+        },
+        phone: {
+          required: "Vui lòng nhập số điện thoai",
+          minlength: "Vui lòng nhập chính xác số điện thoại"
+        },
+        email: "Vui lòng nhập chính xác email"
+      }
+    });
 });
 

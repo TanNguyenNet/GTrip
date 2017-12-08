@@ -209,20 +209,6 @@ select {
 /* --------------------------------------------------------------------- */
 /* HEADER
 /* --------------------------------------------------------------------- */
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 .button {
   background-color: transparent;
   border: 2px solid #6ebb43;
@@ -377,13 +363,6 @@ select {
       top: 0;
       width: 15px; }
 
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 .swiper-container {
   width: 100%; }
 
@@ -404,13 +383,6 @@ select {
     .swiper-slide .slider-content h5 {
       font-size: 2.4vw; }
 
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 .home-navigation {
   margin: 0 auto;
   height: 250px; }
@@ -419,14 +391,14 @@ select {
   overflow: auto;
   overflow-y: hidden; }
   .home-services-scroll .home-services-scrollx {
-    width: 1170px;
+    width: 1140px;
     overflow-y: hidden;
     overflow: auto; }
 
 .home-navigation-content {
   text-align: center;
   color: #fff;
-  margin-right: 21px;
+  margin-right: 25px;
   display: inline-block; }
 
 .domestic {
@@ -558,13 +530,6 @@ select {
     .information .hotel .home-navigation-text {
       font-weight: 700;
       font-size: 1.25rem; }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 
 .special-services-content {
   position: relative; }
@@ -615,13 +580,6 @@ select {
       top: 5px;
       right: -5px; }
 
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 .blog-content {
   margin-bottom: 20px; }
 
@@ -647,401 +605,6 @@ select {
     font-weight: 700; }
     .blog-info .readmore:hover {
       color: #6ebb43; }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-#footer-wrapper {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding-top: 40px; }
-  #footer-wrapper h4 {
-    color: #6ebb43;
-    margin-bottom: 30px;
-    font-size: 1.25rem;
-    font-weight: 500; }
-  #footer-wrapper .icon-info {
-    position: relative;
-    margin-bottom: 10px; }
-    #footer-wrapper .icon-info p {
-      padding-left: 30px; }
-    #footer-wrapper .icon-info i {
-      font-size: 20px;
-      padding-right: 20px;
-      position: absolute;
-      top: 1px;
-      color: #6ebb43; }
-  #footer-wrapper #social-footer {
-    border-top: 1px solid #808c99;
-    padding-top: 10px; }
-    #footer-wrapper #social-footer li {
-      display: inline-block;
-      padding-left: 20px; }
-  #footer-wrapper .footer-bottom {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 20px;
-    color: #6ebb43; }
-    #footer-wrapper .footer-bottom .company-trademark {
-      color: #0c66ab; }
-
-.click-back-top-body button {
-  -webkit-backface-visibility: visible;
-          backface-visibility: visible;
-  background-color: #f5f5f5;
-  border: 2px solid #eee;
-  border-radius: 100%;
-  bottom: 10px;
-  color: #1e1e1e;
-  height: 44px;
-  line-height: 44px;
-  position: fixed;
-  right: 10px;
-  text-align: center;
-  -webkit-transform: translateX(100px);
-          transform: translateX(100px);
-  -webkit-transition: all 0.35s ease 0s;
-  transition: all 0.35s ease 0s;
-  width: 44px;
-  z-index: 10; }
-  .click-back-top-body button.on {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px); }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-.button {
-  background-color: transparent;
-  border: 2px solid #6ebb43;
-  border-radius: 5px;
-  padding: 15px 40px;
-  font-size: 1rem;
-  font-weight: 700; }
-  .button:hover {
-    color: #fff;
-    border-color: #6ebb43; }
-
-.btn-container .sweep-to-right {
-  position: relative;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s; }
-  .btn-container .sweep-to-right:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #6ebb43;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 0 50%;
-    transform-origin: 0 50%;
-    -webkit-transition-property: transform;
-    -webkit-transition-property: -webkit-transform;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-property: transform, -webkit-transform;
-    -webkit-transition: 300ms ease-out;
-    transition: 300ms ease-out; }
-
-.btn-container .sweep-to-right:hover:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1); }
-
-.header-style-1 {
-  width: 100%;
-  background-color: rgba(72, 72, 72, 0.61);
-  z-index: 100;
-  position: absolute; }
-
-.header-style-2 {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8); }
-
-.top-bar {
-  background-color: #1F2A37;
-  color: #fff;
-  padding: 12px 0;
-  font-size: 0.75rem; }
-  .top-bar .top-bar-left {
-    text-align: left; }
-  .top-bar .top-bar-right {
-    text-align: right; }
-
-.header-top {
-  padding: 20px 0; }
-
-.header-logo {
-  width: 100px; }
-
-.header-slogan {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1d9a0a;
-  text-transform: uppercase; }
-  .header-slogan .slogan {
-    font-size: 0.75rem;
-    color: #fff;
-    text-transform: capitalize;
-    display: block;
-    line-height: 0;
-    font-family: "signpainter", sans-serif; }
-
-.mobile-menu {
-  display: none; }
-
-.main-nav-wrapper {
-  overflow: auto;
-  margin: 15px 0; }
-  .main-nav-wrapper .main-nav > ul.nav, .main-nav-wrapper .nav-side-menu .main-nav > li.nav, .nav-side-menu .main-nav-wrapper .main-nav > li.nav {
-    display: inline-block;
-    padding-left: 0; }
-    .main-nav-wrapper .main-nav > ul.nav > li, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li {
-      display: inline-block;
-      margin-right: 5px;
-      text-transform: uppercase;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff; }
-      .main-nav-wrapper .main-nav > ul.nav > li.active, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li.active, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li.active {
-        color: #6ebb43 !important; }
-      .main-nav-wrapper .main-nav > ul.nav > li a:hover, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:hover, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:hover, .main-nav-wrapper .main-nav > ul.nav > li a:active, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:active, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:active, .main-nav-wrapper .main-nav > ul.nav > li a:focus, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:focus, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:focus {
-        background-color: transparent !important;
-        color: #6ebb43 !important; }
-  .main-nav-wrapper .icon-search-menu {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px; }
-    .main-nav-wrapper .icon-search-menu .wicon {
-      color: #fff; }
-    .main-nav-wrapper .icon-search-menu #searchBox {
-      position: absolute;
-      top: 15px;
-      right: 30px; }
-      .main-nav-wrapper .icon-search-menu #searchBox input {
-        border: 1px solid #6ebb43;
-        background: #fff;
-        padding: 5px 0px 5px 10px;
-        font-size: 0.75rem;
-        width: 120px;
-        position: absolute;
-        bottom: -20px;
-        right: 10px; }
-      .main-nav-wrapper .icon-search-menu #searchBox button {
-        position: absolute;
-        top: -5px;
-        right: 18px;
-        color: #000;
-        background-color: transparent;
-        border: none; }
-    .main-nav-wrapper .icon-search-menu .hide-search {
-      padding: 0;
-      display: none; }
-    .main-nav-wrapper .icon-search-menu .unhide-search {
-      padding: 0;
-      display: block; }
-  .main-nav-wrapper .shopping-cart-icon {
-    display: inline-block;
-    color: #fff;
-    padding: 10px;
-    position: relative; }
-    .main-nav-wrapper .shopping-cart-icon span {
-      background-color: #6ebb43;
-      border-radius: 100%;
-      color: #fff;
-      font-size: 8px;
-      height: 15px;
-      line-height: 15px;
-      position: absolute;
-      right: 0px;
-      text-align: center;
-      top: 0;
-      width: 15px; }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-.home-navigation {
-  margin: 0 auto;
-  height: 250px; }
-
-.home-services-scroll {
-  overflow: auto;
-  overflow-y: hidden; }
-  .home-services-scroll .home-services-scrollx {
-    width: 1170px;
-    overflow-y: hidden;
-    overflow: auto; }
-
-.home-navigation-content {
-  text-align: center;
-  color: #fff;
-  margin-right: 21px;
-  display: inline-block; }
-
-.domestic {
-  background-color: #0c66ab;
-  height: 250px;
-  width: 175px; }
-  .domestic img {
-    height: 160px;
-    padding: 15px; }
-  .domestic .home-navigation-text {
-    display: block;
-    font-weight: 700;
-    font-size: 1.25rem; }
-
-.oversea {
-  background-color: #1d9a0a;
-  height: 250px;
-  width: 175px; }
-  .oversea img {
-    padding: 15px 15px 10px 15px; }
-  .oversea .home-navigation-text {
-    display: block;
-    font-weight: 700;
-    font-size: 1.25rem; }
-
-.booking {
-  height: 250px;
-  width: 340px; }
-  .booking .plane {
-    background-color: #b20d18;
-    height: 120px;
-    width: 340px; }
-    .booking .plane a {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
-    .booking .plane img {
-      padding: 15px 15px 10px 15px;
-      width: 120px;
-      vertical-align: middle;
-      margin-right: 25px; }
-    .booking .plane .home-navigation-text {
-      font-weight: 700;
-      font-size: 1.25rem; }
-  .booking .train {
-    background-color: #b20d18;
-    height: 110px;
-    width: 155px;
-    margin-right: 30px; }
-    .booking .train a {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
-    .booking .train img {
-      padding: 10px 0px 15px 10px;
-      width: 40px;
-      vertical-align: middle;
-      margin-right: 10px; }
-    .booking .train .home-navigation-text {
-      font-weight: 700;
-      font-size: 1.25rem;
-      line-height: 0; }
-  .booking .bus {
-    background-color: #0c0faf;
-    height: 110px;
-    width: 155px; }
-    .booking .bus a {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
-    .booking .bus img {
-      width: 40px;
-      vertical-align: middle;
-      margin-right: 10px; }
-    .booking .bus .home-navigation-text {
-      font-weight: 700;
-      font-size: 1.25rem;
-      line-height: 0; }
-
-.ticket {
-  background-color: #de960a;
-  height: 250px;
-  width: 175px; }
-  .ticket a {
-    position: relative;
-    float: left;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
-  .ticket .home-navigation-text {
-    font-weight: 700;
-    font-size: 1.25rem; }
-
-.information {
-  height: 250px;
-  width: 175px; }
-  .information .visa {
-    background-color: #1b9bd2;
-    height: 115px;
-    width: 175px; }
-    .information .visa a {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
-    .information .visa img {
-      padding: 10px 10px 10px 10px; }
-  .information .hotel {
-    background-color: #2d9d95;
-    height: 115px;
-    width: 175px; }
-    .information .hotel img {
-      padding: 10px 15px 0px 10px;
-      width: 130px;
-      height: 56px;
-      margin-top: 10px; }
-    .information .hotel .home-navigation-text {
-      font-weight: 700;
-      font-size: 1.25rem; }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 
 .contact-wrapper {
   background-color: #fafafa;
@@ -1727,393 +1290,41 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
 .shopping-cart .cart-total table tr td {
   padding: 5px 0; }
 
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-#footer-wrapper {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding-top: 40px; }
-  #footer-wrapper h4 {
-    color: #6ebb43;
-    margin-bottom: 30px;
-    font-size: 1.25rem;
-    font-weight: 500; }
-  #footer-wrapper .icon-info {
-    position: relative;
-    margin-bottom: 10px; }
-    #footer-wrapper .icon-info p {
-      padding-left: 30px; }
-    #footer-wrapper .icon-info i {
-      font-size: 20px;
-      padding-right: 20px;
-      position: absolute;
-      top: 1px;
-      color: #6ebb43; }
-  #footer-wrapper #social-footer {
-    border-top: 1px solid #808c99;
-    padding-top: 10px; }
-    #footer-wrapper #social-footer li {
-      display: inline-block;
-      padding-left: 20px; }
-  #footer-wrapper .footer-bottom {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 20px;
-    color: #6ebb43; }
-    #footer-wrapper .footer-bottom .company-trademark {
-      color: #0c66ab; }
-
-.click-back-top-body button {
-  -webkit-backface-visibility: visible;
-          backface-visibility: visible;
-  background-color: #f5f5f5;
-  border: 2px solid #eee;
-  border-radius: 100%;
-  bottom: 10px;
-  color: #1e1e1e;
-  height: 44px;
-  line-height: 44px;
-  position: fixed;
-  right: 10px;
-  text-align: center;
-  -webkit-transform: translateX(100px);
-          transform: translateX(100px);
-  -webkit-transition: all 0.35s ease 0s;
-  transition: all 0.35s ease 0s;
-  width: 44px;
-  z-index: 10; }
-  .click-back-top-body button.on {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px); }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-.button {
-  background-color: transparent;
-  border: 2px solid #6ebb43;
-  border-radius: 5px;
-  padding: 15px 40px;
-  font-size: 1rem;
-  font-weight: 700; }
-  .button:hover {
-    color: #fff;
-    border-color: #6ebb43; }
-
-.btn-container .sweep-to-right {
-  position: relative;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s; }
-  .btn-container .sweep-to-right:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #6ebb43;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 0 50%;
-    transform-origin: 0 50%;
-    -webkit-transition-property: transform;
-    -webkit-transition-property: -webkit-transform;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-property: transform, -webkit-transform;
-    -webkit-transition: 300ms ease-out;
-    transition: 300ms ease-out; }
-
-.btn-container .sweep-to-right:hover:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1); }
-
-.header-style-1 {
-  width: 100%;
-  background-color: rgba(72, 72, 72, 0.61);
-  z-index: 100;
-  position: absolute; }
-
-.header-style-2 {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8); }
-
-.top-bar {
-  background-color: #1F2A37;
-  color: #fff;
-  padding: 12px 0;
-  font-size: 0.75rem; }
-  .top-bar .top-bar-left {
-    text-align: left; }
-  .top-bar .top-bar-right {
-    text-align: right; }
-
-.header-top {
-  padding: 20px 0; }
-
-.header-logo {
-  width: 100px; }
-
-.header-slogan {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1d9a0a;
-  text-transform: uppercase; }
-  .header-slogan .slogan {
+.payment-progress {
+  text-align: center; }
+  .payment-progress > span {
+    padding: 20px 20px;
+    color: #808c99;
     font-size: 0.75rem;
-    color: #fff;
-    text-transform: capitalize;
-    display: block;
-    line-height: 0;
-    font-family: "signpainter", sans-serif; }
-
-.mobile-menu {
-  display: none; }
-
-.main-nav-wrapper {
-  overflow: auto;
-  margin: 15px 0; }
-  .main-nav-wrapper .main-nav > ul.nav, .main-nav-wrapper .nav-side-menu .main-nav > li.nav, .nav-side-menu .main-nav-wrapper .main-nav > li.nav {
-    display: inline-block;
-    padding-left: 0; }
-    .main-nav-wrapper .main-nav > ul.nav > li, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li {
-      display: inline-block;
-      margin-right: 5px;
-      text-transform: uppercase;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff; }
-      .main-nav-wrapper .main-nav > ul.nav > li.active, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li.active, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li.active {
-        color: #6ebb43 !important; }
-      .main-nav-wrapper .main-nav > ul.nav > li a:hover, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:hover, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:hover, .main-nav-wrapper .main-nav > ul.nav > li a:active, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:active, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:active, .main-nav-wrapper .main-nav > ul.nav > li a:focus, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:focus, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:focus {
-        background-color: transparent !important;
-        color: #6ebb43 !important; }
-  .main-nav-wrapper .icon-search-menu {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px; }
-    .main-nav-wrapper .icon-search-menu .wicon {
-      color: #fff; }
-    .main-nav-wrapper .icon-search-menu #searchBox {
-      position: absolute;
-      top: 15px;
-      right: 30px; }
-      .main-nav-wrapper .icon-search-menu #searchBox input {
-        border: 1px solid #6ebb43;
-        background: #fff;
-        padding: 5px 0px 5px 10px;
-        font-size: 0.75rem;
-        width: 120px;
-        position: absolute;
-        bottom: -20px;
-        right: 10px; }
-      .main-nav-wrapper .icon-search-menu #searchBox button {
-        position: absolute;
-        top: -5px;
-        right: 18px;
-        color: #000;
-        background-color: transparent;
-        border: none; }
-    .main-nav-wrapper .icon-search-menu .hide-search {
-      padding: 0;
-      display: none; }
-    .main-nav-wrapper .icon-search-menu .unhide-search {
-      padding: 0;
-      display: block; }
-  .main-nav-wrapper .shopping-cart-icon {
-    display: inline-block;
-    color: #fff;
-    padding: 10px;
-    position: relative; }
-    .main-nav-wrapper .shopping-cart-icon span {
+    border: 1px solid #6ebb43;
+    margin-right: 20px;
+    text-transform: capitalize; }
+    .payment-progress > span strong {
+      padding-left: 10px; }
+    .payment-progress > span.active {
       background-color: #6ebb43;
-      border-radius: 100%;
+      color: #fff; }
+
+.customer-information-content {
+  border: 1px solid #dcdcdc; }
+  .customer-information-content h4 {
+    padding: 15px 15px;
+    background-color: #DCDBDB;
+    font-size: 1rem; }
+    .customer-information-content h4 i {
+      padding-right: 15px;
+      color: #6ebb43; }
+  .customer-information-content form {
+    padding: 20px 40px; }
+    .customer-information-content form div label {
+      text-transform: capitalize; }
+      .customer-information-content form div label .color {
+        color: #6ebb43; }
+    .customer-information-content form div .hbtn1 {
+      margin: 20px 0;
+      padding: 15px 50px;
       color: #fff;
-      font-size: 8px;
-      height: 15px;
-      line-height: 15px;
-      position: absolute;
-      right: 0px;
-      text-align: center;
-      top: 0;
-      width: 15px; }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-.home-navigation {
-  margin: 0 auto;
-  height: 250px; }
-
-.home-services-scroll {
-  overflow: auto;
-  overflow-y: hidden; }
-  .home-services-scroll .home-services-scrollx {
-    width: 1170px;
-    overflow-y: hidden;
-    overflow: auto; }
-
-.home-navigation-content {
-  text-align: center;
-  color: #fff;
-  margin-right: 21px;
-  display: inline-block; }
-
-.domestic {
-  background-color: #0c66ab;
-  height: 250px;
-  width: 175px; }
-  .domestic img {
-    height: 160px;
-    padding: 15px; }
-  .domestic .home-navigation-text {
-    display: block;
-    font-weight: 700;
-    font-size: 1.25rem; }
-
-.oversea {
-  background-color: #1d9a0a;
-  height: 250px;
-  width: 175px; }
-  .oversea img {
-    padding: 15px 15px 10px 15px; }
-  .oversea .home-navigation-text {
-    display: block;
-    font-weight: 700;
-    font-size: 1.25rem; }
-
-.booking {
-  height: 250px;
-  width: 340px; }
-  .booking .plane {
-    background-color: #b20d18;
-    height: 120px;
-    width: 340px; }
-    .booking .plane a {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
-    .booking .plane img {
-      padding: 15px 15px 10px 15px;
-      width: 120px;
-      vertical-align: middle;
-      margin-right: 25px; }
-    .booking .plane .home-navigation-text {
-      font-weight: 700;
-      font-size: 1.25rem; }
-  .booking .train {
-    background-color: #b20d18;
-    height: 110px;
-    width: 155px;
-    margin-right: 30px; }
-    .booking .train a {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
-    .booking .train img {
-      padding: 10px 0px 15px 10px;
-      width: 40px;
-      vertical-align: middle;
-      margin-right: 10px; }
-    .booking .train .home-navigation-text {
-      font-weight: 700;
-      font-size: 1.25rem;
-      line-height: 0; }
-  .booking .bus {
-    background-color: #0c0faf;
-    height: 110px;
-    width: 155px; }
-    .booking .bus a {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
-    .booking .bus img {
-      width: 40px;
-      vertical-align: middle;
-      margin-right: 10px; }
-    .booking .bus .home-navigation-text {
-      font-weight: 700;
-      font-size: 1.25rem;
-      line-height: 0; }
-
-.ticket {
-  background-color: #de960a;
-  height: 250px;
-  width: 175px; }
-  .ticket a {
-    position: relative;
-    float: left;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
-  .ticket .home-navigation-text {
-    font-weight: 700;
-    font-size: 1.25rem; }
-
-.information {
-  height: 250px;
-  width: 175px; }
-  .information .visa {
-    background-color: #1b9bd2;
-    height: 115px;
-    width: 175px; }
-    .information .visa a {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
-    .information .visa img {
-      padding: 10px 10px 10px 10px; }
-  .information .hotel {
-    background-color: #2d9d95;
-    height: 115px;
-    width: 175px; }
-    .information .hotel img {
-      padding: 10px 15px 0px 10px;
-      width: 130px;
-      height: 56px;
-      margin-top: 10px; }
-    .information .hotel .home-navigation-text {
-      font-weight: 700;
-      font-size: 1.25rem; }
+      background-color: #6ebb43; }
 
 .hpagination {
   text-align: center; }
@@ -2133,13 +1344,6 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     .hpagination .pagination1 li.active > a {
       color: #9fde58;
       background: none; }
-
-@font-face {
-  font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 
 #footer-wrapper {
   background-color: rgba(0, 0, 0, 0.8);
