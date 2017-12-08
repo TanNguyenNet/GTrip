@@ -1482,6 +1482,107 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .nav-side-menu li:hover a {
     color: #6ebb43; }
 
+.skype {
+  background: #fff;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  margin: 0 auto;
+  border-radius: 150px;
+  border: solid 15px #fff;
+  -webkit-animation: play 1.5s ease infinite;
+          animation: play 1.5s ease infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 99999;
+  bottom: 50px;
+  right: 50px; }
+
+.skype:before {
+  background: #fff;
+  content: "";
+  width: 80px;
+  height: 50px;
+  position: absolute;
+  top: -12px;
+  right: -2px;
+  border-radius: 100px;
+  border: solid 15px #fff;
+  z-index: 99998;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom; }
+
+.skype:after {
+  background: #12A5F4;
+  background-size: 100% 100%;
+  content: "S";
+  line-height: 52px;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 150px;
+  z-index: 99999 !important;
+  top: -5px;
+  right: -5px; }
+
+.skype:hover {
+  -webkit-animation: none;
+          animation: none;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+
+@-webkit-keyframes play {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  15% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2); }
+  25% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2); }
+  30% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
+  50% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2); }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes play {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  15% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2); }
+  25% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2); }
+  30% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
+  50% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2); }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
 @font-face {
   font-family: 'signpainter';
   src: url("signpainter-housescript-webfont.eot");
