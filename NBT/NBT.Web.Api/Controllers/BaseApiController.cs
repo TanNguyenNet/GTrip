@@ -22,21 +22,7 @@ namespace NBT.Web.Api.Controllers
         {
             _errorService = errorService;
         }
-        protected ApplicationRoleManager AppRoleManager
-        {
-            get
-            {
-                return Request.GetOwinContext().GetUserManager<ApplicationRoleManager>();
-            }
-        }
-
-        protected ApplicationUserManager AppUserManager
-        {
-            get
-            {
-                return Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-        }
+        
         protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requestMessage, Func<HttpResponseMessage> function)
         {
             HttpResponseMessage response = null;

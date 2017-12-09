@@ -19,8 +19,21 @@ namespace NBT.Web.App_Start
 {
     public partial class Startup
     {
+        public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
+
         public void ConfigurationAuth(IAppBuilder app)
         {
+
+            OAuthOptions = new OAuthAuthorizationServerOptions
+            {
+                TokenEndpointPath = new PathString("/api/oauth/token"),
+                AuthorizeEndpointPath = new PathString("/Account/Authorize"),
+                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
+                Provider = new AuthorizationServerProvider(),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(SystemConstants.ExpireTime),
+                AllowInsecureHttp = true
+            };
+
             app.CreatePerOwinContext(MasterDBContext.Create);
 
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
@@ -32,14 +45,17 @@ namespace NBT.Web.App_Start
             //Allow Cross origin for API
             //app.UseCors(CorsOptions.AllowAll);
 
-            app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
-            {
-                TokenEndpointPath = new PathString("/api/oauth/token"),
-                Provider = new AuthorizationServerProvider(),
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(SystemConstants.ExpireTime),
-                AllowInsecureHttp = true
-            });
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+            //app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
+            //{
+            //    TokenEndpointPath = new PathString("/api/oauth/token"),
+            //    AuthorizeEndpointPath = new PathString("/Account/Authorize"),
+            //    Provider = new AuthorizationServerProvider(),
+            //    AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(SystemConstants.ExpireTime),
+            //    AllowInsecureHttp = true
+            //});
+            app.UseOAuthAuthorizationServer(OAuthOptions);
+            //app.UseOAuthBearerTokens(OAuthOptions);
+            //app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
 
             // Configure the sign in cookie
             app.UseCookieAuthentication(new CookieAuthenticationOptions

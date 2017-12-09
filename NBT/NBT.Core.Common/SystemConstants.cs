@@ -8,6 +8,6 @@ namespace NBT.Core.Common
 {
     public static class SystemConstants
     {
-        public const int ExpireTime = 1;
+        public const int ExpireTime = 120;
     }
 }

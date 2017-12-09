@@ -41,7 +41,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("GetListPaging")]
         [HttpGet]
-        [Authorize(Roles = nameof(PermissionProvider.ViewUser))]
+        //[Authorize(Roles = nameof(PermissionProvider.ViewUser))]
         public HttpResponseMessage GetListPaging(HttpRequestMessage request, int page, int pageSize, string filter = null, bool? isSystemAccount = null)
         {
             return CreateHttpResponse(request, () =>

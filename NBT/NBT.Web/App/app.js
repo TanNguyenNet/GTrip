@@ -3,6 +3,8 @@
     angular.module('nbtapp',
         [
             'nbtapp.appRoles',
+            'nbtapp.appGroups',
+            'nbtapp.appUsers',
             'nbtapp.common'
         ])
         .config(config)

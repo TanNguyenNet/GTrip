@@ -27,11 +27,13 @@ namespace NBT.Web.Api.Controllers.Identity
         ApplicationUserManager _userManager;
         public AppGroupController(IErrorService errorService,
             IAppGroupService appGroupService,
-            IAppRoleService appRoleService) : base(errorService)
+            IAppRoleService appRoleService,
+            ApplicationUserManager userManager
+            ) : base(errorService)
         {
             _appGroupService = appGroupService;
             _appRoleService = appRoleService;
-            _userManager = this.AppUserManager;
+            _userManager = userManager;
         }
 
         [Route("getlistpaging")]

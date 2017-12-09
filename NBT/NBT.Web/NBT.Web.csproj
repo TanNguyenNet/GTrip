@@ -193,9 +193,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\app.js" />
+    <Content Include="App\components\appGroups\appGroupAddController.js" />
+    <Content Include="App\components\appGroups\appGroups.module.js" />
+    <Content Include="App\components\appGroups\appGroupsController.js" />
+    <Content Include="App\components\appGroups\appGroupsView.html" />
+    <Content Include="App\components\appGroups\appGroupView.html" />
+    <Content Include="App\components\appGroups\appGroupEditController.js" />
     <Content Include="App\components\appRoles\appRoles.module.js" />
     <Content Include="App\components\appRoles\appRolesController.js" />
     <Content Include="App\components\appRoles\appRolesView.html" />
+    <Content Include="App\components\appUsers\appUsers.module.js" />
+    <Content Include="App\components\appUsers\appUsersController.js" />
+    <Content Include="App\components\appUsers\appUsersView.html" />
     <Content Include="App\components\home\homeController.js" />
     <Content Include="App\components\home\homeView.html" />
     <Content Include="App\components\home\rootController.js" />
@@ -1780,11 +1789,8 @@
     <Content Include="Assets\jquery-slimscroll\jquery.slimscroll.js" />
     <Content Include="Assets\jquery-slimscroll\jquery.slimscroll.min.js" />
     <Content Include="Assets\jquery\AUTHORS.txt" />
-    <Content Include="Assets\jquery\dist\core.js" />
     <Content Include="Assets\jquery\dist\jquery.js" />
     <Content Include="Assets\jquery\dist\jquery.min.js" />
-    <Content Include="Assets\jquery\dist\jquery.slim.js" />
-    <Content Include="Assets\jquery\dist\jquery.slim.min.js" />
     <Content Include="Assets\jquery\external\sizzle\dist\sizzle.js" />
     <Content Include="Assets\jquery\external\sizzle\dist\sizzle.min.js" />
     <Content Include="Assets\jquery\external\sizzle\LICENSE.txt" />
@@ -1792,6 +1798,7 @@
     <Content Include="Assets\jquery\src\ajax.js" />
     <Content Include="Assets\jquery\src\ajax\jsonp.js" />
     <Content Include="Assets\jquery\src\ajax\load.js" />
+    <Content Include="Assets\jquery\src\ajax\parseJSON.js" />
     <Content Include="Assets\jquery\src\ajax\parseXML.js" />
     <Content Include="Assets\jquery\src\ajax\script.js" />
     <Content Include="Assets\jquery\src\ajax\var\location.js" />
@@ -1807,26 +1814,21 @@
     <Content Include="Assets\jquery\src\callbacks.js" />
     <Content Include="Assets\jquery\src\core.js" />
     <Content Include="Assets\jquery\src\core\access.js" />
-    <Content Include="Assets\jquery\src\core\DOMEval.js" />
     <Content Include="Assets\jquery\src\core\init.js" />
-    <Content Include="Assets\jquery\src\core\nodeName.js" />
     <Content Include="Assets\jquery\src\core\parseHTML.js" />
-    <Content Include="Assets\jquery\src\core\ready-no-deferred.js" />
     <Content Include="Assets\jquery\src\core\ready.js" />
-    <Content Include="Assets\jquery\src\core\readyException.js" />
-    <Content Include="Assets\jquery\src\core\stripAndCollapse.js" />
-    <Content Include="Assets\jquery\src\core\support.js" />
     <Content Include="Assets\jquery\src\core\var\rsingleTag.js" />
     <Content Include="Assets\jquery\src\css.js" />
     <Content Include="Assets\jquery\src\css\addGetHookIf.js" />
     <Content Include="Assets\jquery\src\css\adjustCSS.js" />
     <Content Include="Assets\jquery\src\css\curCSS.js" />
+    <Content Include="Assets\jquery\src\css\defaultDisplay.js" />
     <Content Include="Assets\jquery\src\css\hiddenVisibleSelectors.js" />
     <Content Include="Assets\jquery\src\css\showHide.js" />
     <Content Include="Assets\jquery\src\css\support.js" />
     <Content Include="Assets\jquery\src\css\var\cssExpand.js" />
     <Content Include="Assets\jquery\src\css\var\getStyles.js" />
-    <Content Include="Assets\jquery\src\css\var\isHiddenWithinTree.js" />
+    <Content Include="Assets\jquery\src\css\var\isHidden.js" />
     <Content Include="Assets\jquery\src\css\var\rmargin.js" />
     <Content Include="Assets\jquery\src\css\var\rnumnonpx.js" />
     <Content Include="Assets\jquery\src\css\var\swap.js" />
@@ -1836,7 +1838,6 @@
     <Content Include="Assets\jquery\src\data\var\dataPriv.js" />
     <Content Include="Assets\jquery\src\data\var\dataUser.js" />
     <Content Include="Assets\jquery\src\deferred.js" />
-    <Content Include="Assets\jquery\src\deferred\exceptionHook.js" />
     <Content Include="Assets\jquery\src\deprecated.js" />
     <Content Include="Assets\jquery\src\dimensions.js" />
     <Content Include="Assets\jquery\src\effects.js" />
@@ -1850,6 +1851,7 @@
     <Content Include="Assets\jquery\src\event\trigger.js" />
     <Content Include="Assets\jquery\src\exports\amd.js" />
     <Content Include="Assets\jquery\src\exports\global.js" />
+    <Content Include="Assets\jquery\src\intro.js" />
     <Content Include="Assets\jquery\src\jquery.js" />
     <Content Include="Assets\jquery\src\manipulation.js" />
     <Content Include="Assets\jquery\src\manipulation\buildFragment.js" />
@@ -1862,6 +1864,7 @@
     <Content Include="Assets\jquery\src\manipulation\wrapMap.js" />
     <Content Include="Assets\jquery\src\manipulation\_evalUrl.js" />
     <Content Include="Assets\jquery\src\offset.js" />
+    <Content Include="Assets\jquery\src\outro.js" />
     <Content Include="Assets\jquery\src\queue.js" />
     <Content Include="Assets\jquery\src\queue\delay.js" />
     <Content Include="Assets\jquery\src\selector-native.js" />
@@ -1878,15 +1881,12 @@
     <Content Include="Assets\jquery\src\var\concat.js" />
     <Content Include="Assets\jquery\src\var\document.js" />
     <Content Include="Assets\jquery\src\var\documentElement.js" />
-    <Content Include="Assets\jquery\src\var\fnToString.js" />
-    <Content Include="Assets\jquery\src\var\getProto.js" />
     <Content Include="Assets\jquery\src\var\hasOwn.js" />
     <Content Include="Assets\jquery\src\var\indexOf.js" />
-    <Content Include="Assets\jquery\src\var\ObjectFunctionString.js" />
     <Content Include="Assets\jquery\src\var\pnum.js" />
     <Content Include="Assets\jquery\src\var\push.js" />
     <Content Include="Assets\jquery\src\var\rcssNum.js" />
-    <Content Include="Assets\jquery\src\var\rnothtmlwhite.js" />
+    <Content Include="Assets\jquery\src\var\rnotwhite.js" />
     <Content Include="Assets\jquery\src\var\slice.js" />
     <Content Include="Assets\jquery\src\var\support.js" />
     <Content Include="Assets\jquery\src\var\toString.js" />
@@ -2086,8 +2086,8 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\components\appUsers\" />
     <Folder Include="Assets\libs\checklist-model\test\" />
+    <Folder Include="images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -2250,13 +2250,6 @@
     <Content Include="Assets\Ionicons\scss\_ionicons-variables.scss" />
     <Content Include="Assets\css\adminlte.css.map" />
     <Content Include="Assets\css\adminlte.min.css.map" />
-    <Content Include="Assets\jquery\.bower.json" />
-    <Content Include="Assets\jquery\bower.json" />
-    <Content Include="Assets\jquery\dist\jquery.min.map" />
-    <Content Include="Assets\jquery\dist\jquery.slim.min.map" />
-    <Content Include="Assets\jquery\external\sizzle\dist\sizzle.min.map" />
-    <Content Include="Assets\jquery\README.md" />
-    <Content Include="Assets\jquery\src\.eslintrc.json" />
     <Content Include="Assets\jquery-slimscroll\.bower.json" />
     <Content Include="Assets\jquery-slimscroll\bower.json" />
     <Content Include="Assets\jquery-slimscroll\package.json" />
@@ -2433,6 +2426,12 @@
     <Content Include="Assets\libs\toastr\toastr.js.map" />
     <Content Include="Assets\libs\toastr\toastr.less" />
     <Content Include="Assets\libs\toastr\toastr.scss" />
+    <Content Include="Assets\jquery\.bower.json" />
+    <Content Include="Assets\jquery\bower.json" />
+    <Content Include="Assets\jquery\dist\jquery.min.map" />
+    <Content Include="Assets\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="Assets\jquery\README.md" />
+    <Content Include="Assets\jquery\src\.jshintrc" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />

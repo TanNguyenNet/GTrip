@@ -19,8 +19,8 @@ namespace NBT.Web.App_Start
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
             new DefaultContractResolver { IgnoreSerializableAttribute = true };
 
-            config.SuppressDefaultHostAuthentication();
-            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            //config.SuppressDefaultHostAuthentication();
+            //config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

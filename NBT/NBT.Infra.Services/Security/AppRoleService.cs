@@ -28,8 +28,8 @@ namespace NBT.Infra.Services.Security
 
         public bool AddRolesToGroup(IEnumerable<AppRoleGroup> roleGroups, int groupId)
         {
-            var modelAppRoleGroup = _appRoleGroupRepo.TableNoTracking.Where(x=>x.GroupId == groupId);
-            _appRoleGroupRepo.DeleteAsync(modelAppRoleGroup);
+            var modelAppRoleGroup = _appRoleGroupRepo.Table.Where(x=>x.GroupId == groupId).ToList();
+            _appRoleGroupRepo.Delete(modelAppRoleGroup);
             //_appRoleGroupRepo.DeleteMulti(x => x.GroupId == groupId);
             foreach (var roleGroup in roleGroups)
             {

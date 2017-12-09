@@ -29,6 +29,7 @@ namespace NBT.Core.Services.Data
         T Delete(T entity);
 
         Task<int> DeleteAsync(IEnumerable<T> entities);
+        int Delete(IEnumerable<T> entities);
 
         IQueryable<T> Table { get; }
         IQueryable<T> TableNoTracking { get; }

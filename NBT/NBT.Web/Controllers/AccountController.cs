@@ -53,7 +53,15 @@ namespace NBT.Web.Controllers
         {
             return View();
         }
-
+        [HttpGet]
+        [Authorize]
+        public ActionResult Authorize()
+        {
+            var claims = new ClaimsPrincipal(User).Claims.ToArray();
+            var identity = new ClaimsIdentity(claims, "Bearer");
+            AuthenticationManager.SignIn(identity);
+            return new EmptyResult();
+        }
         public ActionResult Login()
         {
             //ViewBag.ReturnUrl = returnUrl;
