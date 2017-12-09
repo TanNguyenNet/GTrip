@@ -15,6 +15,6 @@
         function loadInfoUser() {
 
         }
-
+        
     }
 })(angular.module('nbtapp'));

@@ -14,6 +14,7 @@ namespace NBT.Core.Services.Data
         Task<T> InsertAsync(T entity);
 
         T Insert(T entity);
+        int Insert(IEnumerable<T> entities);
 
         Task<int> InsertAsync(IEnumerable<T> entities);
 

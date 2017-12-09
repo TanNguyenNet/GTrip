@@ -154,7 +154,7 @@ namespace NBT.Web.Api.Controllers.Identity
         [HttpPut]
         [Route("update")]
         [Authorize(Roles = nameof(PermissionProvider.EditUser))]
-        public async Task<HttpResponseMessage> Update(HttpRequestMessage request, ApplicationUserViewModel applicationUserViewModel)
+        public async Task<HttpResponseMessage> Update(HttpRequestMessage request, AppUserVm applicationUserViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -203,7 +203,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("resetPassword")]
         [HttpPut]
-        public async Task<HttpResponseMessage> ResetPassword(HttpRequestMessage request, ApplicationUserViewModel userVm)
+        public async Task<HttpResponseMessage> ResetPassword(HttpRequestMessage request, AppUserVm userVm)
         {
             //var appUser = await _userManager.FindByIdAsync(User.Identity.GetUserId());
             var remove = await _userManager.RemovePasswordAsync(userVm.Id);

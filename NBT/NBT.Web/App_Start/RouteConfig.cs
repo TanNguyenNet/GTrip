@@ -16,7 +16,8 @@ namespace NBT.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] {"NBT.Web.Controllers" }
             );
         }
     }

@@ -94,7 +94,7 @@ namespace NBT.Infra.Services.Security
                     newAppRole.Description = item.Description;
                     appRoles.Add(newAppRole);
                 }
-                _appRoleRepo.InsertAsync(appRoles);
+                _appRoleRepo.Insert(appRoles);
             }
 
         }

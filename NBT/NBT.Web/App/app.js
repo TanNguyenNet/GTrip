@@ -2,6 +2,7 @@
 (function () {
     angular.module('nbtapp',
         [
+            'nbtapp.appRoles',
             'nbtapp.common'
         ])
         .config(config)

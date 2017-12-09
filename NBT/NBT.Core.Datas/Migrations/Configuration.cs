@@ -35,17 +35,13 @@ namespace NBT.Core.Datas.Migrations
             {
                 UserName = "admin",
                 Email = "gtrip@gmail.com",
-                EmailConfirmed = true
+                EmailConfirmed = true,
+                IsSystemAccount = true,
+                IsActive = true
 
             };
 
             manager.Create(user, "123456");
-
-            if (!roleManager.Roles.Any())
-            {
-                roleManager.Create(new IdentityRole { Name = "Admin" });
-                roleManager.Create(new IdentityRole { Name = "User" });
-            }
         }
     }
 }

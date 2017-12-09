@@ -60,8 +60,8 @@
     <Reference Include="Autofac.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.WebApi2.4.1.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
     </Reference>
-    <Reference Include="AutoMapper, Version=6.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.6.2.1\lib\net45\AutoMapper.dll</HintPath>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -194,9 +194,13 @@
   <ItemGroup>
     <Content Include="App\app.js" />
     <Content Include="App\components\appRoles\appRoles.module.js" />
+    <Content Include="App\components\appRoles\appRolesController.js" />
+    <Content Include="App\components\appRoles\appRolesView.html" />
     <Content Include="App\components\home\homeController.js" />
     <Content Include="App\components\home\homeView.html" />
     <Content Include="App\components\home\rootController.js" />
+    <Content Include="App\shared\directives\pagerDirective.html" />
+    <Content Include="App\shared\directives\pagerDirective.js" />
     <Content Include="App\shared\modules\nbtapp.common.js" />
     <Content Include="App\shared\services\apiService.js" />
     <Content Include="App\shared\services\commonService.js" />
@@ -2432,6 +2436,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Admin\index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NBT.Core.Common\NBT.Core.Common.csproj">
@@ -2454,6 +2459,10 @@
       <Project>{A0730F4F-18A6-469D-A6AA-76E172D97670}</Project>
       <Name>NBT.Infra.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NBT.Web.Api\NBT.Web.Api.csproj">
+      <Project>{f10e9191-504b-46d1-9daf-1bd1f97b5e47}</Project>
+      <Name>NBT.Web.Api</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NBT.Web.Framework\NBT.Web.Framework.csproj">
       <Project>{2DAC04D6-ABD9-478B-AA8E-8BDFF5EFCB23}</Project>
       <Name>NBT.Web.Framework</Name>
@@ -2466,6 +2475,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

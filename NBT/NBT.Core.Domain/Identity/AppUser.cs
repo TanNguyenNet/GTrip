@@ -25,6 +25,8 @@ namespace NBT.Core.Domain.Identity
         public DateTimeOffset UpdatedDate { set; get; }
         [MaxLength(64)]
         public string CreatedBy { set; get; }
+        [MaxLength(64)]
+        public string UpdatedBy { set; get; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

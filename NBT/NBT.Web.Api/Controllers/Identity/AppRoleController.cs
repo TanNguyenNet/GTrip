@@ -10,9 +10,12 @@ using NBT.Web.Framework.Models.Security;
 using AutoMapper;
 using NBT.Core.Domain.Identity;
 using NBT.Web.Framework.Core;
+using System.Threading.Tasks;
 
 namespace NBT.Web.Api.Controllers.Identity
 {
+    [RoutePrefix("api/appRole")]
+    //[Authorize]
     public class AppRoleController : BaseApiController
     {
         IAppRoleService _appRoleService;

@@ -17,12 +17,11 @@ namespace NBT.Web
         {
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            AutoMapperConfiguration.Configure();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
             MvcHandler.DisableMvcResponseHeader = true;
+            AutoMapperConfiguration.Configure();
         }
 
         protected void Application_PreSendRequestHeaders()

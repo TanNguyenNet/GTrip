@@ -119,6 +119,20 @@ namespace NBT.Core.Datas.Repositories
             }
 
         }
+
+        public int Insert(IEnumerable<T> entities)
+        {
+            try
+            {
+                DbSet.AddRange(entities);
+                return DbContext.SaveChanges();
+            }
+            catch
+            {
+                throw;
+            }
+
+        }
         public T Insert(T entity)
         {
             try

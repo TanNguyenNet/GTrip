@@ -1,6 +1,6 @@
 ﻿
 (function () {
-    angular.module('nbtapp.applicationRoles', ['nbtapp.common']).config(config);
+    angular.module('nbtapp.appRoles', ['nbtapp.common']).config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
