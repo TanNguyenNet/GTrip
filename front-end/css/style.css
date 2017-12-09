@@ -37,8 +37,8 @@ table {
 
 @font-face {
   font-family: 'signpainter';
-  src: url("signpainter-housescript-webfont.eot");
-  src: url("signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("signpainter-housescript-webfont.woff2") format("woff2"), url("signpainter-housescript-webfont.woff") format("woff"), url("signpainter-housescript-webfont.ttf") format("truetype"), url("signpainter-housescript-webfont.svg#signpainter") format("svg");
+  src: url("fonts/signpainter-housescript-webfont.eot");
+  src: url("fonts/signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/signpainter-housescript-webfont.woff2") format("woff2"), url("fonts/signpainter-housescript-webfont.woff") format("woff"), url("fonts/signpainter-housescript-webfont.ttf") format("truetype"), url("fonts/signpainter-housescript-webfont.svg#signpainter") format("svg");
   font-weight: normal;
   font-style: normal; }
 
