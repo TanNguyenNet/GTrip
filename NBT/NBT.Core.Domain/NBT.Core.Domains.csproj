@@ -54,7 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AudiTable.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Catalog\Continent.cs" />
+    <Compile Include="Catalog\CountryRegion.cs" />
+    <Compile Include="Catalog\StateProvince.cs" />
     <Compile Include="Identity\AppGroup.cs" />
     <Compile Include="Identity\AppRole.cs" />
     <Compile Include="Identity\AppRoleGroup.cs" />

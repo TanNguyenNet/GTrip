@@ -50,6 +50,9 @@
     <Compile Include="ApplicationServices\System\IErrorService.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
+    <Compile Include="DomainServices\Catalog\IContinentRepository.cs" />
+    <Compile Include="DomainServices\Catalog\ICountryRegionRepository.cs" />
+    <Compile Include="DomainServices\Catalog\IStateProvinceRepository.cs" />
     <Compile Include="DomainServices\Security\IAppGroupRepository.cs" />
     <Compile Include="DomainServices\Security\IAppRoleGroupRepository.cs" />
     <Compile Include="DomainServices\Security\IAppRoleRepository.cs" />

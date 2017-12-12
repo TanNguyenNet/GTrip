@@ -67,7 +67,7 @@ namespace NBT.Infra.Services.Security
 
         public IEnumerable<AppRole> GetListRoleByGroupId(int groupId)
         {
-            return _appRoleRepo.GetListRoleByGroupId(groupId);
+            return _appRoleRepo.GetListRoleByGroupId(groupId).ToList();
         }
 
         public AppRole Insert(AppRole appRole)

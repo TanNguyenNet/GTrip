@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using NBT.Core.Domain.Catalog;
 
 namespace NBT.Core.Datas
 {
@@ -17,6 +18,11 @@ namespace NBT.Core.Datas
 
         }
 
+        public DbSet<Continent> Continents { set; get; }
+        public DbSet<CountryRegion> CountryRegions { set; get; }
+        public DbSet<StateProvince> StateProvinces { set; get; }
+
+        //Identity///////////////////////////////////////////////////////////////////////////////////
         public DbSet<AppUserGroup> AppUserGroups { set; get; }
         public DbSet<AppRoleGroup> AppRoleGroups { set; get; }
         public DbSet<AppRole> AppRoles { set; get; }

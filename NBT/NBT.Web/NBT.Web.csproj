@@ -202,9 +202,13 @@
     <Content Include="App\components\appRoles\appRoles.module.js" />
     <Content Include="App\components\appRoles\appRolesController.js" />
     <Content Include="App\components\appRoles\appRolesView.html" />
+    <Content Include="App\components\appUsers\appUserAddController.js" />
+    <Content Include="App\components\appUsers\appUserEditController.js" />
     <Content Include="App\components\appUsers\appUsers.module.js" />
     <Content Include="App\components\appUsers\appUsersController.js" />
     <Content Include="App\components\appUsers\appUsersView.html" />
+    <Content Include="App\components\appUsers\appUserView.html" />
+    <Content Include="App\components\continents\continents.module.js" />
     <Content Include="App\components\home\homeController.js" />
     <Content Include="App\components\home\homeView.html" />
     <Content Include="App\components\home\rootController.js" />
