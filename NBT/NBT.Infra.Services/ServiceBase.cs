@@ -25,7 +25,7 @@ namespace NBT.Infra.Services
         public virtual async Task DeleteAsync(T entity) => await this._repository.DeleteAsync(entity);
 
         public virtual async Task<T> GetByIdAsync(object id) => await this._repository.GetByIdAsync(id);
-
+        public virtual T GetById(object id) => this._repository.GetById(id);
         public virtual async Task UpdateAsync(T entity) => await this._repository.UpdateAsync(entity);
 
         protected override void DisposeCore()

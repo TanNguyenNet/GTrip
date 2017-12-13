@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationServices\Catalog\IContinentService.cs" />
+    <Compile Include="ApplicationServices\Catalog\ICountryRegionService.cs" />
+    <Compile Include="ApplicationServices\Catalog\IStateProvinceService.cs" />
     <Compile Include="ApplicationServices\Security\IAppGroupService.cs" />
     <Compile Include="ApplicationServices\Security\IAppRoleService.cs" />
     <Compile Include="ApplicationServices\Security\IAppUserService.cs" />
@@ -72,5 +75,6 @@
       <Name>NBT.Core.Domains</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

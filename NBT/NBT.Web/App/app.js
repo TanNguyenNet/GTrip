@@ -5,6 +5,7 @@
             'nbtapp.appRoles',
             'nbtapp.appGroups',
             'nbtapp.appUsers',
+            'nbtapp.continents',
             'nbtapp.common'
         ])
         .config(config)

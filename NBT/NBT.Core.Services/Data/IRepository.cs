@@ -10,6 +10,7 @@ namespace NBT.Core.Services.Data
     public interface IRepository<T> : IDisposable where T : class
     {
         Task<T> GetByIdAsync(object id);
+        T GetById(object id);
 
         Task<T> InsertAsync(T entity);
 

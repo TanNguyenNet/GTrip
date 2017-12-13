@@ -64,6 +64,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Catalog\ContinentRepository.cs" />
+    <Compile Include="Repositories\Catalog\CountryRegionRepository.cs" />
+    <Compile Include="Repositories\Catalog\StateProvinceRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\Security\AppGroupRepository.cs" />
     <Compile Include="Repositories\Security\AppRoleGroupRepository.cs" />

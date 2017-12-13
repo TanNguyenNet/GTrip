@@ -98,7 +98,10 @@ namespace NBT.Core.Datas.Repositories
                 throw;
             }
         }
-
+        public T GetById(object id)
+        {
+            return DbSet.Find(id);
+        }
         public async Task<T> GetByIdAsync(object id)
         {
             return await DbSet.FindAsync(id);

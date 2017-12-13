@@ -153,6 +153,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\Catalog\ContinentController.cs" />
+    <Compile Include="Controllers\Catalog\CountryRegionsController.cs" />
     <Compile Include="Controllers\Identity\AppGroupController.cs" />
     <Compile Include="Controllers\Identity\AppRoleController.cs" />
     <Compile Include="Controllers\Identity\AppUserController.cs" />

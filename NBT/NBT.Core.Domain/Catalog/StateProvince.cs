@@ -13,6 +13,7 @@ namespace NBT.Core.Domain.Catalog
         public string Name { set; get; }
         [MaxLength(128)]
         public string Code { set; get; }
+        public int CountryRegionId { set; get; }
         public bool IsShow { set; get; }
         public DateTimeOffset? CreatedDate { set; get; }
 
