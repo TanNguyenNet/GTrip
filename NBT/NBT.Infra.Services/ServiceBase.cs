@@ -21,6 +21,7 @@ namespace NBT.Infra.Services
             _unitOfWork = unitOfWork;
         }
         public virtual async Task AddAsync(T entity) => await this._repository.InsertAsync(entity);
+        public virtual T Add(T entity) => this._repository.Insert(entity);
 
         public virtual async Task DeleteAsync(T entity) => await this._repository.DeleteAsync(entity);
 
@@ -32,5 +33,7 @@ namespace NBT.Infra.Services
         {
             _unitOfWork.Dispose();
         }
+
+        
     }
 }

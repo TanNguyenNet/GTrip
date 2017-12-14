@@ -18,14 +18,23 @@ namespace NBT.Infra.Services.Catalog
         {
             _stateProvinceRepo = stateProvinceRepo;
         }
-        public IPagedList<StateProvince> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "")
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public IEnumerable<StateProvince> GetAll()
         {
             return _stateProvinceRepo.TableNoTracking.ToList();
+        }
+
+        public IPagedList<StateProvince> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", int countryRegionId = 0)
+        {
+            var query = _stateProvinceRepo.TableNoTracking;
+
+            if (!string.IsNullOrEmpty(filter))
+                query = query.Where(x => x.Name.Contains(filter) || x.Code.Contains(filter));
+            if (countryRegionId != 0)
+                query = query.Where(x => x.CountryRegionId == countryRegionId);
+
+            return query.OrderBy(x => x.Name).ToPagedList(pageIndex, pageSize);
         }
     }
 }

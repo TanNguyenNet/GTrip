@@ -6,7 +6,10 @@
             'nbtapp.appGroups',
             'nbtapp.appUsers',
             'nbtapp.continents',
-            'nbtapp.common'
+            'nbtapp.common',
+            'nbtapp.countryRegions',
+            'nbtapp.stateProvinces',
+            'nbtapp.tourAttributes'
         ])
         .config(config)
         .config(configAuthentication);

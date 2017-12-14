@@ -67,6 +67,9 @@
     <Compile Include="Repositories\Catalog\ContinentRepository.cs" />
     <Compile Include="Repositories\Catalog\CountryRegionRepository.cs" />
     <Compile Include="Repositories\Catalog\StateProvinceRepository.cs" />
+    <Compile Include="Repositories\Catalog\TourAttributeRepository.cs" />
+    <Compile Include="Repositories\Catalog\TourAttributeValueRepository.cs" />
+    <Compile Include="Repositories\Catalog\TourRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\Security\AppGroupRepository.cs" />
     <Compile Include="Repositories\Security\AppRoleGroupRepository.cs" />

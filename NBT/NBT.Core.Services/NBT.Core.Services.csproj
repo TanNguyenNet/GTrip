@@ -47,6 +47,9 @@
     <Compile Include="ApplicationServices\Catalog\IContinentService.cs" />
     <Compile Include="ApplicationServices\Catalog\ICountryRegionService.cs" />
     <Compile Include="ApplicationServices\Catalog\IStateProvinceService.cs" />
+    <Compile Include="ApplicationServices\Catalog\ITourAttributeService.cs" />
+    <Compile Include="ApplicationServices\Catalog\ITourAttributeValueService.cs" />
+    <Compile Include="ApplicationServices\Catalog\ITourService.cs" />
     <Compile Include="ApplicationServices\Security\IAppGroupService.cs" />
     <Compile Include="ApplicationServices\Security\IAppRoleService.cs" />
     <Compile Include="ApplicationServices\Security\IAppUserService.cs" />
@@ -56,6 +59,9 @@
     <Compile Include="DomainServices\Catalog\IContinentRepository.cs" />
     <Compile Include="DomainServices\Catalog\ICountryRegionRepository.cs" />
     <Compile Include="DomainServices\Catalog\IStateProvinceRepository.cs" />
+    <Compile Include="DomainServices\Catalog\ITourAttributeRepository.cs" />
+    <Compile Include="DomainServices\Catalog\ITourAttributeValueRepository.cs" />
+    <Compile Include="DomainServices\Catalog\ITourRepository.cs" />
     <Compile Include="DomainServices\Security\IAppGroupRepository.cs" />
     <Compile Include="DomainServices\Security\IAppRoleGroupRepository.cs" />
     <Compile Include="DomainServices\Security\IAppRoleRepository.cs" />

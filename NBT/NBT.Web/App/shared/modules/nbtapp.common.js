@@ -3,6 +3,8 @@
         'ui.router',
         'ngBootbox',
         'checklist-model',
-        'ngPassword'
+        'ngPassword',
+        'ngSanitize',
+        'ui.select'
     ])
 })();

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using NBT.Core.Domain.Catalog;
+using NBT.Core.Domain.Catalog.Dto;
 using NBT.Core.Domain.Identity;
 using NBT.Web.Framework.Models.Security;
 using System;
@@ -16,6 +18,7 @@ namespace NBT.Web.Framework.Mapping
             {
                 cfg.CreateMap<AppUser, AppUserVm>();
                 cfg.CreateMap<AppGroup, AppGroupVm>();
+                cfg.CreateMap<TourDto, Tour>();
             });
         }
     }

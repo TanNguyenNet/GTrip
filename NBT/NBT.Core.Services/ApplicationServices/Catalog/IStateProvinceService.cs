@@ -11,6 +11,6 @@ namespace NBT.Core.Services.ApplicationServices.Catalog
     public interface IStateProvinceService : IService<StateProvince>
     {
         IEnumerable<StateProvince> GetAll();
-        IPagedList<StateProvince> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "");
+        IPagedList<StateProvince> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "",int countryRegionId=0);
     }
 }

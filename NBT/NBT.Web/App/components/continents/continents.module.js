@@ -12,17 +12,17 @@
             parent: 'base',
             controller: "continentsController"
         })
-            .state('addContinent', {
-                url: "/addContinent",
-                parent: 'base',
-                templateUrl: "/app/components/continents/continentView.html",
-                controller: "addContinentController"
-            })
-            .state('editContinent', {
-                url: "/editContinent/:id",
-                templateUrl: "/app/components/continents/continentView.html",
-                controller: "editContinentController",
-                parent: 'base',
-            });
+        .state('addContinent', {
+            url: "/addContinent",
+            parent: 'base',
+            templateUrl: "/app/components/continents/continentView.html",
+            controller: "addContinentController"
+        })
+        .state('editContinent', {
+            url: "/editContinent/:id",
+            templateUrl: "/app/components/continents/continentView.html",
+            controller: "editContinentController",
+            parent: 'base',
+        });
     }
 })();

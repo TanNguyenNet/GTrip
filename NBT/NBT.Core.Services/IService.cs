@@ -11,6 +11,7 @@ namespace NBT.Core.Services
         T GetById(object id);
         Task<T> GetByIdAsync(object id);
         Task AddAsync(T entity);
+        T Add(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
     }

@@ -21,6 +21,9 @@ namespace NBT.Core.Datas
         public DbSet<Continent> Continents { set; get; }
         public DbSet<CountryRegion> CountryRegions { set; get; }
         public DbSet<StateProvince> StateProvinces { set; get; }
+        public DbSet<Tour> Tours { set; get; }
+        public DbSet<TourAttribute> TourAttributes { set; get; }
+        public DbSet<TourAttributeValue> TourAttributeValues { set; get; }
 
         //Identity///////////////////////////////////////////////////////////////////////////////////
         public DbSet<AppUserGroup> AppUserGroups { set; get; }
