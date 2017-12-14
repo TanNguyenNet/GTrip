@@ -11,6 +11,7 @@ namespace NBT.Core.Domain.Catalog
     {
         [MaxLength(128)]
         public string Name { set; get; }
+        public decimal Price { set; get; }
         [MaxLength(128)]
         public string Alias { set; get; }
         [MaxLength(128)]

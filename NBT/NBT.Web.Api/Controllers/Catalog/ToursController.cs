@@ -24,7 +24,7 @@ namespace NBT.Web.Api.Controllers.Catalog
         IUnitOfWork _uow;
         public ToursController(IErrorService errorService
             , ITourService tourService
-            , ITourAttributeValueService tourAttributeValueService,
+            , ITourAttributeValueService tourAttributeValueService
             , IUnitOfWork uow) : base(errorService)
         {
             _tourService = tourService;

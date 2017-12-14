@@ -50,7 +50,8 @@ namespace NBT.Infra.Services.Catalog
                              TitleSeo = t.TitleSeo,
                              ToDate = t.ToDate,
                              UpdatedBy = t.UpdatedBy,
-                             UpdatedDate = t.UpdatedDate
+                             UpdatedDate = t.UpdatedDate,
+                             Price = t.Price
                          }).FirstOrDefault();
             var modelAttr = _tourAttributeValueRepository.TableNoTracking.Where(x => x.TourId == id).ToList();
             query.TourAttr = modelAttr;

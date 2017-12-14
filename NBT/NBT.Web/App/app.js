@@ -9,7 +9,8 @@
             'nbtapp.common',
             'nbtapp.countryRegions',
             'nbtapp.stateProvinces',
-            'nbtapp.tourAttributes'
+            'nbtapp.tourAttributes',
+            'nbtapp.tours'
         ])
         .config(config)
         .config(configAuthentication);

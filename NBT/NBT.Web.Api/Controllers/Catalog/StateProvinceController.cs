@@ -48,6 +48,22 @@ namespace NBT.Web.Api.Controllers.Catalog
             });
         }
 
+        [Route("getAllNoPaging")]
+        [HttpGet]
+        //[Authorize(Roles = nameof(PermissionProvider.ViewProduct))]
+        public HttpResponseMessage GetAllNoPaging(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                var model = _stateProvinceService.GetAll();
+               
+                response = request.CreateResponse(HttpStatusCode.OK, model);
+
+                return response;
+            });
+        }
+
         [Route("getByid/{id:int}")]
         [HttpGet]
         //[Authorize(Roles = nameof(PermissionProvider.ViewGroup))]
