@@ -13,6 +13,7 @@ namespace NBT.Core.Services
         Task AddAsync(T entity);
         T Add(T entity);
         Task UpdateAsync(T entity);
+        T Update(T entity);
         Task DeleteAsync(T entity);
     }
 }

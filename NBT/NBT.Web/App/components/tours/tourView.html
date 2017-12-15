@@ -16,7 +16,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Quốc gia</label>
                                 <div class="col-sm-10">
-                                    <ui-select ng-required="true" ng-model="data.countryRegionId" name="CountryRegion" theme="bootstrap" style="min-width: 300px;" title="Chọn quốc gia">
+                                    <ui-select ng-required="true" ng-model="data.CountryRegionId" name="CountryRegion" theme="bootstrap" style="min-width: 300px;" title="Chọn quốc gia">
                                         <ui-select-match allow-clear="true" placeholder="Chọn quốc gia">{{$select.selected.Name}}</ui-select-match>
                                         <ui-select-choices repeat="item.Id as item in countryRegions | filter: $select.search">
                                             <div ng-bind-html="item.Name | highlight: $select.search"></div>
@@ -27,9 +27,9 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Thành phố</label>
                                 <div class="col-sm-10">
-                                    <ui-select ng-required="true" ng-model="data.stateProvinceId" name="stateProvince" theme="bootstrap" style="min-width: 300px;" title="Chọn Tp">
+                                    <ui-select ng-required="true" ng-model="data.StateProvinceId" name="stateProvince" theme="bootstrap" style="min-width: 300px;" title="Chọn Tp">
                                         <ui-select-match allow-clear="true" placeholder="Chọn Tp">{{$select.selected.Name}}</ui-select-match>
-                                        <ui-select-choices repeat="item.Id as item in stateProvinces | filter: {CountryRegionId: data.countryRegionId}">
+                                        <ui-select-choices repeat="item.Id as item in stateProvinces | filter: {CountryRegionId: data.CountryRegionId}">
                                             <div ng-bind-html="item.Name | highlight: $select.search"></div>
                                         </ui-select-choices>
                                     </ui-select>
@@ -40,6 +40,13 @@
                                 <div class="col-sm-10">
                                     <input type="text" maxlength="128" class="form-control" name="name" required ng-model="data.Name">
                                     <span ng-show="frm.name.$invalid" class="help-block">Tên tour</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Mã tour</label>
+                                <div class="col-sm-10">
+                                    <input type="text" maxlength="128" class="form-control" name="code" required ng-model="data.Code">
+                                    <span ng-show="frm.code.$invalid" class="help-block">Mã tour</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -145,8 +152,8 @@
                                 <tr ng-repeat="item in dataAttr">
                                     <td><input type="checkbox" ng-click="addAttr(item)" ng-model="item.Checked" name="all" /></td>
                                     <td>{{item.Name}}</td>
-                                    <td width="5">
-                                        <input class="input-group-sm" style="text-align:left" ng-change="addValue(item)" ng-disabled="!item.Checked" width="5" ng-model="item.Value" type="text" maxlength="128" />
+                                    <td>
+                                        <input class="input-group-sm" style="text-align:left;width:100%" ng-change="addValue(item)" ng-disabled="!item.Checked" ng-model="item.Value" type="text" maxlength="128" />
                                     </td>
                                 </tr>
                             </table>

@@ -6,8 +6,7 @@
 
     function editTourController(apiService, $scope, notificationService, $state, $stateParams) {
         $scope.data = {
-            IsShow: true,
-            TourAttr: []
+            
         };
         $scope.chooseImage = chooseImage;
         $scope.save = save;
@@ -53,7 +52,7 @@
             $scope.data.ToDate = moment($scope.data.ToDate, "DD/MM/YYYY").format();
             $scope.data.FromDate = moment($scope.data.FromDate, "DD/MM/YYYY").format();
 
-            apiService.post('api/tours/create', $scope.data,
+            apiService.put('api/tours/update', $scope.data,
                 function (result) {
                     notificationService.displaySuccess($scope.data.Name + ' đã được thêm mới.');
                     $state.go('tours');
@@ -71,7 +70,7 @@
                 });
             };
             finder.popup();
-        };
+        }
 
         function loadCountryRegions() {
             apiService.get('api/countryRegion/getAllNoPaging', null, function (result) {
@@ -84,6 +83,7 @@
         function loadStateProvinces() {
             apiService.get('api/stateProvince/getAllNoPaging', null, function (result) {
                 $scope.stateProvinces = result.data;
+                loadDetail();
             }, function () {
                 console.log('Cannot get data');
             });
@@ -94,8 +94,9 @@
                 $scope.dataAttr = result.data;
                 for (var j in $scope.dataAttr){
                     for (var i in $scope.data.TourAttr) {
-                        if ($scope.data.dataAttr[j].Id === item.Id) {
-                            $scope.data.dataAttr[j].Value = item.Value;
+                        if ($scope.dataAttr[j].Id === $scope.data.TourAttr[i].TourAttributeId) {
+                            $scope.dataAttr[j].Value = $scope.data.TourAttr[i].Value;
+                            $scope.dataAttr[j].Checked = true;
                             break;
                         }
                     }
@@ -106,18 +107,21 @@
         }
 
         function loadDetail() {
-            apiService.get('api/stateProvince/getbyid/' + $stateParams.id, null, function (result) {
+            apiService.get('api/tours/getbyid/' + $stateParams.id, null, function (result) {
                 $scope.data = result.data;
+                loadTourAttr();
+                $scope.data.ToDate = moment($scope.data.ToDate).format('DD/MM/YYYY');
+                $scope.data.FromDate = moment($scope.data.FromDate).format('DD/MM/YYYY');
             }, function (error) {
                 notificationService.displayError(error.data);
             });
         }
-
+        
         loadCountryRegions();
         loadStateProvinces();
-        loadTourAttr();
-        loadDetail();
-
+        
+        
+        
         $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
         $('#datemask2').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
         $('[data-mask]').inputmask();

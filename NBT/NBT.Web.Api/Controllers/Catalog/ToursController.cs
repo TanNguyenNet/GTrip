@@ -12,6 +12,7 @@ using NBT.Core.Domain.Catalog.Dto;
 using AutoMapper;
 using Microsoft.AspNet.Identity;
 using NBT.Core.Services.Data;
+using NBT.Core.Common.Helper;
 
 namespace NBT.Web.Api.Controllers.Catalog
 {
@@ -87,6 +88,7 @@ namespace NBT.Web.Api.Controllers.Catalog
                 else
                 {
                     var modelTour = Mapper.Map<Tour>(tourDto);
+                    modelTour.Alias = StringHelper.ToUrlFriendlyWithDateTime(modelTour.Name);
                     modelTour.FromDate = modelTour.FromDate.UtcDateTime;
                     modelTour.ToDate = modelTour.ToDate.UtcDateTime;
                     modelTour.CreatedDate = GetDateTimeNowUTC();
@@ -111,7 +113,7 @@ namespace NBT.Web.Api.Controllers.Catalog
         }
 
         [Route("update")]
-        [HttpPost]
+        [HttpPut]
         //[Authorize(Roles = nameof(PermissionProvider.AddArea))]
         public HttpResponseMessage Update(HttpRequestMessage request, TourDto tourDto)
         {
@@ -136,7 +138,7 @@ namespace NBT.Web.Api.Controllers.Catalog
                             item.TourId = modelTour.Id;
                         }
                     _uow.BeginTran();
-                    _tourService.UpdateAsync(modelTour);
+                    _tourService.Update(modelTour);
                     _tourAttributeValueService.DeleteByTourId(modelTour.Id);
                     _tourAttributeValueService.Add(tourDto.TourAttr);
                     _uow.CommitTran();
