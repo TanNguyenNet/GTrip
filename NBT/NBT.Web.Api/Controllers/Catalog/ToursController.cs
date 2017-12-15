@@ -87,6 +87,8 @@ namespace NBT.Web.Api.Controllers.Catalog
                 else
                 {
                     var modelTour = Mapper.Map<Tour>(tourDto);
+                    modelTour.FromDate = modelTour.FromDate.UtcDateTime;
+                    modelTour.ToDate = modelTour.ToDate.UtcDateTime;
                     modelTour.CreatedDate = GetDateTimeNowUTC();
                     modelTour.CreatedBy = User.Identity.GetUserId();
                     _uow.BeginTran();
@@ -99,6 +101,44 @@ namespace NBT.Web.Api.Controllers.Catalog
                         }
                     _tourAttributeValueService.Add(tourDto.TourAttr);
 
+                    _uow.CommitTran();
+
+                    reponse = request.CreateResponse(HttpStatusCode.Created, modelTour);
+                }
+                return reponse;
+
+            });
+        }
+
+        [Route("update")]
+        [HttpPost]
+        //[Authorize(Roles = nameof(PermissionProvider.AddArea))]
+        public HttpResponseMessage Update(HttpRequestMessage request, TourDto tourDto)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+
+                HttpResponseMessage reponse = null;
+                if (!ModelState.IsValid)
+                {
+                    reponse = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var modelTour = Mapper.Map<Tour>(tourDto);
+                    modelTour.FromDate = modelTour.FromDate.UtcDateTime;
+                    modelTour.ToDate = modelTour.ToDate.UtcDateTime;
+                    modelTour.UpdatedDate = GetDateTimeNowUTC();
+                    modelTour.UpdatedBy = User.Identity.GetUserId();
+                    if (tourDto.TourAttr.Count > 0)
+                        foreach (var item in tourDto.TourAttr)
+                        {
+                            item.TourId = modelTour.Id;
+                        }
+                    _uow.BeginTran();
+                    _tourService.UpdateAsync(modelTour);
+                    _tourAttributeValueService.DeleteByTourId(modelTour.Id);
+                    _tourAttributeValueService.Add(tourDto.TourAttr);
                     _uow.CommitTran();
 
                     reponse = request.CreateResponse(HttpStatusCode.Created, modelTour);

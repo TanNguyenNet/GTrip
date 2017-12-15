@@ -18,6 +18,7 @@ namespace NBT.Core.Domain.Catalog
         public string Code { set; get; }
         public int CountryRegionId { set; get; }
         public int StateProvinceId { set; get; }
+        public int DisplayOrder { set; get; }
         [MaxLength(128)]
         public string ShortDescription { set; get; }
         public string FullDescription { set; get; }
@@ -32,6 +33,7 @@ namespace NBT.Core.Domain.Catalog
         public DateTimeOffset FromDate { set; get; }
         public DateTimeOffset ToDate { set; get; }
         public bool IsShow { set; get; }
+        public bool IsHot { set; get; }
         public bool IsDel { set; get; }
         public DateTimeOffset? CreatedDate { set; get; }
 

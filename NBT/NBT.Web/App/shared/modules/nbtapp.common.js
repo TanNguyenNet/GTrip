@@ -5,6 +5,7 @@
         'checklist-model',
         'ngPassword',
         'ngSanitize',
-        'ui.select'
+        'ui.select',
+        'ngCkeditor'
     ])
 })();

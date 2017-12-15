@@ -51,7 +51,9 @@ namespace NBT.Infra.Services.Catalog
                              ToDate = t.ToDate,
                              UpdatedBy = t.UpdatedBy,
                              UpdatedDate = t.UpdatedDate,
-                             Price = t.Price
+                             Price = t.Price,
+                             DisplayOrder = t.DisplayOrder,
+                             IsHot = t.IsHot
                          }).FirstOrDefault();
             var modelAttr = _tourAttributeValueRepository.TableNoTracking.Where(x => x.TourId == id).ToList();
             query.TourAttr = modelAttr;
