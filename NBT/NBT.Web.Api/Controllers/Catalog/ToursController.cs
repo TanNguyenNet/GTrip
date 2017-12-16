@@ -150,5 +150,27 @@ namespace NBT.Web.Api.Controllers.Catalog
             });
         }
 
+        [Route("delete")]
+        [HttpDelete]
+        public HttpResponseMessage Delete(HttpRequestMessage request, long id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    _tourService.DeleteById(id);
+                    var result = true;
+                    response = request.CreateResponse(HttpStatusCode.Created, result);
+                }
+
+                return response;
+            });
+        }
+
     }
 }

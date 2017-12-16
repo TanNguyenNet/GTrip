@@ -30,6 +30,7 @@ namespace NBT.Core.Domain.Catalog
         public string TitleSeo { set; get; }
         [MaxLength(256)]
         public string DescriptionSeo { set; get; }
+        public int TotalDays { set; get; }
         public DateTimeOffset FromDate { set; get; }
         public DateTimeOffset ToDate { set; get; }
         public bool IsShow { set; get; }

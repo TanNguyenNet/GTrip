@@ -8,7 +8,7 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <button class="btn btn-success" ui-sref="addTour"><i class="fa fa-plus"></i> Thêm mới tour</button>
+                            <button class="btn btn-success" ui-sref="addVisa"><i class="fa fa-plus"></i> Thêm mới tour</button>
                         </div>
                     </div>
                 </div>
@@ -21,26 +21,6 @@
                                     <button class="btn btn-primary" type="button" ng-click="search()">Tìm</button>
                                 </span>
                             </div><!-- /input-group -->
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="input-group-sm">
-                                <ui-select ng-required="true" ng-model="filterCountry.countryRegionId" name="CountryRegion" theme="bootstrap" style="min-width: 300px;" title="Chọn quốc gia">
-                                    <ui-select-match allow-clear="true" placeholder="Chọn quốc gia">{{$select.selected.Name}}</ui-select-match>
-                                    <ui-select-choices repeat="item.Id as item in countryRegions | filter: $select.search">
-                                        <div ng-bind-html="item.Name | highlight: $select.search"></div>
-                                    </ui-select-choices>
-                                </ui-select>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="input-group-sm">
-                                <ui-select ng-required="true" ng-model="filterCountry.stateProvinceId" name="stateProvince" theme="bootstrap" style="min-width: 300px;" title="Chọn Tp">
-                                    <ui-select-match allow-clear="true" placeholder="Chọn Tp">{{$select.selected.Name}}</ui-select-match>
-                                    <ui-select-choices repeat="item.Id as item in stateProvinces | filter: {CountryRegionId: filterCountry.countryRegionId}">
-                                        <div ng-bind-html="item.Name | highlight: $select.search"></div>
-                                    </ui-select-choices>
-                                </ui-select>
-                            </div>
                         </div>
                         <div class="col-md-2">
                             <div class="input-group">
@@ -61,7 +41,7 @@
             <!-- /.box -->
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Danh sách tour</h3>
+                    <h3 class="box-title">Danh sách visa</h3>
                 </div>
                 <div class="box-header">
                     <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="search(page)"></pager-directive>
@@ -72,26 +52,19 @@
                         <tr>
                             <th style="width: 10%">Hình</th>
                             <th>Tiêu đề</th>
-                            <th style="width: 10%">Mã tour</th>
-                            <th style="width: 10%">Giá</th>
                             <th style="width: 10%">Hiển thị</th>
                             <th style="width: 10%">Thao tác</th>
                         </tr>
                         <tr ng-repeat="item in data">
                             <td><img class="img-link" ng-src="{{item.Image}}" width="80" height="80" /></td>
                             <td>
-                                {{item.Name}}
+                                <a ui-sref="editVisa({id:item.Id})">{{item.Name}}</a>
                             </td>
-                            <td>
-                                {{item.Code}}
-                            </td>
-                            <td>{{item.Price | number:0}}</td>
                             <td style="text-align:center">
-                                <span class="{{item.IsShow | filterBoolClass}}">{{item.IsShow | filterBoolText}}</span>
+                                <span class="{{item.IsWeb | filterBoolClass}}">{{item.IsWeb | filterBoolText}}</span>
                             </td>
                             <td>
-                                <a class="btn btn-sm btn-primary" ui-sref="editTour({id:item.Id})"><i class="fa fa-pencil"></i></a>
-                                <button class="btn btn-sm btn-danger" ng-click="del(item)"><i class="fa fa-trash"></i></button>
+                                <a class="btn btn-sm btn-primary" ui-sref="editVisa({id:item.Id})"><i class="fa fa-pencil"></i></a>
                             </td>
                         </tr>
                     </table>

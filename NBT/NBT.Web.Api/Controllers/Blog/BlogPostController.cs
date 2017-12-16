@@ -6,35 +6,35 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using NBT.Core.Common.Helper;
-using NBT.Core.Domain.Immigrant;
-using NBT.Core.Services.ApplicationServices.Immigrant;
+using NBT.Core.Domain.Blog;
+using NBT.Core.Services.ApplicationServices.Blog;
 using NBT.Core.Services.ApplicationServices.System;
 using NBT.Web.Framework.Core;
 
-namespace NBT.Web.Api.Controllers.Immigrant
+namespace NBT.Web.Api.Controllers.Blog
 {
-    [RoutePrefix("api/visas")]
+    [RoutePrefix("api/blogPosts")]
     [Authorize]
-    public class VisaController : BaseApiController
+    public class BlogPostController : BaseApiController
     {
-        IVisaService _visaService;
-        public VisaController(IErrorService errorService
-            , IVisaService visaService) : base(errorService)
+        IBlogPostService _blogPostService;
+        public BlogPostController(IErrorService errorService,
+            IBlogPostService blogPostService) : base(errorService)
         {
-            _visaService = visaService;
+            _blogPostService = blogPostService;
         }
 
         [Route("getAll")]
         [HttpGet]
         //[Authorize(Roles = nameof(PermissionProvider.ViewProduct))]
         public HttpResponseMessage getAll(HttpRequestMessage request,
-            int page = 0, int pageSize = 20, string filter = "")
+            int page = 0, int pageSize = 20, string filter = "",int categoryId=0)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var model = _visaService.GetAll(page + 1, pageSize, filter);
-                PaginationSet<Visa> pagedSet = new PaginationSet<Visa>()
+                var model = _blogPostService.GetAll(page + 1, pageSize, filter);
+                PaginationSet<BlogPost> pagedSet = new PaginationSet<BlogPost>()
                 {
                     Page = page,
                     TotalCount = model.TotalItemCount,
@@ -56,7 +56,7 @@ namespace NBT.Web.Api.Controllers.Immigrant
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var model = _visaService.GetById(id);
+                var model = _blogPostService.GetById(id);
                 response = request.CreateResponse(HttpStatusCode.OK, model);
 
                 return response;
@@ -66,7 +66,7 @@ namespace NBT.Web.Api.Controllers.Immigrant
         [Route("create")]
         [HttpPost]
         //[Authorize(Roles = nameof(PermissionProvider.AddArea))]
-        public HttpResponseMessage Create(HttpRequestMessage request, Visa visa)
+        public HttpResponseMessage Create(HttpRequestMessage request, BlogPost blogPost)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -78,11 +78,11 @@ namespace NBT.Web.Api.Controllers.Immigrant
                 }
                 else
                 {
-                    visa.Alias = StringHelper.ToUrlFriendlyWithDateTime(visa.Name);
-                    visa.CreatedDate = GetDateTimeNowUTC();
-                    visa.CreatedBy = User.Identity.GetUserId();
-                    _visaService.Add(visa);
-                    reponse = request.CreateResponse(HttpStatusCode.Created, visa);
+                    blogPost.Alias = StringHelper.ToUrlFriendlyWithDateTime(blogPost.Title);
+                    blogPost.CreatedDate = GetDateTimeNowUTC();
+                    blogPost.CreatedBy = User.Identity.GetUserId();
+                    _blogPostService.Add(blogPost);
+                    reponse = request.CreateResponse(HttpStatusCode.Created, blogPost);
                 }
                 return reponse;
 
@@ -92,7 +92,7 @@ namespace NBT.Web.Api.Controllers.Immigrant
         [Route("update")]
         [HttpPut]
         //[Authorize(Roles = nameof(PermissionProvider.AddArea))]
-        public HttpResponseMessage Update(HttpRequestMessage request, Visa visa)
+        public HttpResponseMessage Update(HttpRequestMessage request, BlogPost blogPost)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -104,11 +104,36 @@ namespace NBT.Web.Api.Controllers.Immigrant
                 }
                 else
                 {
-                    _visaService.Update(visa);
-                    reponse = request.CreateResponse(HttpStatusCode.Created, visa);
+                    blogPost.UpdatedDate = GetDateTimeNowUTC();
+                    blogPost.UpdatedBy = User.Identity.GetUserId();
+                    _blogPostService.Update(blogPost);
+                    reponse = request.CreateResponse(HttpStatusCode.Created, blogPost);
                 }
                 return reponse;
 
+            });
+        }
+
+        [Route("delete")]
+        [HttpDelete]
+        public HttpResponseMessage Delete(HttpRequestMessage request, long id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var model = _blogPostService.GetById(id);
+                    _blogPostService.DeleteAsync(model);
+                    var result = true;
+                    response = request.CreateResponse(HttpStatusCode.Created, result);
+                }
+
+                return response;
             });
         }
     }

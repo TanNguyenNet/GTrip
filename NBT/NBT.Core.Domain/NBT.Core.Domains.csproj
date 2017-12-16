@@ -56,7 +56,9 @@
   <ItemGroup>
     <Compile Include="AudiTable.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Blog\BlogPost.cs" />
     <Compile Include="Blog\BlogPostAbout.cs" />
+    <Compile Include="Blog\BlogPostTag.cs" />
     <Compile Include="Catalog\Continent.cs" />
     <Compile Include="Catalog\CountryRegion.cs" />
     <Compile Include="Catalog\Dto\TourDto.cs" />

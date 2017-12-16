@@ -14,9 +14,26 @@
         $scope.filter = '';
 
         $scope.filterCountry = {};
-
         $scope.data = [];
+
         $scope.search = search;
+        $scope.del = del;
+
+        function del(item) {
+            $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
+                var config = {
+                    params: {
+                        id: item.Id
+                    }
+                }
+                apiService.del('api/tours/delete', config, function () {
+                    notificationService.displaySuccess('Xóa thành công');
+                    search();
+                }, function () {
+                    notificationService.displayError('Xóa không thành công');
+                })
+            });
+        }
 
         function search(page) {
             $scope.loading = true;

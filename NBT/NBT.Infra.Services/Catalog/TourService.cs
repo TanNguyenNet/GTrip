@@ -53,7 +53,8 @@ namespace NBT.Infra.Services.Catalog
                              UpdatedDate = t.UpdatedDate,
                              Price = t.Price,
                              DisplayOrder = t.DisplayOrder,
-                             IsHot = t.IsHot
+                             IsHot = t.IsHot,
+                             TotalDays = t.TotalDays
                          }).FirstOrDefault();
             var modelAttr = _tourAttributeValueRepository.TableNoTracking.Where(x => x.TourId == id).ToList();
             query.TourAttr = modelAttr;
@@ -61,7 +62,7 @@ namespace NBT.Infra.Services.Catalog
         }
         public IPagedList<Tour> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", int stateProvinceId = 0, int countryRegionId = 0)
         {
-            var query = _tourRepo.TableNoTracking;
+            var query = _tourRepo.TableNoTracking.Where(x=>x.IsDel==false);
 
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter) || x.Code.Contains(filter));
@@ -73,6 +74,18 @@ namespace NBT.Infra.Services.Catalog
             return query.OrderByDescending(x => x.DisplayOrder).ThenByDescending(x=>x.CreatedDate).ThenBy(x => x.Name).ToPagedList(pageIndex, pageSize);
         }
 
-
+        public void DeleteById(long id)
+        {
+            try
+            {
+                var model = _tourRepo.GetById(id);
+                model.IsDel = true;
+                _tourRepo.Update(model);
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace NBT.Core.Domain.Blog
 {
-    public class BlogPostAbout:BaseEntity<int>
+    public class BlogPost : BaseEntity<long>
     {
         [MaxLength(128)]
         public string Title { set; get; }
-        [MaxLength(64)]
-        public string Code { set; get; }
+        public int BlogPostCategory { set; get; }
         [MaxLength(128)]
         public string Alias { set; get; }
         [MaxLength(128)]
@@ -26,6 +25,7 @@ namespace NBT.Core.Domain.Blog
         public string TitleSeo { set; get; }
         [MaxLength(256)]
         public string DescriptionSeo { set; get; }
+        public string Tag { set; get; }
         public bool IsShow { set; get; }
         public bool IsHot { set; get; }
         public bool IsDel { set; get; }

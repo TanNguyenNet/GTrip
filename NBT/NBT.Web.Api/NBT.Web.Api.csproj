@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\Blog\BlogPostController.cs" />
     <Compile Include="Controllers\Catalog\ContinentController.cs" />
     <Compile Include="Controllers\Catalog\CountryRegionsController.cs" />
     <Compile Include="Controllers\Catalog\StateProvinceController.cs" />

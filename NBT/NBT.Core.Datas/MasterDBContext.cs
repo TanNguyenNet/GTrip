@@ -28,6 +28,8 @@ namespace NBT.Core.Datas
         public DbSet<TourAttributeValue> TourAttributeValues { set; get; }
         public DbSet<Visa> Visas { set; get; }
         public DbSet<BlogPostAbout> BlogPostAbouts{ set;get;}
+        public DbSet<BlogPost> BlogPosts { set; get; }
+        public DbSet<BlogPostTag> BlogPostTags { set; get; }
 
         //Identity///////////////////////////////////////////////////////////////////////////////////
         public DbSet<AppUserGroup> AppUserGroups { set; get; }

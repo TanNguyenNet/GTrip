@@ -13,6 +13,7 @@ namespace NBT.Core.Services.ApplicationServices.Catalog
     {
         TourDto GetById(long id);
         IPagedList<Tour> GetAll(int pageIndex =1, int pageSize=20, string filter ="", int stateProvinceId=0, int countryRegionId=0);
+        void DeleteById(long id);
 
     }
 }

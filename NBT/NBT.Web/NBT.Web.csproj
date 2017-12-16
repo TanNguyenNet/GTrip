@@ -246,6 +246,12 @@
     <Content Include="App\components\tours\toursController.js" />
     <Content Include="App\components\tours\toursView.html" />
     <Content Include="App\components\tours\tourView.html" />
+    <Content Include="App\components\visas\addVisaController.js" />
+    <Content Include="App\components\visas\editVisaController.js" />
+    <Content Include="App\components\visas\visasView.html" />
+    <Content Include="App\components\visas\visaView.html" />
+    <Content Include="App\components\visas\visas.module.js" />
+    <Content Include="App\components\visas\visasController.js" />
     <Content Include="App\shared\directives\pagerDirective.html" />
     <Content Include="App\shared\directives\pagerDirective.js" />
     <Content Include="App\shared\filter\showFilter.js" />
@@ -6480,6 +6486,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\components\blogPost\" />
     <Folder Include="Assets\libs\checklist-model\test\" />
     <Folder Include="Assets\libs\jquery\src\deferred\" />
     <Folder Include="Assets\libs\ngBootbox\typings\angularjs\" />

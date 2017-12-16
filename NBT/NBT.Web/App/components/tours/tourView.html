@@ -72,6 +72,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Tổng ngày</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="totalDay" required ng-model="data.TotalDays" min="1" max="999" ng-init="data.TotalDays = 1" ng-maxlength="6">
+                                    <span ng-show="frm.totalDay.$invalid" class="help-block">Nhập tổng ngày</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Từ ngày</label>
                                 <div class="col-sm-10">
                                     <input type="text" maxlength="128" class="form-control" id="fromDate" name="fromDate" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required ng-model="data.FromDate">
