@@ -70,7 +70,7 @@ namespace NBT.Infra.Services.Catalog
             if (countryRegionId != 0)
                 query = query.Where(x => x.CountryRegionId == countryRegionId);
 
-            return query.OrderByDescending(x => x.CreatedDate).ThenByDescending(x => x.Name).ToPagedList(pageIndex, pageSize);
+            return query.OrderByDescending(x => x.DisplayOrder).ThenByDescending(x=>x.CreatedDate).ThenBy(x => x.Name).ToPagedList(pageIndex, pageSize);
         }
 
 

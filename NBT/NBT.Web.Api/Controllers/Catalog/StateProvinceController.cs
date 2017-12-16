@@ -56,7 +56,7 @@ namespace NBT.Web.Api.Controllers.Catalog
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var model = _stateProvinceService.GetAll();
+                var model = _stateProvinceService.GetAll(null);
                
                 response = request.CreateResponse(HttpStatusCode.OK, model);
 

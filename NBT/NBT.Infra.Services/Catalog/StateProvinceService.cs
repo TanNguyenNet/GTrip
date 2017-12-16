@@ -18,11 +18,12 @@ namespace NBT.Infra.Services.Catalog
         {
             _stateProvinceRepo = stateProvinceRepo;
         }
-        
 
-        public IEnumerable<StateProvince> GetAll()
+
+        public IEnumerable<StateProvince> GetAll(bool? isShow = null)
         {
-            return _stateProvinceRepo.TableNoTracking.ToList();
+            return isShow != null ? _stateProvinceRepo.TableNoTracking.Where(x => x.IsShow == isShow.Value).ToList() 
+                : _stateProvinceRepo.TableNoTracking.ToList();
         }
 
         public IPagedList<StateProvince> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", int countryRegionId = 0)

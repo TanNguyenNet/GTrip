@@ -44,24 +44,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationServices\Blog\IBlogPostAboutService.cs" />
     <Compile Include="ApplicationServices\Catalog\IContinentService.cs" />
     <Compile Include="ApplicationServices\Catalog\ICountryRegionService.cs" />
     <Compile Include="ApplicationServices\Catalog\IStateProvinceService.cs" />
     <Compile Include="ApplicationServices\Catalog\ITourAttributeService.cs" />
     <Compile Include="ApplicationServices\Catalog\ITourAttributeValueService.cs" />
     <Compile Include="ApplicationServices\Catalog\ITourService.cs" />
+    <Compile Include="ApplicationServices\Immigrant\IVisaService.cs" />
     <Compile Include="ApplicationServices\Security\IAppGroupService.cs" />
     <Compile Include="ApplicationServices\Security\IAppRoleService.cs" />
     <Compile Include="ApplicationServices\Security\IAppUserService.cs" />
     <Compile Include="ApplicationServices\System\IErrorService.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
+    <Compile Include="DomainServices\Blog\IBlogPostAboutRepository.cs" />
     <Compile Include="DomainServices\Catalog\IContinentRepository.cs" />
     <Compile Include="DomainServices\Catalog\ICountryRegionRepository.cs" />
     <Compile Include="DomainServices\Catalog\IStateProvinceRepository.cs" />
     <Compile Include="DomainServices\Catalog\ITourAttributeRepository.cs" />
     <Compile Include="DomainServices\Catalog\ITourAttributeValueRepository.cs" />
     <Compile Include="DomainServices\Catalog\ITourRepository.cs" />
+    <Compile Include="DomainServices\Immigrant\IVisaRepository.cs" />
     <Compile Include="DomainServices\Security\IAppGroupRepository.cs" />
     <Compile Include="DomainServices\Security\IAppRoleGroupRepository.cs" />
     <Compile Include="DomainServices\Security\IAppRoleRepository.cs" />

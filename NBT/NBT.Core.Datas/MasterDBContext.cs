@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using NBT.Core.Domain.Catalog;
+using NBT.Core.Domain.Immigrant;
+using NBT.Core.Domain.Blog;
 
 namespace NBT.Core.Datas
 {
@@ -24,6 +26,8 @@ namespace NBT.Core.Datas
         public DbSet<Tour> Tours { set; get; }
         public DbSet<TourAttribute> TourAttributes { set; get; }
         public DbSet<TourAttributeValue> TourAttributeValues { set; get; }
+        public DbSet<Visa> Visas { set; get; }
+        public DbSet<BlogPostAbout> BlogPostAbouts{ set;get;}
 
         //Identity///////////////////////////////////////////////////////////////////////////////////
         public DbSet<AppUserGroup> AppUserGroups { set; get; }

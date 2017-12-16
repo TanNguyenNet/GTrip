@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="AudiTable.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Blog\BlogPostAbout.cs" />
     <Compile Include="Catalog\Continent.cs" />
     <Compile Include="Catalog\CountryRegion.cs" />
     <Compile Include="Catalog\Dto\TourDto.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Identity\AppRoleGroup.cs" />
     <Compile Include="Identity\AppUser.cs" />
     <Compile Include="Identity\AppUserGroup.cs" />
+    <Compile Include="Immigrant\Visa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\Error.cs" />
   </ItemGroup>

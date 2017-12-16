@@ -18,10 +18,11 @@ namespace NBT.Infra.Services.Catalog
         {
             _countryRegionRepo = countryRegionRepo;
         }
-        
-        public IEnumerable<CountryRegion> GetAll()
+
+        public IEnumerable<CountryRegion> GetAll(bool? isShow = null)
         {
-            return _countryRegionRepo.TableNoTracking.ToList();
+            return isShow != null ? _countryRegionRepo.TableNoTracking.Where(x => x.IsShow == isShow.Value).ToList()
+                : _countryRegionRepo.TableNoTracking.ToList();
         }
 
         public IPagedList<CountryRegion> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", int continentId = 0)
@@ -30,7 +31,7 @@ namespace NBT.Infra.Services.Catalog
 
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter));
-            if (continentId !=0)
+            if (continentId != 0)
                 query = query.Where(x => x.ContinentId == continentId);
 
             return query.OrderBy(x => x.Name).ToPagedList(pageIndex, pageSize);

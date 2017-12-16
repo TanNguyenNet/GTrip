@@ -161,6 +161,7 @@
     <Compile Include="Controllers\Identity\AppGroupController.cs" />
     <Compile Include="Controllers\Identity\AppRoleController.cs" />
     <Compile Include="Controllers\Identity\AppUserController.cs" />
+    <Compile Include="Controllers\Immigrant\VisaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

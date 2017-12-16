@@ -36,9 +36,9 @@ table {
   border-spacing: 0; }
 
 @font-face {
-    font-family: 'signpainter';
+    font-family: "signpainter";
     src: url("/Assets/client/css/fonts/signpainter-housescript-webfont.eot");
-    src: url("/Assets/client/css/fonts/signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.woff2") format("woff2"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.woff") format("woff"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.ttf") format("truetype"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.svg#signpainter") format("svg");
+    src: url("/Assets/client/css/fonts/signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.svg#signpainter") format("svg"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.woff2") format("woff2"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.woff") format("woff"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
