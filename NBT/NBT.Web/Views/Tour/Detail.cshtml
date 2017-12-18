@@ -61,7 +61,7 @@
                                             @Html.Hidden("Code", Model.Code)
                                             @Html.Hidden("Image", Model.Image)
                                             @Html.Hidden("Price", Model.Price)
-                                            @Html.Hidden("Id",Model.Id)
+                                            @Html.Hidden("Id", Model.Id)
                                         </div>
                                         <div class="end-date">
                                             <input type='text' class="form-control" id='datetimepicker5' name="ToDate" /><i class="fa fa-calendar" aria-hidden="true"></i>
@@ -70,7 +70,7 @@
                                     </form>
                                 </div>
                                 <div class="tour-detail-desc">
-                                    @Model.FullDescription
+                                    @Html.Raw(Model.FullDescription)
                                 </div>
                             </div>
                         </div>

@@ -1,1 +1,88 @@
-﻿
+﻿@model NBT.Core.Domain.Blog.BlogPost
+@{
+    ViewBag.Title = "index";
+    ViewBag.StyleHeader = "header header-style-2";
+    Layout = "~/Views/Shared/Layouts.cshtml";
+}
+
+<div id="example-wrapper">
+    @Html.Partial("Navigation")
+
+    <div class="div-box mb">
+        <div class="blog-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <div class="blog-wrap">
+                            <div class="blog-content">
+                                <div class="blog-cate-title"><h3>Bài viết mới</h3></div>
+                                <div class="new-blog">
+                                    <a href="">
+                                        <img class="img-responsive" src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
+                                        <h5><a href="#">Nước áo xinh đẹp và thanh bình</a></h5>
+                                    </a>
+                                </div>
+                                <div class="next-blog">
+                                    <div class="next-blog-content">
+                                        <div class="next-blog-img">
+                                            <a href="">
+                                                <img class="img-responsive" src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="next-blog-info">
+                                            <h5><a href="">nước áo xinh đẹp</a></h5>
+                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>15-06-2017</span>
+                                            <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch…</p>
+                                        </div>
+                                    </div>
+                                    <div class="next-blog-content">
+                                        <div class="next-blog-img">
+                                            <a href="">
+                                                <img class="img-responsive" src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="next-blog-info">
+                                            <h5><a href="">nước áo xinh đẹp</a></h5>
+                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>15-06-2017</span>
+                                            <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch…</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="promotion">
+                                    <img class="img-responsive" src="../images/poster-quang-cao-du-lich-01.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <div class="article-wrap">
+                            <article>
+                                <div class="article-head">
+                                    <h3>@Model.Title</h3>
+                                    <span><i class="fa fa-calendar" aria-hidden="true"></i> @Model.CreatedDate.Value.ToString("dd-MM-yyyy")</span>
+                                    <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
+                                </div>
+                                <div class="article-content">
+                                    @Html.Raw(Model.FullContent)
+                                </div>
+                                <div class="social-wrapper">
+                                    <ul class="share_social">
+                                        Chia sẽ:
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <div class="hleftright">
+                                <a href="" class="pull-left"><i class="fa fa-angle-double-left" aria-hidden="true"></i> bài viết mới</a>
+                                <a href="" class="pull-right"><i class="fa fa-angle-double-right" aria-hidden="true"></i> bài viết củ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -194,6 +194,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TourController.cs" />
+    <Compile Include="Controllers\VisaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5511,7 +5512,6 @@
     <Content Include="Assets\libs\jquery\external\sizzle\LICENSE.txt" />
     <Content Include="Assets\libs\jquery\LICENSE.txt" />
     <Content Include="Assets\libs\jquery\README.md" />
-    <Content Include="Assets\libs\jquery\src\.eslintrc.json" />
     <Content Include="Assets\libs\jquery\src\ajax.js" />
     <Content Include="Assets\libs\jquery\src\ajax\jsonp.js" />
     <Content Include="Assets\libs\jquery\src\ajax\load.js" />
@@ -6501,7 +6501,6 @@
     <Folder Include="Assets\libs\ngBootbox\typings\jquery\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Common\" />
-    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\bootstrap\.bower.json" />
@@ -6965,6 +6964,9 @@
     <Content Include="Views\Cart\Checkout.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Detail.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Visa\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NBT.Core.Common\NBT.Core.Common.csproj">

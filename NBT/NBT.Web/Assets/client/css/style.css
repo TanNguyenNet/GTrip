@@ -35,13 +35,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-@font-face {
+/*@font-face {
     font-family: "signpainter";
     src: url("/Assets/client/css/fonts/signpainter-housescript-webfont.eot");
     src: url("/Assets/client/css/fonts/signpainter-housescript-webfont.eot?#iefix") format("embedded-opentype"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.svg#signpainter") format("svg"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.woff2") format("woff2"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.woff") format("woff"), url("/Assets/client/css/fonts/signpainter-housescript-webfont.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 body {
   font-family: "Roboto", Helvetica, Verdana, sans-serif;
@@ -174,11 +174,12 @@ select {
   padding-right: 0px !important; }
 
 .title-style .title-right, .title-style .title-left {
-  display: inline-block;
-  font-family: "signpainter", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-weight: 700; }
+    display: inline-block;
+    font-family: 'Itim', cursive;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-weight: 700;
+}
 
 .title-style .title-left {
   color: #6ebb43;

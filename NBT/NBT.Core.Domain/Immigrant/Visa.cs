@@ -11,6 +11,8 @@ namespace NBT.Core.Domain.Immigrant
     {
         [MaxLength(128)]
         public string Name { set; get; }
+        [MaxLength(128)]
+        public string Code { set; get; }
         public int DisplayOrder { set; get; } = -1;
         [MaxLength(256)]
         public string Alias { set; get; }

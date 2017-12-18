@@ -14,6 +14,18 @@ namespace NBT.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "cmsGtrip",
+                url: "cmsGtrip",
+                defaults: new { controller = "Admin", action = "Index", alias = UrlParameter.Optional },
+                namespaces: new string[] { "NBT.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "visa",
+                url: "visa/{alias}",
+                defaults: new { controller = "Visa", action = "Index", alias = UrlParameter.Optional },
+                namespaces: new string[] { "NBT.Web.Controllers" }
+            );
+            routes.MapRoute(
                 name: "TourDetail",
                 url: "tour/detail/{alias}",
                 defaults: new { controller = "Tour", action = "Detail", alias = UrlParameter.Optional },

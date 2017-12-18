@@ -81,6 +81,7 @@ namespace NBT.Web.Api.Controllers.Immigrant
                     visa.Alias = StringHelper.ToUrlFriendlyWithDateTime(visa.Name);
                     visa.CreatedDate = GetDateTimeNowUTC();
                     visa.CreatedBy = User.Identity.GetUserId();
+                    visa.Alias = StringHelper.ToUrlFriendlyWithDateTime(visa.Name,visa.CreatedDate.DateTime);
                     _visaService.Add(visa);
                     reponse = request.CreateResponse(HttpStatusCode.Created, visa);
                 }
@@ -104,6 +105,7 @@ namespace NBT.Web.Api.Controllers.Immigrant
                 }
                 else
                 {
+                    visa.Alias = StringHelper.ToUrlFriendlyWithDateTime(visa.Name, visa.CreatedDate.DateTime);
                     _visaService.Update(visa);
                     reponse = request.CreateResponse(HttpStatusCode.Created, visa);
                 }
