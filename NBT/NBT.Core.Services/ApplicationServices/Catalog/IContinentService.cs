@@ -10,6 +10,6 @@ namespace NBT.Core.Services.ApplicationServices.Catalog
 {
     public interface IContinentService:IService<Continent>
     {
-        IEnumerable<Continent> GetAll();
+        IEnumerable<Continent> GetAll(bool? isShow = null);
     }
 }

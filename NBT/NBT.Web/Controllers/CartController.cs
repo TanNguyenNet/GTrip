@@ -68,6 +68,7 @@ namespace NBT.Web.Controllers
             else
             {
                 var listItems = new List<OrderItemVm>();
+                item.Quantity = 1;
                 listItems.Add(item);
                 cartCookie.Value = JsonConvert.SerializeObject(listItems);
                 cartCookie.Expires = DateTime.Now.AddDays(30);
@@ -80,7 +81,7 @@ namespace NBT.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Checkout(OrderVm order)
         {
-            if(ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return View(order);
             }

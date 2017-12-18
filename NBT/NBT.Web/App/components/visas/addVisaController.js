@@ -6,7 +6,7 @@
 
     function addVisaController(apiService, $scope, notificationService, $state) {
         $scope.data = {
-            IsWeb: true
+            IsWeb: false
         };
         $scope.chooseImage = chooseImage;
         $scope.save = save;

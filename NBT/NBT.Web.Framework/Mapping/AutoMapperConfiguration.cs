@@ -23,9 +23,9 @@ namespace NBT.Web.Framework.Mapping
                 cfg.CreateMap<AppGroup, AppGroupVm>();
                 cfg.CreateMap<TourDto, Tour>();
                 cfg.CreateMap<TourAttributeValueDto, TourAttributeValue>();
-                cfg.CreateMap<Order, OrderVm>();
-                cfg.CreateMap<OrderItem, OrderItemVm>()
-                .ForMember(x => x.Id, mo => mo.MapFrom(src => src.CodeId))
+                cfg.CreateMap<OrderVm, Order>();
+                cfg.CreateMap<OrderItemVm, OrderItem>()
+                .ForMember(x => x.CodeId, mo => mo.MapFrom(src => src.Id))
                 .ForMember(x => x.Image, mo => mo.MapFrom(src => src.Image))
                 .ForMember(x => x.Quantity, mo => mo.MapFrom(src => src.Quantity))
                 .ForMember(x => x.Price, mo => mo.MapFrom(src => src.Price))

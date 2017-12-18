@@ -62,11 +62,17 @@
                 });
         }
 
-        function chooseImage() {
+        function chooseImage(item) {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
                 $scope.$apply(function () {
-                    $scope.data.Image = fileUrl;
+                    switch (item) {
+                        case 1:
+                            $scope.data.LargeImage = fileUrl;
+                            break;
+                        default:
+                            $scope.data.Image = fileUrl;
+                    }
                 });
             };
             finder.popup();

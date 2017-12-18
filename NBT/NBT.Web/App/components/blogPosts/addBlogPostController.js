@@ -6,7 +6,7 @@
 
     function addBlogPostController(apiService, $scope, notificationService, $state) {
         $scope.data = {
-            IsShow: true
+            IsShow: false
         };
         $scope.chooseImage = chooseImage;
         $scope.save = save;

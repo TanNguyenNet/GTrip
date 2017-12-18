@@ -68,7 +68,7 @@ namespace NBT.Web.Api.Controllers.Catalog
                     }
                     else
                     {
-                        _continentService.AddAsync(continent);
+                        _continentService.Add(continent);
 
                         reponse = request.CreateResponse(HttpStatusCode.Created, continent);
                     }

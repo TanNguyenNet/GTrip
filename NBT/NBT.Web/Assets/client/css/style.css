@@ -804,7 +804,7 @@ select {
   .visa-cate-wrap .visa-title {
     border-bottom: 1px solid #dedede; }
     .visa-cate-wrap .visa-title .icon {
-      background: url(../images/earth1.png) no-repeat left center;
+      background: url(/images/earth1.png) no-repeat left center;
       background-size: 50px 50px;
       font-size: 30px;
       width: 50px;
@@ -834,39 +834,39 @@ select {
   text-indent: -999px; }
 
 .au {
-  background: url(../images/icon/flags/Australia.png) no-repeat left center;
+  background: url(/images/icon/flags/Australia.png) no-repeat left center;
   background-size: 25px 25px; }
 
 .us {
-  background: url(../images/icon/flags/USA.png) no-repeat left center;
+  background: url(/images/icon/flags/USA.png) no-repeat left center;
   background-size: 25px 25px; }
 
 .ca {
-  background: url(../images/icon/flags/Canada.png) no-repeat left center;
+  background: url(/images/icon/flags/Canada.png) no-repeat left center;
   background-size: 25px 25px; }
 
 .nz {
-  background: url(../images/icon/flags/NewZealand.png) no-repeat left center;
+  background: url(/images/icon/flags/NewZealand.png) no-repeat left center;
   background-size: 25px 25px; }
 
 .jp {
-  background: url(../images/icon/flags/Japan.png) no-repeat left center;
+  background: url(/images/icon/flags/Japan.png) no-repeat left center;
   background-size: 25px 25px; }
 
 .id {
-  background: url(../images/icon/flags/Indonezia.png) no-repeat left center;
+  background: url(/images/icon/flags/Indonezia.png) no-repeat left center;
   background-size: 25px 25px; }
 
 .il {
-  background: url(../images/icon/flags/Italy.png) no-repeat left center;
+  background: url(/images/icon/flags/Italy.png) no-repeat left center;
   background-size: 25px 25px; }
 
 .fr {
-  background: url(../images/icon/flags/France.png) no-repeat left center;
+  background: url(/images/icon/flags/France.png) no-repeat left center;
   background-size: 25px 25px; }
 
 .uk {
-  background: url(../images/icon/flags/UK.png) no-repeat left center;
+  background: url(/images/icon/flags/UK.png) no-repeat left center;
   background-size: 25px 25px; }
 
 .tour-detail-content .tour-detail-option {
@@ -1518,7 +1518,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     .visa-cate-wrap .visa-title {
       border-bottom: 1px solid #dedede; }
       .visa-cate-wrap .visa-title .icon {
-        background: url(../images/earth1.png) no-repeat left center;
+        background: url(/images/earth1.png) no-repeat left center;
         background-size: 40px 40px;
         font-size: 30px;
         width: 40px;

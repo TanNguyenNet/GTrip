@@ -6,7 +6,7 @@
 
     function addTourController(apiService, $scope, notificationService, $state) {
         $scope.data = {
-            IsShow: true,
+            IsShow: false,
             TourAttr: []
         };
         $scope.chooseImage = chooseImage;
@@ -64,15 +64,21 @@
                 });
         }
 
-        function chooseImage() {
+        function chooseImage(item) {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
                 $scope.$apply(function () {
-                    $scope.data.Image = fileUrl;
+                    switch (item) {
+                        case 1:
+                            $scope.data.LargeImage = fileUrl;
+                            break;
+                        default:
+                            $scope.data.Image = fileUrl;
+                    }
                 });
             };
             finder.popup();
-        };
+        }
 
         function loadCountryRegions() {
             apiService.get('api/countryRegion/getAllNoPaging', null, function (result) {

@@ -12,6 +12,7 @@ using NBT.Core.Domain.Identity;
 using NBT.Web.Framework.Core;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
+using NBT.Infra.Services.Identity;
 
 namespace NBT.Web.Api.Controllers.Identity
 {

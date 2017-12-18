@@ -79,19 +79,26 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Từ ngày</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">Ngày khởi hành</label>
                                 <div class="col-sm-10">
-                                    <input type="text" maxlength="128" class="form-control" id="fromDate" name="fromDate" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required ng-model="data.FromDate">
-                                    <span ng-show="frm.fromDate.$invalid" class="help-block">Nhập ngày</span>
+                                    <input type="number" class="form-control" name="dayBegin" required ng-model="data.DayBegin" ng-init="data.TotalDays = 1" ng-maxlength="128">
+                                    <span ng-show="frm.dayBegin.$invalid" class="help-block">Nhập ngày khởi hành</span>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Đến ngày</label>
-                                <div class="col-sm-10">
-                                    <input type="text" maxlength="128" class="form-control" id="toDate" name="toDate" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required ng-model="data.ToDate">
-                                    <span ng-show="frm.toDate.$invalid" class="help-block">Nhập ngày</span>
-                                </div>
-                            </div>
+                            <!--<div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Từ ngày</label>
+        <div class="col-sm-10">
+            <input type="text" maxlength="128" class="form-control" id="fromDate" name="fromDate" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required ng-model="data.FromDate">
+            <span ng-show="frm.fromDate.$invalid" class="help-block">Nhập ngày</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Đến ngày</label>
+        <div class="col-sm-10">
+            <input type="text" maxlength="128" class="form-control" id="toDate" name="toDate" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required ng-model="data.ToDate">
+            <span ng-show="frm.toDate.$invalid" class="help-block">Nhập ngày</span>
+        </div>
+    </div>-->
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Thứ tự hiển thị</label>
                                 <div class="col-sm-10">
@@ -105,8 +112,18 @@
                                     <ul class="list-inline">
                                         <li><img src="{{data.Image}}" width="100" /></li>
                                     </ul>
-                                    <button class="btn btn-success" type="button" ng-click="chooseImage()">Chọn ảnh...</button>
+                                    <button class="btn btn-success" type="button" ng-click="chooseImage(0)">Chọn ảnh...</button>
                                     <input type="hidden" class="form-control" name="Image" ng-model="data.Image">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Ảnh lớn</label>
+                                <div class="col-sm-1">
+                                    <ul class="list-inline">
+                                        <li><img src="{{data.LargeImage}}" width="100" /></li>
+                                    </ul>
+                                    <button class="btn btn-success" type="button" ng-click="chooseImage(1)">Chọn ảnh...</button>
+                                    <input type="hidden" class="form-control" name="Image" ng-model="data.LargeImage">
                                 </div>
                             </div>
                             <div class="form-group">

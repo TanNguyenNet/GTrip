@@ -64,7 +64,10 @@ namespace NBT.Infra.Services.Catalog
                              IsHot = t.IsHot,
                              TotalDays = t.TotalDays,
                              CountryRegionName = c.Name,
-                             StateProvinceName = s.Name
+                             StateProvinceName = s.Name,
+                             LargeImage = t.LargeImage,
+                             TourType = t.TourType,
+                             DayBegin = t.DayBegin
                          }).FirstOrDefault();
             var modelAttr = from attr in _tourAttributeValueRepository.TableNoTracking.Where(x => x.TourId == id)
                             join attrs in _tourAttributeRepository.TableNoTracking on attr.TourAttributeId equals attrs.Id
@@ -149,7 +152,10 @@ namespace NBT.Infra.Services.Catalog
                                   IsHot = t.IsHot,
                                   TotalDays = t.TotalDays,
                                   CountryRegionName = c.Name,
-                                  StateProvinceName = s.Name
+                                  StateProvinceName = s.Name,
+                                  LargeImage = t.LargeImage,
+                                  TourType = t.TourType,
+                                  DayBegin = t.DayBegin
                               };
             return queryResult.OrderByDescending(x => x.DisplayOrder)
                 .ThenByDescending(x => x.CreatedDate)
@@ -188,7 +194,10 @@ namespace NBT.Infra.Services.Catalog
                              IsHot = t.IsHot,
                              TotalDays = t.TotalDays,
                              CountryRegionName = c.Name,
-                             StateProvinceName = s.Name
+                             StateProvinceName = s.Name,
+                             LargeImage = t.LargeImage,
+                             TourType = t.TourType,
+                             DayBegin = t.DayBegin
                          }).FirstOrDefault();
             var modelAttr = from attr in _tourAttributeValueRepository.TableNoTracking.Where(x => x.TourId == query.Id)
                             join attrs in _tourAttributeRepository.TableNoTracking on attr.TourAttributeId equals attrs.Id

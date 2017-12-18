@@ -19,7 +19,7 @@ namespace NBT.Web.Controllers
         // GET: Blog
         public ActionResult Index(int pageIndex = 1, int pageSize = 12, string filter = "")
         {
-            var model = _blogPostService.GetAll(pageIndex = 1, pageSize = 12,filter = "");
+            var model = _blogPostService.GetAll(pageIndex = 1, pageSize = 12, filter = "", true);
             PaginationSet<BlogPost> pagedSet = new PaginationSet<BlogPost>()
             {
                 Page = pageIndex,

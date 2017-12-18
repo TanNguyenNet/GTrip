@@ -6,7 +6,7 @@
 
     function addTourAttributesController(apiService, $scope, notificationService, $state) {
         $scope.data = {
-            IsShow: true
+            IsShow: false
         };
 
         $scope.save = save;

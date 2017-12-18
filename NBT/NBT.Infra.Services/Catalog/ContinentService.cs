@@ -20,9 +20,10 @@ namespace NBT.Infra.Services.Catalog
             _continentRepo = continentRepo;
         }
 
-        public IEnumerable<Continent> GetAll()
+        public IEnumerable<Continent> GetAll(bool? isShow = null)
         {
-            return _continentRepo.TableNoTracking.ToList();
+            return isShow != null ? _continentRepo.TableNoTracking.Where(x => x.IsShow == isShow.Value).ToList()
+                : _continentRepo.TableNoTracking.ToList();
         }
     }
 }

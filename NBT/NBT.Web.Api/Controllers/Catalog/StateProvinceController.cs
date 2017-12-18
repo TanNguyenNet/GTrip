@@ -98,7 +98,7 @@ namespace NBT.Web.Api.Controllers.Catalog
                         stateProvince.CreatedBy = User.Identity.GetUserId();
                         stateProvince.CreatedDate = GetDateTimeNowUTC();
 
-                        _stateProvinceService.AddAsync(stateProvince);
+                        _stateProvinceService.Add(stateProvince);
 
                         reponse = request.CreateResponse(HttpStatusCode.Created, stateProvince);
                     }

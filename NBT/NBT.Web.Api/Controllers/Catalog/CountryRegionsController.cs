@@ -94,7 +94,7 @@ namespace NBT.Web.Api.Controllers.Catalog
                     }
                     else
                     {
-                        _countryRegionService.AddAsync(countryRegion);
+                        _countryRegionService.Add(countryRegion);
 
                         reponse = request.CreateResponse(HttpStatusCode.Created, countryRegion);
                     }

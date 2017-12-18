@@ -11,6 +11,7 @@ namespace NBT.Core.Domain.Catalog
     {
         [MaxLength(128)]
         public string Name { set; get; }
+        public int TourType { set; get; }
         public decimal Price { set; get; }
         [MaxLength(128)]
         public string Alias { set; get; }
@@ -24,6 +25,8 @@ namespace NBT.Core.Domain.Catalog
         public string FullDescription { set; get; }
         [MaxLength(512)]
         public string Image { set; get; }
+        [MaxLength(512)]
+        public string LargeImage { set; get; }
         [MaxLength(128)]
         public string KeywordSeo { set; get; }
         [MaxLength(128)]
@@ -31,6 +34,8 @@ namespace NBT.Core.Domain.Catalog
         [MaxLength(256)]
         public string DescriptionSeo { set; get; }
         public int TotalDays { set; get; }
+        [MaxLength(256)]
+        public string DayBegin { set; get; }
         public DateTimeOffset FromDate { set; get; }
         public DateTimeOffset ToDate { set; get; }
         public bool IsShow { set; get; }

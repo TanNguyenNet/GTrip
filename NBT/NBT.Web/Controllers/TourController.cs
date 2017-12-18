@@ -50,8 +50,8 @@ namespace NBT.Web.Controllers
         public ActionResult ForeignCategory()
         {
             MenuGeographyVm model = new MenuGeographyVm();
-            var modelContinent = _continentService.GetAll();
-            var modelCountryRegion = _countryRegionService.GetAll(true).ToList();
+            var modelContinent = _continentService.GetAll(true);
+            var modelCountryRegion = _countryRegionService.GetAll(true);
             var modelStateProvince = _stateProvinceService.GetAll(true);
             model.Continents = Mapper.Map<List<ContinentVm>>(modelContinent);
             model.CountryRegions = Mapper.Map<List<CountryRegionVm>>(modelCountryRegion);
