@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using NBT.Core.Domain.Catalog.Dto;
 using NBT.Core.Services.ApplicationServices.Catalog;
+using NBT.Web.Framework.Core;
 using NBT.Web.Framework.Models.Catalog;
 using System;
 using System.Collections.Generic;
@@ -14,19 +16,35 @@ namespace NBT.Web.Controllers
         IContinentService _continentService;
         ICountryRegionService _countryRegionService;
         IStateProvinceService _stateProvinceService;
+        ITourService _tourService;
         public TourController(
             IContinentService continentService,
             ICountryRegionService countryRegionService,
-            IStateProvinceService stateProvinceService
+            IStateProvinceService stateProvinceService,
+            ITourService tourService
             )
         {
             _continentService = continentService;
             _countryRegionService = countryRegionService;
             _stateProvinceService = stateProvinceService;
+            _tourService = tourService;
         }
-        public ActionResult Index()
+        public ActionResult Index(int pageIndex = 1, int pageSize = 12,string filter = "", int stateProvinceId = 0, int countryRegionId = 0)
         {
-            return View();
+            var model = _tourService.GetAll(pageIndex, pageSize, filter, stateProvinceId, countryRegionId, true);
+            PaginationSet<TourDto> pagedSet = new PaginationSet<TourDto>()
+            {
+                Page = pageIndex,
+                TotalCount = model.TotalItemCount,
+                TotalPages = (int)Math.Ceiling((decimal)model.TotalItemCount / pageSize),
+                Items = model
+            };
+            return View(pagedSet);
+        }
+        public ActionResult Detail(string alias)
+        {
+            var model = _tourService.GetByAlias(alias);
+            return View(model);
         }
         [ChildActionOnly]
         public ActionResult ForeignCategory()

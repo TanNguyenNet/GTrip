@@ -13,6 +13,7 @@ namespace NBT.Core.Datas.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(NBT.Core.Datas.MasterDBContext context)

@@ -21,7 +21,7 @@
         .state('editVisa', {
             url: "/editVisa/:id",
             templateUrl: "/app/components/visas/visaView.html",
-            controller: "editTourController",
+            controller: "editVisaController",
             parent: 'base',
         });
     }

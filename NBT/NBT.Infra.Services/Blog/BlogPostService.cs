@@ -30,5 +30,10 @@ namespace NBT.Infra.Services.Blog
 
             return query.OrderByDescending(x => x.CreatedDate).ThenBy(x => x.Title).ToPagedList(pageIndex, pageSize);
         }
+
+        public BlogPost GetByAlias(string alias)
+        {
+            return _blogPostRepo.GetMulti(x => x.Alias == alias).FirstOrDefault();
+        }
     }
 }

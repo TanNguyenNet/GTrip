@@ -9,5 +9,6 @@ namespace NBT.Core.Common
     public static class SystemConstants
     {
         public const int ExpireTime = 120;
+        public const string Cart = "Cart";
     }
 }

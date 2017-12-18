@@ -188,7 +188,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TourController.cs" />
     <Compile Include="Global.asax.cs">
@@ -214,6 +217,12 @@
     <Content Include="App\components\appUsers\appUsersController.js" />
     <Content Include="App\components\appUsers\appUsersView.html" />
     <Content Include="App\components\appUsers\appUserView.html" />
+    <Content Include="App\components\blogPosts\addBlogPostController.js" />
+    <Content Include="App\components\blogPosts\blogPosts.module.js" />
+    <Content Include="App\components\blogPosts\blogPostsController.js" />
+    <Content Include="App\components\blogPosts\blogPostsView.html" />
+    <Content Include="App\components\blogPosts\blogPostView.html" />
+    <Content Include="App\components\blogPosts\editBlogPostController.js" />
     <Content Include="App\components\continents\addContinentController.js" />
     <Content Include="App\components\continents\continents.module.js" />
     <Content Include="App\components\continents\continentsController.js" />
@@ -6486,13 +6495,13 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\components\blogPost\" />
     <Folder Include="Assets\libs\checklist-model\test\" />
     <Folder Include="Assets\libs\jquery\src\deferred\" />
     <Folder Include="Assets\libs\ngBootbox\typings\angularjs\" />
     <Folder Include="Assets\libs\ngBootbox\typings\jquery\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Common\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\bootstrap\.bower.json" />
@@ -6939,6 +6948,7 @@
     <Content Include="Assets\client\css\libs\font-awesome\scss\_screen-reader.scss" />
     <Content Include="Assets\client\css\libs\font-awesome\scss\_stacked.scss" />
     <Content Include="Assets\client\css\libs\font-awesome\scss\_variables.scss" />
+    <Content Include="ConnectionString.config" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
@@ -6950,6 +6960,11 @@
     <Content Include="Views\Shared\Navigation.cshtml" />
     <Content Include="Views\Tour\index.cshtml" />
     <Content Include="Views\Tour\ForeignCategory.cshtml" />
+    <Content Include="Views\Tour\Detail.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NBT.Core.Common\NBT.Core.Common.csproj">

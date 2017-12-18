@@ -1,4 +1,4 @@
-﻿
+﻿@model NBT.Web.Framework.Core.PaginationSet<NBT.Core.Domain.Catalog.Dto.TourDto>
 @{
     ViewBag.Title = "index";
     ViewBag.StyleHeader = "header header-style-2";
@@ -16,169 +16,62 @@
                     <div class="col-md-9 col-sm-9">
                         <div class="tour-wrap">
                             <div class="tour-content">
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="tour-img">
-                                        <a href="tour_detail.html"><img class="img-responsive" src="/images/0002700_chiang-mai.jpeg" alt=""></a>
-                                        <div class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan <span class="cut-edges"></span></div>
-                                    </div>
-                                    <div class="tour-info">
-                                        <h5><a href="tour_detail.html">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
-                                        <div class="tour-price">
-                                            <span class="pull-left">thời gian</span>
-                                            <span class="pull-right">giá từ</span>
+                                @foreach (var item in Model.Items)
+                                {
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="tour-img">
+                                            <a href="/tour/detail/@item.Alias"><img class="img-responsive" src="@item.Image" alt="@item.Name"></a>
+                                            <div class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> @item.CountryRegionName, @item.StateProvinceName <span class="cut-edges"></span></div>
                                         </div>
-                                        <div class="tour-price">
-                                            <span class="pull-left blue"><i class="fa fa-calendar" aria-hidden="true"></i> 4 ngày 3 đêm</span>
-                                            <span class="pull-right green">15.000.000.vnd</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="tour-img">
-                                        <a href="tour_detail.html"><img class="img-responsive" src="/images/0002701_pattaya.jpeg" alt=""></a>
-                                        <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
-                                    </div>
-                                    <div class="tour-info">
-                                        <h5><a href="tour_detail.html">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
-                                        <div class="tour-price">
-                                            <span class="pull-left">thời gian</span>
-                                            <span class="pull-right">giá từ</span>
-                                        </div>
-                                        <div class="tour-price">
-                                            <span class="pull-left blue"><i class="fa fa-calendar" aria-hidden="true"></i> 4 ngày 3 đêm</span>
-                                            <span class="pull-right green">15.000.000.vnd</span>
+                                        <div class="tour-info">
+                                            <h5><a href="tour_detail.html">@item.Name</a></h5>
+                                            <div class="tour-price">
+                                                <span class="pull-left">@item.FromDate.ToString("dd-MM-yyyy") - @item.ToDate.ToString("dd-MM-yyyy")</span>
+                                                <span class="pull-right">Giá từ @item.Price.ToString("n0")</span>
+                                            </div>
+                                            <div class="tour-price">
+                                                <span class="pull-left blue">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>@item.TotalDays Ngày @if (item.TotalDays > 1)
+                                                    {
+                                                        @(item.TotalDays - 1);@:đêm" }
+                                                    } 
+                                                </span>
+                                                <span class="pull-right green">@item.Price.ToString("n0") vnđ</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="tour-img">
-                                        <a href="tour_detail.html"><img class="img-responsive" src="/images/0004965_hua-hin.jpeg" alt=""></a>
-                                        <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
-                                    </div>
-                                    <div class="tour-info">
-                                        <h5><a href="tour_detail.html">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
-                                        <div class="tour-price">
-                                            <span class="pull-left">thời gian</span>
-                                            <span class="pull-right">giá từ</span>
-                                        </div>
-                                        <div class="tour-price">
-                                            <span class="pull-left blue"><i class="fa fa-calendar" aria-hidden="true"></i> 4 ngày 3 đêm</span>
-                                            <span class="pull-right green">15.000.000.vnd</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="tour-img">
-                                        <a href="tour_detail.html"><img class="img-responsive" src="/images/0002682_bangkok.jpeg" alt=""></a>
-                                        <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
-                                    </div>
-                                    <div class="tour-info">
-                                        <h5><a href="tour_detail.html">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
-                                        <div class="tour-price">
-                                            <span class="pull-left">thời gian</span>
-                                            <span class="pull-right">giá từ</span>
-                                        </div>
-                                        <div class="tour-price">
-                                            <span class="pull-left blue"><i class="fa fa-calendar" aria-hidden="true"></i> 4 ngày 3 đêm</span>
-                                            <span class="pull-right green">15.000.000.vnd</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="tour-img">
-                                        <a href="tour_detail.html"><img class="img-responsive" src="/images/0002699_phuket.jpeg" alt=""></a>
-                                        <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
-                                    </div>
-                                    <div class="tour-info">
-                                        <h5><a href="tour_detail.html">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
-                                        <div class="tour-price">
-                                            <span class="pull-left">thời gian</span>
-                                            <span class="pull-right">giá từ</span>
-                                        </div>
-                                        <div class="tour-price">
-                                            <span class="pull-left blue"><i class="fa fa-calendar" aria-hidden="true"></i> 4 ngày 3 đêm</span>
-                                            <span class="pull-right green">15.000.000.vnd</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="tour-img">
-                                        <a href="tour_detail.html"><img class="img-responsive" src="/images/0002701_pattaya.jpeg" alt=""></a>
-                                        <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
-                                    </div>
-                                    <div class="tour-info">
-                                        <h5><a href="tour_detail.html">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
-                                        <div class="tour-price">
-                                            <span class="pull-left">thời gian</span>
-                                            <span class="pull-right">giá từ</span>
-                                        </div>
-                                        <div class="tour-price">
-                                            <span class="pull-left blue"><i class="fa fa-calendar" aria-hidden="true"></i> 4 ngày 3 đêm</span>
-                                            <span class="pull-right green">15.000.000.vnd</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="tour-img">
-                                        <a href="tour_detail.html"><img class="img-responsive" src="/images/0004965_hua-hin.jpeg" alt=""></a>
-                                        <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
-                                    </div>
-                                    <div class="tour-info">
-                                        <h5><a href="tour_detail.html">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
-                                        <div class="tour-price">
-                                            <span class="pull-left">thời gian</span>
-                                            <span class="pull-right">giá từ</span>
-                                        </div>
-                                        <div class="tour-price">
-                                            <span class="pull-left blue"><i class="fa fa-calendar" aria-hidden="true"></i> 4 ngày 3 đêm</span>
-                                            <span class="pull-right green">15.000.000.vnd</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="tour-img">
-                                        <a href=""><img class="img-responsive" src="/images/0002700_chiang-mai.jpeg" alt=""></a>
-                                        <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
-                                    </div>
-                                    <div class="tour-info">
-                                        <h5><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
-                                        <div class="tour-price">
-                                            <span class="pull-left">thời gian</span>
-                                            <span class="pull-right">giá từ</span>
-                                        </div>
-                                        <div class="tour-price">
-                                            <span class="pull-left blue"><i class="fa fa-calendar" aria-hidden="true"></i> 4 ngày 3 đêm</span>
-                                            <span class="pull-right green">15.000.000.vnd</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="tour-img">
-                                        <a href=""><img class="img-responsive" src="/images/0002699_phuket.jpeg" alt=""></a>
-                                        <span class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> Bangkok, Thai Lan</span>
-                                    </div>
-                                    <div class="tour-info">
-                                        <h5><a href="">Chao Phraya Bangkok - Sông Chao Phraya</a></h5>
-                                        <div class="tour-price">
-                                            <span class="pull-left">thời gian</span>
-                                            <span class="pull-right">giá từ</span>
-                                        </div>
-                                        <div class="tour-price">
-                                            <span class="pull-left blue"><i class="fa fa-calendar" aria-hidden="true"></i> 4 ngày 3 đêm</span>
-                                            <span class="pull-right green">15.000.000.vnd</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                }
                             </div>
                         </div>
                         <div class="hpagination">
                             <nav class="page-navigation">
                                 <ul class="pagination1">
-                                    <li><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
-                                    <li class="active"><a href="">1</a></li>
-                                    <li><a href="">2</a></li>
-                                    <li><a href="">3</a></li>
-                                    <li><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                    @if (Model.TotalPages > 1)
+                                    {
+                                        var startPageIndex = Math.Max(1, Model.Page - 5 / 2);
+                                        var endPageIndex = Math.Min(Model.TotalPages, Model.Page + 5 / 2);
+                                        if (Model.Page > 1)
+                                        {
+                                            <li><a href="?pageIndex=@(Model.Page-1)&pageSize=@Model.PageSize"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+
+                                        }
+                                        for (int i = startPageIndex; i <= endPageIndex; i++)
+                                        {
+                                            if (Model.Page == i)
+                                            {
+                                                <li class="active"><a href="?pageIndex=@i&pageSize=@Model.PageSize">@i</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="?pageIndex=@i&pageSize=@Model.PageSize">@i</a></li>
+                                            }
+                                        }
+                                        if (Model.Page < Model.TotalPages)
+                                        {
+
+                                            <li><a href="?pageIndex=@(Model.Page+1)&pageSize=@Model.PageSize"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                        }
+                                    }
                                 </ul>
                             </nav>
                         </div>

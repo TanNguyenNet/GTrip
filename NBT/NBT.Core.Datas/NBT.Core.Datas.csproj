@@ -73,6 +73,8 @@
     <Compile Include="Repositories\Catalog\TourAttributeValueRepository.cs" />
     <Compile Include="Repositories\Catalog\TourRepository.cs" />
     <Compile Include="Repositories\Immigrant\VisaRepository.cs" />
+    <Compile Include="Repositories\Orders\OrderItemRepository.cs" />
+    <Compile Include="Repositories\Orders\OrderRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\Security\AppGroupRepository.cs" />
     <Compile Include="Repositories\Security\AppRoleGroupRepository.cs" />

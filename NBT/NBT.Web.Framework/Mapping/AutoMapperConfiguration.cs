@@ -2,6 +2,8 @@
 using NBT.Core.Domain.Catalog;
 using NBT.Core.Domain.Catalog.Dto;
 using NBT.Core.Domain.Identity;
+using NBT.Core.Domain.Orders;
+using NBT.Web.Framework.Models.Cart;
 using NBT.Web.Framework.Models.Catalog;
 using NBT.Web.Framework.Models.Security;
 using System;
@@ -20,6 +22,16 @@ namespace NBT.Web.Framework.Mapping
                 cfg.CreateMap<AppUser, AppUserVm>();
                 cfg.CreateMap<AppGroup, AppGroupVm>();
                 cfg.CreateMap<TourDto, Tour>();
+                cfg.CreateMap<TourAttributeValueDto, TourAttributeValue>();
+                cfg.CreateMap<Order, OrderVm>();
+                cfg.CreateMap<OrderItem, OrderItemVm>()
+                .ForMember(x => x.Id, mo => mo.MapFrom(src => src.CodeId))
+                .ForMember(x => x.Image, mo => mo.MapFrom(src => src.Image))
+                .ForMember(x => x.Quantity, mo => mo.MapFrom(src => src.Quantity))
+                .ForMember(x => x.Price, mo => mo.MapFrom(src => src.Price))
+                .ForMember(x => x.FromDate, mo => mo.MapFrom(src => src.FromDate))
+                .ForMember(x => x.ToDate, mo => mo.MapFrom(src => src.ToDate))
+                ;
                 cfg.CreateMap<Continent, ContinentVm>();
                 cfg.CreateMap<CountryRegion, CountryRegionVm>();
                 cfg.CreateMap<StateProvince, StateProvinceVm>();

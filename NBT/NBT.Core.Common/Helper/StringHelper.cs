@@ -44,6 +44,10 @@ namespace NBT.Core.Common.Helper
         {
             return ToUrlFriendly(true, title) + "-" + DateTime.Now.ToString("ddMMyyyyHHmmss");
         }
+        public static string ToUrlFriendlyWithDateTime(string title,DateTime dateTime)
+        {
+            return ToUrlFriendly(true, title) + "-" + dateTime.ToString("ddMMyyyyHHmmss");
+        }
         /// <summary>
         /// Creates a slug.
         /// Author: Daniel Harman, based on original code by Jeff Atwood

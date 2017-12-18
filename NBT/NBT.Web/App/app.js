@@ -11,7 +11,8 @@
             'nbtapp.stateProvinces',
             'nbtapp.tourAttributes',
             'nbtapp.tours',
-            'nbtapp.visas'
+            'nbtapp.visas',
+            'nbtapp.blogPosts'
         ])
         .config(config)
         .config(configAuthentication);

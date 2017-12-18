@@ -27,7 +27,7 @@ namespace NBT.Core.Domain.Blog
         public string DescriptionSeo { set; get; }
         public string Tag { set; get; }
         public bool IsShow { set; get; }
-        public bool IsHot { set; get; }
+        public bool IsHome { set; get; }
         public bool IsDel { set; get; }
         public DateTimeOffset? CreatedDate { set; get; }
 

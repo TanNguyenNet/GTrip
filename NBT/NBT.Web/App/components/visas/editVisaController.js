@@ -1,15 +1,19 @@
 ﻿(function (app) {
 
-    app.controller('editTourController', editTourController);
+    app.controller('editVisaController', editVisaController);
 
-    editTourController.$inject = ['apiService', '$scope', 'notificationService', '$state','$stateParams'];
+    editVisaController.$inject = ['apiService', '$scope', 'notificationService', '$state','$stateParams'];
 
-    function editTourController(apiService, $scope, notificationService, $state, $stateParams) {
+    function editVisaController(apiService, $scope, notificationService, $state, $stateParams) {
         $scope.data = {
             IsShow: true
         };
         $scope.chooseImage = chooseImage;
         $scope.save = save;
+
+        $scope.ckeditorOptions = function () {
+
+        };
 
         function save() {
             $("input").prop('disabled', true);

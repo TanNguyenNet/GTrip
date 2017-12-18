@@ -106,6 +106,7 @@ namespace NBT.Web.Api.Controllers.Blog
                 {
                     blogPost.UpdatedDate = GetDateTimeNowUTC();
                     blogPost.UpdatedBy = User.Identity.GetUserId();
+                    blogPost.Alias = StringHelper.ToUrlFriendlyWithDateTime(blogPost.Title, blogPost.CreatedDate.Value.DateTime);
                     _blogPostService.Update(blogPost);
                     reponse = request.CreateResponse(HttpStatusCode.Created, blogPost);
                 }

@@ -10,6 +10,7 @@ using System.Data.Entity;
 using NBT.Core.Domain.Catalog;
 using NBT.Core.Domain.Immigrant;
 using NBT.Core.Domain.Blog;
+using NBT.Core.Domain.Orders;
 
 namespace NBT.Core.Datas
 {
@@ -30,6 +31,8 @@ namespace NBT.Core.Datas
         public DbSet<BlogPostAbout> BlogPostAbouts{ set;get;}
         public DbSet<BlogPost> BlogPosts { set; get; }
         public DbSet<BlogPostTag> BlogPostTags { set; get; }
+        public DbSet<Order> Orders { set; get; }
+        public DbSet<OrderItem> OrderItems { set; get; }
 
         //Identity///////////////////////////////////////////////////////////////////////////////////
         public DbSet<AppUserGroup> AppUserGroups { set; get; }

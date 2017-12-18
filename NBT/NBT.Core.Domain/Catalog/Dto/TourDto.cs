@@ -46,6 +46,8 @@ namespace NBT.Core.Domain.Catalog.Dto
 
         [MaxLength(256)]
         public string UpdatedBy { set; get; }
-        public List<TourAttributeValue> TourAttr { set; get; }
+        public string CountryRegionName { set; get; }
+        public string StateProvinceName { set; get; }
+        public List<TourAttributeValueDto> TourAttr { set; get; }
     }
 }

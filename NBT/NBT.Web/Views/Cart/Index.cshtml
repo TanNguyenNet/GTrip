@@ -1,0 +1,82 @@
+﻿@model IEnumerable<NBT.Web.Framework.Models.Cart.OrderItemVm>
+@{
+    ViewBag.Title = "index";
+    ViewBag.StyleHeader = "header header-style-2";
+    Layout = "~/Views/Shared/Layouts.cshtml";
+    decimal total = 0;
+    foreach (var item in Model)
+    {
+        total += item.Price * item.Quantity;
+    }
+    decimal totalItem = 0;
+}
+
+<div id="example-wrapper">
+    @Html.Partial("Navigation")
+    <div class="div-box mb">
+        <div class="shopping-cart">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="shopping-cart-wrap">
+                            <form class="cart-form">
+                                <table>
+                                    <tr>
+                                        <th>Hình</th>
+                                        <th>Tên</th>
+                                        <th>Giá</th>
+                                        <th>Số lượng Tour/Vé</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Xóa</th>
+                                    </tr>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td data-title="Product"><a href="#" class="image-product"><img class="img-responsive" src="@item.Image" alt="@item.Name" width="180" height="220" /></a></td>
+                                            <td data-title="Name"><a href="#" class="name-product">@item.Name</a></td>
+                                            <td data-title="Price"><span class="price">@item.Price.ToString("n0") vnđ</span></td>
+                                            <td data-title="Quantity">
+                                                <span class="quanlity">Số lượng:</span>
+                                                <input type="number" value="@item.Quantity" min="0" />
+                                            </td>
+                                            <td data-title="Total"><span class="total">
+                                                @{ 
+                                                    totalItem = item.Quantity * item.Price;
+                                                }
+                                                @totalItem.ToString("n0") vnđ</span>
+                                            </td>
+                                            <td data-title="Remove"><i class="fa fa-times"><a href="/cart/removeItem"></a></i></td>
+                                        </tr>
+                                    }
+                                </table>
+                                <div class="button-cart">
+                                    <div class="button-cart-left">
+                                        <input type="text" placeholder="Coupon code" /><a href="#" class="coupon">Nhập mã khuyến mãi</a>
+                                    </div>
+                                    <div class="button-cart-right"><a href="#" class="update-cart">Cập nhật</a><a href="/cart/InfoCheckout" class="process">Đặt vé</a></div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form class="cart-total">
+                                        <h4>Cart Totals</h4>
+                                        <table>
+                                            <tr>
+                                                <td>Tạm tính</td>
+                                                <td><span class="subtotal">@total.ToString("n0")</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tổng tiền</td>
+                                                <td><span class="total">@total.ToString("n0")</span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
