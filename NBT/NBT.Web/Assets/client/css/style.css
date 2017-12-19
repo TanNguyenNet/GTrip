@@ -1433,6 +1433,36 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .click-back-top-body button.on {
     -webkit-transform: translateX(0px);
             transform: translateX(0px); }
+  .tour-filter {
+    border: 1px solid #ccc;
+    width: 100%;
+    overflow: hidden;
+    background: url("../images/icon/down-arrow.png") no-repeat 95% 65%;
+  }
+
+  .tour-filter select {
+      padding: 5px 8px;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      background-image: none;
+      -webkit-appearance: none;
+  }
+
+  .tour-filter select:focus {
+      outline: none;
+  }
+  .bttn-filter {
+    padding: 5px 8px;
+    background-color: transparent;
+    width: 100%;
+  }
+  .bttn-filter:hover {
+    background-color: #6ebb43;
+    color: #fff;
+    font-family: 'Itim', cursive;
+  }
   @media only screen and (max-width: 1200px) {
   .block-content {
     padding: 3px 15px 6px 15px;
@@ -1630,6 +1660,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     .mobile-menu .col-3 {
       width: 33.33%;
       float: left; }
+
   .tour-wrap {
     margin-top: 40px; }
   .promotion {
