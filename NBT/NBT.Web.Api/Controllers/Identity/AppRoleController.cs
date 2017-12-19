@@ -11,11 +11,13 @@ using AutoMapper;
 using NBT.Core.Domain.Identity;
 using NBT.Web.Framework.Core;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using NBT.Infra.Services.Identity;
 
 namespace NBT.Web.Api.Controllers.Identity
 {
     [RoutePrefix("api/appRole")]
-    //[Authorize]
+    [Authorize]
     public class AppRoleController : BaseApiController
     {
         IAppRoleService _appRoleService;
@@ -47,6 +49,23 @@ namespace NBT.Web.Api.Controllers.Identity
                 };
 
                 response = request.CreateResponse(HttpStatusCode.OK, pagedSet);
+
+                return response;
+            });
+        }
+
+        [Route("getlistall")]
+        [HttpGet]
+        //[Authorize(Roles = nameof(PermissionProvider.ViewPermission))]
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                var model = _appRoleService.GetAll();
+                IEnumerable<AppRoleVm> modelVm = Mapper.Map<IEnumerable<AppRole>, IEnumerable<AppRoleVm>>(model);
+
+                response = request.CreateResponse(HttpStatusCode.OK, modelVm);
 
                 return response;
             });

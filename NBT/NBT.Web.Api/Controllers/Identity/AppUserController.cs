@@ -41,7 +41,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("GetListPaging")]
         [HttpGet]
-        [Authorize(Roles = nameof(PermissionProvider.ViewUser))]
+        //[Authorize(Roles = nameof(PermissionProvider.ViewUser))]
         public HttpResponseMessage GetListPaging(HttpRequestMessage request, int page, int pageSize, string filter = null, bool? isSystemAccount = null)
         {
             return CreateHttpResponse(request, () =>
@@ -73,7 +73,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("detail/{id}")]
         [HttpGet]
-        [Authorize(Roles = nameof(PermissionProvider.ViewUser))]
+        //[Authorize(Roles = nameof(PermissionProvider.ViewUser))]
         public HttpResponseMessage Details(HttpRequestMessage request, string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -97,7 +97,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [HttpPost]
         [Route("add")]
-        [Authorize(Roles = nameof(PermissionProvider.AddUser))]
+        //[Authorize(Roles = nameof(PermissionProvider.AddUser))]
         public async Task<HttpResponseMessage> Create(HttpRequestMessage request, AppUserVm appUserVm)
         {
             if (ModelState.IsValid)
@@ -106,6 +106,7 @@ namespace NBT.Web.Api.Controllers.Identity
                 newAppUser.UpdateUser(appUserVm);
                 newAppUser.CreatedDate = GetDateTimeNowUTC();
                 newAppUser.CreatedBy = User.Identity.GetUserId();
+                newAppUser.IsSystemAccount = true;
                 try
                 {
                     newAppUser.Id = Guid.NewGuid().ToString();
@@ -153,7 +154,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [HttpPut]
         [Route("update")]
-        [Authorize(Roles = nameof(PermissionProvider.EditUser))]
+        //[Authorize(Roles = nameof(PermissionProvider.EditUser))]
         public async Task<HttpResponseMessage> Update(HttpRequestMessage request, AppUserVm applicationUserViewModel)
         {
             if (ModelState.IsValid)

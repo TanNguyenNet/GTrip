@@ -10,6 +10,7 @@ namespace NBT.Core.Services.Data
     public interface IRepository<T> : IDisposable where T : class
     {
         Task<T> GetByIdAsync(object id);
+        T GetById(object id);
 
         Task<T> InsertAsync(T entity);
 
@@ -29,6 +30,7 @@ namespace NBT.Core.Services.Data
         T Delete(T entity);
 
         Task<int> DeleteAsync(IEnumerable<T> entities);
+        int Delete(IEnumerable<T> entities);
 
         IQueryable<T> Table { get; }
         IQueryable<T> TableNoTracking { get; }

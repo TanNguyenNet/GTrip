@@ -14,29 +14,74 @@
                     <img src="/Assets/img/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p>CMS</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
-            <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </form>
-            <!-- /.search form -->
-            <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">MAIN NAVIGATION</li>
+                <li class="header">Quản lý khu vực</li>
+                <li class="treeview">
+                    <a ui-sref="continents">
+                        <i class="fa fa-files-o"></i>
+                        <span>Danh sách châu lục</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a ui-sref="countryRegions">
+                        <i class="fa fa-files-o"></i>
+                        <span>Danh sách quốc gia</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a ui-sref="stateProvinces">
+                        <i class="fa fa-files-o"></i>
+                        <span>Danh sách thành phố</span>
+                    </a>
+                </li>
+                <li class="header">Quản lý tour</li>
+                <li class="treeview">
+                    <a ui-sref="tourAttributes">
+                        <i class="fa fa-files-o"></i>
+                        <span>Thông tin tour</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a ui-sref="tours">
+                        <i class="fa fa-files-o"></i>
+                        <span>Danh sách tour</span>
+                    </a>
+                </li>
+                <li class="header">Quản lý Visa</li>
+                <li class="treeview">
+                    <a ui-sref="visas">
+                        <i class="fa fa-files-o"></i>
+                        <span>Danh sách Visa</span>
+                    </a>
+                </li>
+                <li class="header">Quản lý bài viết</li>
+                <li class="treeview">
+                    <a ui-sref="blogPosts">
+                        <i class="fa fa-files-o"></i>
+                        <span>Danh sách bài viết</span>
+                    </a>
+                </li>
+                <li class="header">Quản lý hệ thống CMS</li>
                 <li class="treeview">
                     <a ui-sref="appRoles">
                         <i class="fa fa-files-o"></i>
-                        <span>Danh sách người dùng</span>
+                        <span>Danh sách quyền</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a ui-sref="appGroups">
+                        <i class="fa fa-files-o"></i>
+                        <span>Nhóm quyền</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a ui-sref="appUsers">
+                        <i class="fa fa-files-o"></i>
+                        <span>Danh sách tài khoản</span>
                     </a>
                 </li>
             </ul>

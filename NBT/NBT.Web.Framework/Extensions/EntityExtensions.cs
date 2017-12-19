@@ -1,4 +1,6 @@
 ﻿using NBT.Core.Domain.Identity;
+using NBT.Core.Domain.Orders;
+using NBT.Web.Framework.Models.Cart;
 using NBT.Web.Framework.Models.Security;
 using System;
 using System.Collections.Generic;
@@ -44,6 +46,26 @@ namespace NBT.Web.Framework.Extensions
             //public string CreatedBy { set; get; }
             appUser.CreatedBy = appUserVm.CreatedBy;
 
+        }
+
+        public static void UpdateOrder(this Order order, OrderVm orderVm)
+        {
+            //public string CustomerName { set; get; }
+            order.CustomerName = orderVm.CustomerName;
+            //public string CustomerPhone { set; get; }
+            order.CustomerPhone = orderVm.CustomerPhone;
+            //public string CustomerAddress { set; get; }
+            order.CustomerAddress = orderVm.CustomerAddress;
+            //public string CustomerEmail { set; get; }
+            order.CustomerEmail = orderVm.CustomerEmail;
+            //public bool IsVerify { set; get; }
+            order.IsVerify = orderVm.IsVerify;
+            //public DateTimeOffset CreatedDate { set; get; }
+            order.CreatedDate = orderVm.CreatedDate;
+            //public decimal Total { set; get; }
+            order.Total = orderVm.Total;
+            //public string Note { set; get; }
+            order.Note = orderVm.Note;
         }
     }
 }

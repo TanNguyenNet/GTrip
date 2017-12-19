@@ -57,7 +57,20 @@ namespace NBT.Core.Datas.Repositories
             return entity;
                 
         }
+        public int Delete(IEnumerable<T> entities)
+        {
+            try
+            {
+                foreach (var entity in entities)
+                    DbSet.Remove(entity);
 
+                return DbContext.SaveChanges();
+            }
+            catch
+            {
+                throw;
+            }
+        }
         public async Task DeleteAsync(T entity)
         {
             try
@@ -85,7 +98,10 @@ namespace NBT.Core.Datas.Repositories
                 throw;
             }
         }
-
+        public T GetById(object id)
+        {
+            return DbSet.Find(id);
+        }
         public async Task<T> GetByIdAsync(object id)
         {
             return await DbSet.FindAsync(id);

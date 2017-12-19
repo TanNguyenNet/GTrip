@@ -1,0 +1,122 @@
+﻿@model NBT.Web.Framework.Core.PaginationSet<NBT.Core.Domain.Blog.BlogPost>
+@{
+    ViewBag.Title = "index";
+    ViewBag.StyleHeader = "header header-style-2";
+    Layout = "~/Views/Shared/Layouts.cshtml";
+}
+
+<div id="example-wrapper">
+    @Html.Partial("Navigation")
+
+    <div class="div-box mb">
+        <div class="blog-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <div class="blog-wrap">
+                            <div class="blog-content">
+                                <div class="blog-cate-title"><h3>Bài viết mới</h3></div>
+                                <div class="new-blog">
+                                    <a href="blog_detail.html">
+                                        <img class="img-responsive" src="../images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
+                                        <h5><a href="#">Nước áo xinh đẹp và thanh bình</a></h5>
+                                    </a>
+                                </div>
+                                <div class="next-blog">
+                                    <div class="next-blog-content">
+                                        <div class="next-blog-img">
+                                            <a href="blog_detail.html">
+                                                <img class="img-responsive" src="../images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="next-blog-info">
+                                            <h5><a href="blog_detail.html">nước áo xinh đẹp</a></h5>
+                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>15-06-2017</span>
+                                            <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch…</p>
+                                        </div>
+                                    </div>
+                                    <div class="next-blog-content">
+                                        <div class="next-blog-img">
+                                            <a href="blog_detail.html">
+                                                <img class="img-responsive" src="../images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="next-blog-info">
+                                            <h5><a href="blog_detail.html">nước áo xinh đẹp</a></h5>
+                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>15-06-2017</span>
+                                            <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch…</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="promotion">
+                                    <img class="img-responsive" src="../images/poster-quang-cao-du-lich-01.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <div class="blog-wrap">
+                            @foreach (var item in Model.Items)
+                            {
+                                <div class="blog-inner">
+                                    <a href="/blog/detail/@item.Alias"><img class="img-responsive" src="@item.Image" alt="@item.Title" width="848" height="318"></a>
+                                    <div class="blog-info">
+                                        <div class="blog-title">
+                                            <h3><a href="/blog/detail/@item.Alias">@item.Title</a></h3>
+                                            <span><i class="fa fa-calendar" aria-hidden="true"></i>@item.CreatedDate.Value.ToString("dd-MM-yyyy")</span>
+                                            <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
+                                        </div>
+                                        <p>@item.ShortContent</p>
+                                        <div class="link float-right">
+                                            <a href="/blog/detail/@item.Alias" class="button1">Đọc Thêm</a>
+                                            <ul class="share_social">
+                                                Chia sẽ:
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 hpagination">
+                            <nav class="page-navigation">
+                                <ul class="pagination1">
+                                    @if (Model.TotalPages > 1)
+                                    {
+                                        var startPageIndex = Math.Max(1, Model.Page - 5 / 2);
+                                        var endPageIndex = Math.Min(Model.TotalPages, Model.Page + 5 / 2);
+                                        if (Model.Page > 1)
+                                        {
+                                            <li><a href="?pageIndex=@(Model.Page-1)&pageSize=@Model.PageSize"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+
+                                        }
+                                        for (int i = startPageIndex; i <= endPageIndex; i++)
+                                        {
+                                            if (Model.Page == i)
+                                            {
+                                                <li class="active"><a href="?pageIndex=@i&pageSize=@Model.PageSize">@i</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="?pageIndex=@i&pageSize=@Model.PageSize">@i</a></li>
+                                            }
+                                        }
+                                        if (Model.Page < Model.TotalPages)
+                                        {
+
+                                            <li><a href="?pageIndex=@(Model.Page+1)&pageSize=@Model.PageSize"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                        }
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -64,12 +64,12 @@ namespace NBT.Infra.Services.Security
 
         public IEnumerable<AppGroup> GetListGroupByUserId(string userId)
         {
-            return _appGroupRepo.GetListGroupByUserId(userId);
+            return _appGroupRepo.GetListGroupByUserId(userId).ToList();
         }
 
         public IEnumerable<AppUser> GetListUserByGroupId(int groupId)
         {
-            return _appGroupRepo.GetListUserByGroupId(groupId);
+            return _appGroupRepo.GetListUserByGroupId(groupId).ToList();
         }
 
         public AppGroup Insert(AppGroup appGroup)

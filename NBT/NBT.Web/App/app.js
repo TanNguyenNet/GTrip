@@ -3,7 +3,16 @@
     angular.module('nbtapp',
         [
             'nbtapp.appRoles',
-            'nbtapp.common'
+            'nbtapp.appGroups',
+            'nbtapp.appUsers',
+            'nbtapp.continents',
+            'nbtapp.common',
+            'nbtapp.countryRegions',
+            'nbtapp.stateProvinces',
+            'nbtapp.tourAttributes',
+            'nbtapp.tours',
+            'nbtapp.visas',
+            'nbtapp.blogPosts'
         ])
         .config(config)
         .config(configAuthentication);

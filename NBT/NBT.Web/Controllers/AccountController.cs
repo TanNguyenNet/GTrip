@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using NBT.Core.Datas;
 using NBT.Core.Domain.Identity;
 using NBT.Infra.Services.Identity;
 using NBT.Web.Framework.Models.Security;
@@ -53,10 +55,34 @@ namespace NBT.Web.Controllers
         {
             return View();
         }
-
+        [HttpGet]
+        [Authorize]
+        public ActionResult Authorize()
+        {
+            var claims = new ClaimsPrincipal(User).Claims.ToArray();
+            var identity = new ClaimsIdentity(claims, "Bearer");
+            AuthenticationManager.SignIn(identity);
+            return new EmptyResult();
+        }
         public ActionResult Login()
         {
             //ViewBag.ReturnUrl = returnUrl;
+            var manager = new UserManager<AppUser>(new UserStore<AppUser>(new MasterDBContext()));
+
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new MasterDBContext()));
+            if (manager.Users.Count() != 0)
+                return View();
+            var user = new AppUser()
+            {
+                UserName = "admin",
+                Email = "gtrip@gmail.com",
+                EmailConfirmed = true,
+                IsSystemAccount = true,
+                IsActive = true
+
+            };
+
+            manager.Create(user, "abc@123");
             return View();
         }
 

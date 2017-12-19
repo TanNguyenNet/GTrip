@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using NBT.Core.Domain.Catalog;
+using NBT.Core.Domain.Immigrant;
+using NBT.Core.Domain.Blog;
+using NBT.Core.Domain.Orders;
 
 namespace NBT.Core.Datas
 {
@@ -17,6 +21,20 @@ namespace NBT.Core.Datas
 
         }
 
+        public DbSet<Continent> Continents { set; get; }
+        public DbSet<CountryRegion> CountryRegions { set; get; }
+        public DbSet<StateProvince> StateProvinces { set; get; }
+        public DbSet<Tour> Tours { set; get; }
+        public DbSet<TourAttribute> TourAttributes { set; get; }
+        public DbSet<TourAttributeValue> TourAttributeValues { set; get; }
+        public DbSet<Visa> Visas { set; get; }
+        public DbSet<BlogPostAbout> BlogPostAbouts{ set;get;}
+        public DbSet<BlogPost> BlogPosts { set; get; }
+        public DbSet<BlogPostTag> BlogPostTags { set; get; }
+        public DbSet<Order> Orders { set; get; }
+        public DbSet<OrderItem> OrderItems { set; get; }
+
+        //Identity///////////////////////////////////////////////////////////////////////////////////
         public DbSet<AppUserGroup> AppUserGroups { set; get; }
         public DbSet<AppRoleGroup> AppRoleGroups { set; get; }
         public DbSet<AppRole> AppRoles { set; get; }
