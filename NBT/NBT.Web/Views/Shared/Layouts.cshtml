@@ -15,13 +15,13 @@
     <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
     <!-- Vendor CSS-->
     <link href="~/Assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/jquery.mmenu/jquery.mmenu.css" rel="stylesheet" />
     <link href="~/Assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Assets/Swiper-4.0.6/dist/css/swiper.min.css" rel="stylesheet" />
     <link href="~/Assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 
     <link href="~/Assets/accordion-menu/css/style.css" rel="stylesheet" />
 
-    <link href="~/Assets/jquery.mmenu/jquery.mmenu.css" rel="stylesheet" />
 
     <!-- Template CSS-->
     <link href="~/Assets/client/css/style.css" rel="stylesheet" />
@@ -34,6 +34,8 @@
     -->
 
     <script src="~/Assets/Swiper-4.0.6/dist/js/swiper.min.js"></script>
+    <script src="~/Assets/jquery/dist/jquery.min.js"></script>
+    <script src="~/Assets/jquery.mmenu/jquery.mmenu.js"></script>
 </head>
 <body class="home main-home">
     @Html.Partial("Header")
@@ -50,16 +52,14 @@
     </div>
 
     <!-- Vendor jQuery-->
-    <script src="~/Assets/jquery/dist/jquery.min.js"></script>
     <script src="~/Assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/Assets/libs/moment/moment.js"></script>
     <script src="~/Assets/libs/moment/moment-timezone.min.js"></script>
     <script src="~/Assets/libs/moment/moment-timezone-with-data.min.js"></script>
     <script src="~/Assets/jquery/jquery.validate.min.js"></script>
     <script src="~/Assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="~/Assets/jquery.mmenu/jquery.mmenu.js"></script>
     <script src="~/Assets/client/js/main.js"></script>
     @RenderSection("footerJS", required: false)
-    
+
 </body>
 </html>
