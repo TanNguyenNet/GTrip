@@ -310,7 +310,7 @@ select {
       font-size: 1rem;
       font-weight: 700;
       color: #fff; }
-      .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li {
+      .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li > a{
         padding: 10px 8px;}
       .main-nav-wrapper .main-nav > ul.nav > li.active, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li.active, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li.active {
         color: #6ebb43 !important; }
