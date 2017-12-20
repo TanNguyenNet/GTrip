@@ -14,6 +14,33 @@
                 <div class="row">
                     @{Html.RenderAction("ForeignCategory", "Tour");}
                     <div class="col-md-9 col-sm-9">
+                        <div class="mt40-1 mb20 clearfix">
+                            <div class="col-md-5 col-xs-5">
+                                <div class="tour-filter">
+                                  <select>
+                                    <option value="hacker">Hacker</option>
+                                    <option value="gamer">Gamer</option>
+                                    <option value="developer">Developer</option>
+                                    <option value="programmer">Programmer</option>
+                                    <option value="designer">Designer</option>
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-xs-5">
+                                <div class="tour-filter">
+                                  <select>
+                                    <option value="hacker">Hacker</option>
+                                    <option value="gamer">Gamer</option>
+                                    <option value="developer">Developer</option>
+                                    <option value="programmer">Programmer</option>
+                                    <option value="designer">Designer</option>
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-xs-2">
+                                <button class="bttn-filter">Tìm</button>
+                            </div>
+                          </div>
                         <div class="tour-wrap">
                             <div class="tour-content">
                                 @foreach (var item in Model.Items)
@@ -34,7 +61,7 @@
                                                     <i class="fa fa-calendar" aria-hidden="true"></i>@item.TotalDays Ngày @if (item.TotalDays > 1)
                                                     {
                                                         @(item.TotalDays - 1);@:đêm" }
-                                                    } 
+                                                    }
                                                 </span>
                                                 <span class="pull-right green">@item.Price.ToString("n0") vnđ</span>
                                             </div>

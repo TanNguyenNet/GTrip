@@ -292,7 +292,7 @@ select {
     text-transform: capitalize;
     display: block;
     line-height: 0;
-    font-family: "signpainter", sans-serif; }
+    font-family: 'Itim', cursive; }
 
 .mobile-menu {
   display: none; }
@@ -420,7 +420,7 @@ select {
   height: 250px;
   width: 175px; }
   .oversea img {
-    padding: 15px 15px 10px 15px; }
+    padding: 15px 25px 10px 15px; }
   .oversea .home-navigation-text {
     display: block;
     font-weight: 700;
@@ -544,7 +544,7 @@ select {
     background-color: rgba(83, 83, 83, 0.5);
     border: solid 0.5px #808c99;
     padding: 10px 5px;
-    font-family: "signpainter", sans-serif;
+    font-family: 'Itim', cursive;
     font-weight: 700;
     text-transform: capitalize;
     color: #fff; }
@@ -554,9 +554,9 @@ select {
   color: #fff;
   font-weight: 400; }
   .block-content.b1 {
-    background-color: rgba(110, 187, 67, 0.4); }
+    background-color: rgba(110, 187, 67, 0.8); }
   .block-content.b2 {
-    background-color: rgba(110, 187, 67, 0.6); }
+    background-color: #6ebb43; }
   .block-content.b3 {
     background-color: rgba(110, 187, 67, 0.8); }
   .block-content.b4 {
@@ -588,7 +588,7 @@ select {
 .blog-info {
   padding: 10px 10px 0px 10px; }
   .blog-info h3 {
-    font-family: "signpainter", sans-serif;
+    font-family: 'Itim', cursive;
     font-weight: 700;
     line-height: 30px;
     font-size: 1.7rem; }
@@ -620,7 +620,7 @@ select {
   .contact-wrapper .contact-content h2 {
     text-align: center;
     color: #6ebb43;
-    font-family: "signpainter", sans-serif;
+    font-family: 'Itim', cursive;
     font-weight: 700;
     margin-bottom: 15px; }
   .contact-wrapper .contact-content .skype-info {
@@ -663,7 +663,7 @@ select {
 .contact-form h2 {
   text-align: center;
   color: #6ebb43;
-  font-family: "signpainter", sans-serif; }
+  font-family: 'Itim', cursive; }
 
 .contact-form p {
   margin: 5px 0px 90px;
@@ -704,7 +704,7 @@ select {
 .blog-cate-title h3 {
   text-align: center;
   color: #6ebb43;
-  font-family: "signpainter", sans-serif; }
+  font-family: 'Itim', cursive; }
 
 .new-blog {
   position: relative; }
@@ -717,7 +717,7 @@ select {
     background-color: rgba(83, 83, 83, 0.5);
     border: solid 0.5px #808c99;
     padding: 10px 5px;
-    font-family: "signpainter", sans-serif;
+    font-family: 'Itim', cursive;
     font-weight: 700;
     text-transform: capitalize;
     color: #fff; }
@@ -733,7 +733,7 @@ select {
     .next-blog .next-blog-content .next-blog-info {
       margin-left: 130px; }
       .next-blog .next-blog-content .next-blog-info h5 {
-        font-family: "signpainter", sans-serif;
+        font-family: 'Itim', cursive;
         font-weight: 700;
         text-transform: capitalize; }
       .next-blog .next-blog-content .next-blog-info span {
@@ -769,7 +769,7 @@ select {
 .article-head {
   margin-bottom: 10px; }
   .article-head h3 {
-    font-family: "signpainter", sans-serif;
+    font-family: 'Itim', cursive;
     font-weight: 700;
     line-height: 30px; }
   .article-head span {
@@ -826,48 +826,77 @@ select {
       .visa-cate-wrap .flag-wrapper li a {
         padding-left: 10px; }
 
-.flag, .au, .us, .ca, .nz, .jp, .id, .il, .fr, .uk {
+.flag, .us, .ca, .mx, .nz, .au, .cn, .jp, .kr, .tw, .id, .it, .fr, .uk, .ch, .de, .nl, .ng, .ma, .za {
   width: 25px;
   height: 25px;
   display: inline-block;
   margin-right: 10px;
   text-indent: -999px; }
 
-.au {
-  background: url(/images/icon/flags/Australia.png) no-repeat left center;
-  background-size: 25px 25px; }
-
 .us {
   background: url(/images/icon/flags/USA.png) no-repeat left center;
   background-size: 25px 25px; }
-
 .ca {
   background: url(/images/icon/flags/Canada.png) no-repeat left center;
   background-size: 25px 25px; }
+.mx {
+  background: url(/images/icon/flags/Mexico.png) no-repeat left center;
+  background-size: 25px 25px; }
 
+.au {
+  background: url(/images/icon/flags/Australia.png) no-repeat left center;
+  background-size: 25px 25px; }
 .nz {
   background: url(/images/icon/flags/NewZealand.png) no-repeat left center;
   background-size: 25px 25px; }
 
+.cn {
+  background: url(/images/icon/flags/China.png) no-repeat left center;
+  background-size: 25px 25px; }
 .jp {
   background: url(/images/icon/flags/Japan.png) no-repeat left center;
   background-size: 25px 25px; }
+.kr {
+  background: url(/images/icon/flags/South_Korea.png) no-repeat left center;
+  background-size: 25px 25px; }
+.tw {
+  background: url(/images/icon/flags/Taiwan.png) no-repeat left center;
+  background-size: 25px 25px; }
+
 
 .id {
   background: url(/images/icon/flags/Indonezia.png) no-repeat left center;
   background-size: 25px 25px; }
-
-.il {
+.it {
   background: url(/images/icon/flags/Italy.png) no-repeat left center;
   background-size: 25px 25px; }
-
 .fr {
   background: url(/images/icon/flags/France.png) no-repeat left center;
   background-size: 25px 25px; }
-
 .uk {
   background: url(/images/icon/flags/UK.png) no-repeat left center;
   background-size: 25px 25px; }
+.ch {
+  background: url(/images/icon/flags/Switzerland.png) no-repeat left center;
+  background-size: 25px 25px; }
+.de {
+  background: url(/images/icon/flags/Germany.png) no-repeat left center;
+  background-size: 25px 25px; }
+.nl {
+  background: url(/images/icon/flags/Netherlands.png) no-repeat left center;
+  background-size: 25px 25px; }
+
+.ng {
+  background: url(/images/icon/flags/Nigeria.png) no-repeat left center;
+  background-size: 25px 25px; }
+.ma {
+  background: url(/images/icon/flags/Morocco.png) no-repeat left center;
+  background-size: 25px 25px; }
+.za {
+  background: url(/images/icon/flags/South_Africa.png) no-repeat left center;
+  background-size: 25px 25px; }
+
+
 
 .tour-detail-content .tour-detail-option {
   margin: 10px 0px 30px 0px; }
@@ -1404,6 +1433,36 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .click-back-top-body button.on {
     -webkit-transform: translateX(0px);
             transform: translateX(0px); }
+  .tour-filter {
+    border: 1px solid #ccc;
+    width: 100%;
+    overflow: hidden;
+    background: url("../images/icon/down-arrow.png") no-repeat 95% 65%;
+  }
+
+  .tour-filter select {
+      padding: 5px 8px;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      background-image: none;
+      -webkit-appearance: none;
+  }
+
+  .tour-filter select:focus {
+      outline: none;
+  }
+  .bttn-filter {
+    padding: 5px 8px;
+    background-color: transparent;
+    width: 100%;
+  }
+  .bttn-filter:hover {
+    background-color: #6ebb43;
+    color: #fff;
+    font-family: 'Itim', cursive;
+  }
   @media only screen and (max-width: 1200px) {
   .block-content {
     padding: 3px 15px 6px 15px;
@@ -1556,24 +1615,26 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .mobile-menu {
     display: block;
     overflow: auto;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     padding-bottom: 0px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); }
+    background-color: rgba(72, 72, 72, 0.61); }
     .mobile-menu .text-left {
       color: #fff;
       text-align: left; }
       .mobile-menu .text-left a {
         display: inline-block;
-        padding: 25px 30px;
+        padding: 15px 20px;
         font-size: 1.5rem; }
     .mobile-menu .text-center {
       text-align: center; }
+      .mobile-menu .text-center .logo {
+        height: 80px }
     .mobile-menu .text-right {
       text-align: right; }
       .mobile-menu .text-right div {
         display: inline-block;
-        padding: 10px 10px;
+        padding: 8px 10px;
         margin: 0;
         color: #fff; }
         .mobile-menu .text-right div .icon-search-menu {
@@ -1601,6 +1662,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     .mobile-menu .col-3 {
       width: 33.33%;
       float: left; }
+
   .tour-wrap {
     margin-top: 40px; }
   .promotion {
