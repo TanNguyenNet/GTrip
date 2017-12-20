@@ -28,12 +28,12 @@ namespace NBT.Web.Api.Controllers.Blog
         [HttpGet]
         //[Authorize(Roles = nameof(PermissionProvider.ViewProduct))]
         public HttpResponseMessage getAll(HttpRequestMessage request,
-            int page = 0, int pageSize = 20, string filter = "",int categoryId=0)
+            int page = 0, int pageSize = 20, string filter = "",int categoryId=0,int blogPostType=0)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var model = _blogPostService.GetAll(page + 1, pageSize, filter);
+                var model = _blogPostService.GetAll(page + 1, pageSize, filter,blogPostType: blogPostType);
                 PaginationSet<BlogPost> pagedSet = new PaginationSet<BlogPost>()
                 {
                     Page = page,

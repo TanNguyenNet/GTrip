@@ -14,6 +14,16 @@
                 </div>
                 <div class="box-body">
                     <div class="row">
+                        <div class="col-sm-3">
+                            <div class="input-group-sm">
+                                <ui-select ng-required="true" ng-model="condition.blogPostType" name="tourType" theme="bootstrap" style="min-width: 300px;" title="Loại bài viết">
+                                    <ui-select-match allow-clear="true" placeholder="Loại bài viết">{{$select.selected.Name}}</ui-select-match>
+                                    <ui-select-choices repeat="item.Id as item in blogPostTypes">
+                                        <div ng-bind-html="item.Name | highlight: $select.search"></div>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <div class="input-group">
                                 <input type="text" class="form-control" ng-model="filter" placeholder="Từ khóa">

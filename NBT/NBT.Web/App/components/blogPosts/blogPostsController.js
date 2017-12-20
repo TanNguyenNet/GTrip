@@ -11,6 +11,7 @@
         $scope.pageSize = "50";
         $scope.pagesCount = 0;
         $scope.totalCount = 0;
+        $scope.condition = {};
         $scope.filter = '';
 
         $scope.data = [];
@@ -40,12 +41,13 @@
             var config = {
                 params: {
                     filter: $scope.filter,
+                    blogPostType: $scope.condition.blogPostType,
                     page: page,
                     pageSize: $scope.pageSize
                 }
             };
             apiService.get('/api/blogPosts/getAll', config, function (result) {
-                if (result.data.TotalCount == 0) {
+                if (result.data.TotalCount === 0) {
                     notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
                 }
                 $scope.data = result.data.Items;
@@ -59,7 +61,15 @@
             });
         }
 
+        function loadBlogPostTypes() {
+            apiService.get('api/blogPostTypes/getAll', null, function (result) {
+                $scope.blogPostTypes = result.data;
+            }, function () {
+                console.log('Cannot get data');
+            });
+        }
 
+        loadBlogPostTypes();
         $scope.search();
     }
 })(angular.module('nbtapp.blogPosts'));

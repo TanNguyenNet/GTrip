@@ -39,6 +39,16 @@
             finder.popup();
         };
 
+        function loadBlogPostTypes() {
+            apiService.get('api/blogPostTypes/getAll', null, function (result) {
+                $scope.blogPostTypes = result.data;
+            }, function () {
+                console.log('Cannot get data');
+            });
+        }
+
+        loadBlogPostTypes();
+
     }
 
 })(angular.module('nbtapp.blogPosts'));

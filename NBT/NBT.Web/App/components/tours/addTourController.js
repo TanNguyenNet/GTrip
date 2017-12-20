@@ -104,6 +104,16 @@
             });
         }
 
+        function loadTourTypes() {
+            apiService.get('api/tourTypes/getAll', null, function (result) {
+                $scope.tourTypes = result.data;
+            }, function () {
+                console.log('Cannot get data');
+            });
+        }
+
+        loadTourTypes();
+
         loadCountryRegions();
         loadStateProvinces();
         loadTourAttr();
