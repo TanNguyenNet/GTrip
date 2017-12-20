@@ -310,6 +310,8 @@ select {
       font-size: 1rem;
       font-weight: 700;
       color: #fff; }
+      .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li {
+        padding: 10px 8px;}
       .main-nav-wrapper .main-nav > ul.nav > li.active, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li.active, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li.active {
         color: #6ebb43 !important; }
       .main-nav-wrapper .main-nav > ul.nav > li a:hover, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:hover, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:hover, .main-nav-wrapper .main-nav > ul.nav > li a:active, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:active, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:active, .main-nav-wrapper .main-nav > ul.nav > li a:focus, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:focus, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:focus {
@@ -413,7 +415,8 @@ select {
   .domestic .home-navigation-text {
     display: block;
     font-weight: 700;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    text-transform: capitalize; }
 
 .oversea {
   background-color: #1d9a0a;
@@ -424,7 +427,8 @@ select {
   .oversea .home-navigation-text {
     display: block;
     font-weight: 700;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    text-transform: capitalize; }
 
 .booking {
   height: 250px;
@@ -447,7 +451,8 @@ select {
       margin-right: 25px; }
     .booking .plane .home-navigation-text {
       font-weight: 700;
-      font-size: 1.25rem; }
+      font-size: 1.25rem;
+      text-transform: capitalize; }
   .booking .train {
     background-color: #b20d18;
     height: 110px;
@@ -468,7 +473,8 @@ select {
     .booking .train .home-navigation-text {
       font-weight: 700;
       font-size: 1.25rem;
-      line-height: 0; }
+      line-height: 0;
+      text-transform: capitalize; }
   .booking .bus {
     background-color: #0c0faf;
     height: 110px;
@@ -487,7 +493,8 @@ select {
     .booking .bus .home-navigation-text {
       font-weight: 700;
       font-size: 1.25rem;
-      line-height: 0; }
+      line-height: 0;
+      text-transform: capitalize; }
 
 .ticket {
   background-color: #de960a;
@@ -502,7 +509,8 @@ select {
             transform: translate(-50%, -50%); }
   .ticket .home-navigation-text {
     font-weight: 700;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    text-transform: capitalize; }
 
 .information {
   height: 250px;
@@ -531,7 +539,8 @@ select {
       margin-top: 10px; }
     .information .hotel .home-navigation-text {
       font-weight: 700;
-      font-size: 1.25rem; }
+      font-size: 1.25rem;
+      text-transform: capitalize; }
 
 .special-services-content {
   position: relative; }
@@ -1612,6 +1621,23 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     display: none; }
   .header-top {
     display: none; }
+    .main-nav-wrapper .shopping-cart-icon .widget_shopping_cart_icon {
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+    position: relative; }
+    .main-nav-wrapper .shopping-cart-icon .widget_shopping_cart_icon span {
+      background-color: #6ebb43;
+      border-radius: 100%;
+      color: #fff;
+      font-size: 8px;
+      height: 15px;
+      line-height: 15px;
+      position: absolute;
+      right: 0px;
+      text-align: center;
+      top: 0;
+      width: 15px; }
   .mobile-menu {
     display: block;
     overflow: auto;
@@ -1624,7 +1650,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
       text-align: left; }
       .mobile-menu .text-left a {
         display: inline-block;
-        padding: 15px 20px;
+        padding: 20px 20px;
         font-size: 1.5rem; }
     .mobile-menu .text-center {
       text-align: center; }
@@ -1634,7 +1660,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
       text-align: right; }
       .mobile-menu .text-right div {
         display: inline-block;
-        padding: 8px 10px;
+        padding: 5px 10px;
         margin: 0;
         color: #fff; }
         .mobile-menu .text-right div .icon-search-menu {
