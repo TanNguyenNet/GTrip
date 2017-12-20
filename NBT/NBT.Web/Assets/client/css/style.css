@@ -1446,7 +1446,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     border: 1px solid #ccc;
     width: 100%;
     overflow: hidden;
-    background: url("../images/icon/down-arrow.png") no-repeat 95% 65%;
+    background: url("/images/icon/angle-arrow-down.png") no-repeat 95% 65%;
   }
 
   .tour-filter select {
