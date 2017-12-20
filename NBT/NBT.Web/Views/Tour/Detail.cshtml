@@ -18,20 +18,17 @@
                                 <img class="img-responsive" src="@Model.Image" alt="@Model.Name">
                                 <div class="tour-category-info">
                                     <h5>@Model.Name</h5>
-                                    <div class="tour-category-list"><span><i class="fa fa-barcode" aria-hidden="true"></i> <strong>Code:</strong> @Model.Code</span></div>
-                                    <div class="tour-category-list"><span><i class="fa fa-calendar" aria-hidden="true"></i> <strong>Ngày Đi:</strong> @Model.FromDate.ToString("dd-MM-yyyy")</span></div>
-                                    <div class="tour-category-list"><span><i class="fa fa-calendar" aria-hidden="true"></i> <strong>Ngày Đi:</strong> @Model.ToDate.ToString("dd-MM-yyyy")</span></div>
+                                    <div class="tour-category-list"><span><i class="fa fa-barcode" aria-hidden="true"></i> <strong>Mã tour:</strong> @Model.Code</span></div>
+                                    <div class="tour-category-list"><span><i class="fa fa-calendar" aria-hidden="true"></i> <strong>Ngày khởi hành:</strong> @Model.DayBegin</span></div>
                                     <div class="tour-category-list">
                                         <span>
                                             <i class="fa fa-calculator" aria-hidden="true"></i> <strong>Thời Gian:</strong> @Model.TotalDays Ngày @if (Model.TotalDays > 1)
                                             {
-                                                @(Model.TotalDays - 1);@:đêm" }
+                                                @(Model.TotalDays - 1);}
                                             }
                                         </span>
                                     </div>
                                     <div class="tour-category-list"><span><i class="fa fa-money" aria-hidden="true"></i> <strong>Giá:</strong> @Model.Price.ToString("n0") x 1</span></div>
-                                    <div class="total"><span class="pull-left">Total:</span><span class="pull-right"> @Model.Price.ToString("n0") vnđ</span></div>
-                                    <div class="tour-btn" style="text-align: center; margin-top: 20px"><button>Đặt Vé</button></div>
                                 </div>
                             </div>
                         </div>

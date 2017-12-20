@@ -52,6 +52,7 @@
     <Compile Include="ApplicationServices\Catalog\ITourAttributeService.cs" />
     <Compile Include="ApplicationServices\Catalog\ITourAttributeValueService.cs" />
     <Compile Include="ApplicationServices\Catalog\ITourService.cs" />
+    <Compile Include="ApplicationServices\Catalog\ITourTypeService.cs" />
     <Compile Include="ApplicationServices\Immigrant\IVisaService.cs" />
     <Compile Include="ApplicationServices\Orders\IOrderItemService.cs" />
     <Compile Include="ApplicationServices\Orders\IOrderService.cs" />

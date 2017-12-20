@@ -25,24 +25,27 @@
             position: relative;
         }
 
-        .input-number label {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            cursor: pointer;
-            font-weight: normal;
-        }
+            .input-number label {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                cursor: pointer;
+                font-weight: normal;
+            }
 
-        .input-number input:focus + label {
-            display: none;
-        }
+            .input-number input:focus + label {
+                display: none;
+            }
     </style>
+    <script src="/Assets/jquery/dist/jquery.min.js"></script>
+    <script src="/Assets/js/adminlte.min.js"></script>
+    <script src="/Assets/js/demo.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng-app="nbtapp" ng-controller="rootController">
     <!-- Site wrapper -->
     <div ui-view></div>
 
-    <script src="/Assets/jquery/dist/jquery.min.js"></script>
+    
     <script src="/Assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/Assets/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <script src="/Assets/fastclick/lib/fastclick.js"></script>
@@ -50,13 +53,13 @@
     <script src="~/Assets/libs/input-mask/jquery.inputmask.date.extensions.js"></script>
     <script src="~/Assets/libs/input-mask/jquery.inputmask.extensions.js"></script>
     <script src="~/Assets/libs/moment/min/moment.min.js"></script>
-    <script src="/Assets/js/adminlte.min.js"></script>
-    <script src="/Assets/js/demo.js"></script>
+
     <script>
 
     </script>
     <!--Angular-->
     <script src="~/Assets/libs/angular/angular.min.js"></script>
+    <script src="~/App/app.js"></script>
     <script src="~/Assets/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="~/Assets/libs/angular-password/angular-password.min.js"></script>
     <script src="~/Assets/libs/checklist-model/checklist-model.js"></script>
@@ -68,6 +71,8 @@
     <script src="~/Assets/libs/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="~/Assets/libs/ckeditor/ckeditor.js"></script>
     <script src="~/Assets/libs/ng-ckeditor/ng-ckeditor.min.js"></script>
+
+
 
     <script src="~/App/shared/modules/nbtapp.common.js"></script>
     <script src="~/App/shared/services/apiService.js"></script>
@@ -87,7 +92,7 @@
     <script src="~/App/components/visas/visas.module.js"></script>
     <script src="~/App/components/blogPosts/blogPosts.module.js"></script>
 
-    <script src="~/App/app.js"></script>
+
     <script src="~/App/components/home/rootController.js"></script>
     <script src="~/App/components/home/homeController.js"></script>
     <script src="~/App/components/appRoles/appRolesController.js"></script>

@@ -46,15 +46,10 @@ namespace NBT.Web.Controllers
             if (cartCookie.Value != "")
             {
                 var listItems = JsonConvert.DeserializeObject<List<OrderItemVm>>(cartCookie.Value);
-                if (listItems.Any(x => x.Alias == item.Alias))
+
+                if (listItems.Any(x => x.Alias == item.Alias && x.FromDate == item.FromDate && x.ToDate == item.ToDate))
                 {
-                    foreach (var itemCart in listItems)
-                    {
-                        if (itemCart.Alias == item.Alias)
-                        {
-                            itemCart.Quantity = itemCart.Quantity + 1;
-                        }
-                    }
+                    listItems.First(x => x.Alias == item.Alias && x.FromDate == item.FromDate && x.ToDate == item.ToDate).Quantity++;
                 }
                 else
                 {
@@ -81,7 +76,7 @@ namespace NBT.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Checkout(OrderVm order)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(order);
             }

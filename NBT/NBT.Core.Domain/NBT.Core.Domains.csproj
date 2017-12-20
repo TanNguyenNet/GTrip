@@ -67,6 +67,7 @@
     <Compile Include="Catalog\Tour.cs" />
     <Compile Include="Catalog\TourAttribute.cs" />
     <Compile Include="Catalog\TourAttributeValue.cs" />
+    <Compile Include="Catalog\TourType.cs" />
     <Compile Include="Identity\AppGroup.cs" />
     <Compile Include="Identity\AppRole.cs" />
     <Compile Include="Identity\AppRoleGroup.cs" />

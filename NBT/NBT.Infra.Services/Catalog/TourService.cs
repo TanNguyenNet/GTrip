@@ -212,5 +212,12 @@ namespace NBT.Infra.Services.Catalog
             query.TourAttr = modelAttr.ToList();
             return query;
         }
+
+        public bool CheckCode(string code)
+        {
+            code = code.Trim().ToUpper();
+            var query = _tourRepo.TableNoTracking.Where(x => x.Code == code).ToList();
+            return query.Count > 0;
+        }
     }
 }

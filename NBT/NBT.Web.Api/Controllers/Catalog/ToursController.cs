@@ -23,6 +23,7 @@ namespace NBT.Web.Api.Controllers.Catalog
         ITourService _tourService;
         ITourAttributeValueService _tourAttributeValueService;
         IUnitOfWork _uow;
+        private string msg = "";
         public ToursController(IErrorService errorService
             , ITourService tourService
             , ITourAttributeValueService tourAttributeValueService
@@ -87,8 +88,11 @@ namespace NBT.Web.Api.Controllers.Catalog
                 }
                 else
                 {
+                    this.msg = "Trùng code";
+                    if(_tourService.CheckCode(tourDto.Code))
+                        reponse = request.CreateResponse(HttpStatusCode.BadRequest, msg);
                     var modelTour = Mapper.Map<Tour>(tourDto);
-                    
+                    modelTour.Code = modelTour.Code.Trim().ToUpper();
                     modelTour.FromDate = modelTour.FromDate.UtcDateTime;
                     modelTour.ToDate = modelTour.ToDate.UtcDateTime;
                     modelTour.CreatedDate = GetDateTimeNowUTC();
@@ -129,7 +133,11 @@ namespace NBT.Web.Api.Controllers.Catalog
                 }
                 else
                 {
+                    this.msg = "Trùng code";
+                    if (_tourService.CheckCode(tourDto.Code))
+                        reponse = request.CreateResponse(HttpStatusCode.BadRequest, msg);
                     var modelTour = Mapper.Map<Tour>(tourDto);
+                    modelTour.Code = modelTour.Code.Trim().ToUpper();
                     modelTour.FromDate = modelTour.FromDate.UtcDateTime;
                     modelTour.ToDate = modelTour.ToDate.UtcDateTime;
                     modelTour.UpdatedDate = GetDateTimeNowUTC();
