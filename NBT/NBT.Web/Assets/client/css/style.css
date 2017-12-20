@@ -554,9 +554,9 @@ select {
   color: #fff;
   font-weight: 400; }
   .block-content.b1 {
-    background-color: rgba(110, 187, 67, 0.4); }
+    background-color: rgba(110, 187, 67, 0.8); }
   .block-content.b2 {
-    background-color: rgba(110, 187, 67, 0.6); }
+    background-color: #6ebb43; }
   .block-content.b3 {
     background-color: rgba(110, 187, 67, 0.8); }
   .block-content.b4 {
@@ -1615,7 +1615,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .mobile-menu {
     display: block;
     overflow: auto;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     padding-bottom: 0px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8); }
@@ -1624,15 +1624,17 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
       text-align: left; }
       .mobile-menu .text-left a {
         display: inline-block;
-        padding: 25px 30px;
+        padding: 15px 20px;
         font-size: 1.5rem; }
     .mobile-menu .text-center {
       text-align: center; }
+      .mobile-menu .text-center .logo {
+        height: 80px }
     .mobile-menu .text-right {
       text-align: right; }
       .mobile-menu .text-right div {
         display: inline-block;
-        padding: 10px 10px;
+        padding: 8px 10px;
         margin: 0;
         color: #fff; }
         .mobile-menu .text-right div .icon-search-menu {
