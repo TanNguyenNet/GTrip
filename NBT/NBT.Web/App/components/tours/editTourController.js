@@ -122,11 +122,18 @@
                 notificationService.displayError(error.data);
             });
         }
-        
+
+        function loadTourTypes() {
+            apiService.get('api/tourTypes/getAll', null, function (result) {
+                $scope.tourTypes = result.data;
+            }, function () {
+                console.log('Cannot get data');
+            });
+        }
+
+        loadTourTypes();
         loadCountryRegions();
         loadStateProvinces();
-        
-        
         
         $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
         $('#datemask2').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });

@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-sm-3">
                             <div class="input-group-sm">
-                                <ui-select ng-required="true" ng-model="filterCountry.countryRegionId" name="CountryRegion" theme="bootstrap" style="min-width: 300px;" title="Chọn quốc gia">
+                                <ui-select ng-required="true" ng-model="condition.countryRegionId" name="CountryRegion" theme="bootstrap" style="min-width: 300px;" title="Chọn quốc gia">
                                     <ui-select-match allow-clear="true" placeholder="Chọn quốc gia">{{$select.selected.Name}}</ui-select-match>
                                     <ui-select-choices repeat="item.Id as item in countryRegions | filter: $select.search">
                                         <div ng-bind-html="item.Name | highlight: $select.search"></div>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-sm-3">
                             <div class="input-group-sm">
-                                <ui-select ng-required="true" ng-model="filterCountry.stateProvinceId" name="stateProvince" theme="bootstrap" style="min-width: 300px;" title="Chọn Tp">
+                                <ui-select ng-required="true" ng-model="condition.stateProvinceId" name="stateProvince" theme="bootstrap" style="min-width: 300px;" title="Chọn Tp">
                                     <ui-select-match allow-clear="true" placeholder="Chọn Tp">{{$select.selected.Name}}</ui-select-match>
                                     <ui-select-choices repeat="item.Id as item in stateProvinces | filter: {CountryRegionId: filterCountry.countryRegionId}">
                                         <div ng-bind-html="item.Name | highlight: $select.search"></div>
@@ -42,6 +42,19 @@
                                 </ui-select>
                             </div>
                         </div>
+                        <div class="col-sm-3">
+                            <div class="input-group-sm">
+                                <ui-select ng-required="true" ng-model="condition.tourType" name="tourType" theme="bootstrap" style="min-width: 300px;" title="Chọn loại tour">
+                                    <ui-select-match allow-clear="true" placeholder="Chọn loại tour">{{$select.selected.Name}}</ui-select-match>
+                                    <ui-select-choices repeat="item.Id as item in tourTypes">
+                                        <div ng-bind-html="item.Name | highlight: $select.search"></div>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
                         <div class="col-md-2">
                             <div class="input-group">
                                 <span class="input-group-btn">

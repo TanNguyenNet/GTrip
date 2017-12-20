@@ -19,10 +19,12 @@ namespace NBT.Infra.Services.Blog
             _blogPostRepo = blogPostRepo;
         }
 
-        public IPagedList<BlogPost> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", bool? isShow = null)
+        public IPagedList<BlogPost> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", bool? isShow = null, int blogPostType=0)
         {
             var query = _blogPostRepo.TableNoTracking.Where(x => x.IsDel == false);
 
+            if (blogPostType != 0)
+                query = query.Where(x => x.BlogPostType == blogPostType);
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Title.Contains(filter));
             if (isShow != null)

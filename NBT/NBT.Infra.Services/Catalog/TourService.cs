@@ -82,10 +82,11 @@ namespace NBT.Infra.Services.Catalog
             query.TourAttr = modelAttr.ToList();
             return query;
         }
-        public IPagedList<Tour> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", int stateProvinceId = 0, int countryRegionId = 0)
+        public IPagedList<Tour> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", int stateProvinceId = 0, int countryRegionId = 0, int tourType = 0)
         {
             var query = _tourRepo.TableNoTracking.Where(x => x.IsDel == false);
-
+            if (tourType != 0)
+                query = query.Where(x=>x.TourType == tourType);
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter) || x.Code.Contains(filter));
             if (stateProvinceId != 0)
@@ -110,10 +111,13 @@ namespace NBT.Infra.Services.Catalog
             }
         }
 
-        public IPagedList<TourDto> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", int stateProvinceId = 0, int countryRegionId = 0, bool? isShow = null)
+        public IPagedList<TourDto> GetAll(int pageIndex = 1, int pageSize = 20, string filter = ""
+            , int stateProvinceId = 0, int countryRegionId = 0
+            , bool? isShow = null, int tourType = 0)
         {
             var query = _tourRepo.TableNoTracking.Where(x => x.IsDel == false);
-
+            if (tourType != 0)
+                query = query.Where(x => x.TourType == tourType);
             if (isShow != null)
                 query = query.Where(x => x.IsShow == isShow.Value);
             if (!string.IsNullOrWhiteSpace(filter))

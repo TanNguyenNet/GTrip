@@ -36,6 +36,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Loại tour</label>
+                                <div class="col-sm-10">
+                                    <ui-select ng-required="true" ng-model="data.TourType" name="tourType" theme="bootstrap" style="min-width: 300px;" title="Chọn loại tour">
+                                        <ui-select-match allow-clear="true" placeholder="Chọn loại tour">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="item.Id as item in tourTypes">
+                                            <div ng-bind-html="item.Name | highlight: $select.search"></div>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Tên</label>
                                 <div class="col-sm-10">
                                     <input type="text" maxlength="128" class="form-control" name="name" required ng-model="data.Name">

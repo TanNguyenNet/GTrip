@@ -12,6 +12,7 @@ namespace NBT.Core.Domain.Blog
         [MaxLength(128)]
         public string Title { set; get; }
         public int BlogPostCategory { set; get; }
+        public int BlogPostType { set; get; }
         [MaxLength(128)]
         public string Alias { set; get; }
         [MaxLength(128)]

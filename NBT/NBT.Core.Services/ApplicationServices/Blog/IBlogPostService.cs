@@ -10,7 +10,7 @@ namespace NBT.Core.Services.ApplicationServices.Blog
 {
     public interface IBlogPostService:IService<BlogPost>
     {
-        IPagedList<BlogPost> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "",bool? isShow= null);
+        IPagedList<BlogPost> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", bool? isShow = null,int blogPostType =0);
         BlogPost GetByAlias(string alias);
     }
 }

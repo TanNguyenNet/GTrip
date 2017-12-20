@@ -25,6 +25,10 @@ using System.Web.Mvc;
 using System.Web.Http;
 using System.Reflection;
 using NBT.Core.Services.DomainServices.Security;
+using NBT.Infra.Services.Catalog;
+using NBT.Core.Services.ApplicationServices.Catalog;
+using NBT.Core.Services.ApplicationServices.Blog;
+using NBT.Infra.Services.Blog;
 
 [assembly: OwinStartup(typeof(NBT.Web.App_Start.Startup))]
 
@@ -54,6 +58,8 @@ namespace NBT.Web.App_Start
             builder.RegisterType<MasterDBContext>().AsSelf().InstancePerRequest();
 
             builder.RegisterType<PermissionProvider>().As<IPermissionProvider>().InstancePerRequest();
+            builder.RegisterType<TourTypeProvider>().As<ITourTypeProvider>().InstancePerRequest();
+            builder.RegisterType<BlogPostTypeProvider>().As<IBlogPostTypeProvider>().InstancePerRequest();
 
             builder.RegisterType<RoleStore<AppRole>>().As<IRoleStore<AppRole, string>>();
             builder.RegisterType<ApplicationUserStore>().As<IUserStore<AppUser>>().InstancePerRequest();

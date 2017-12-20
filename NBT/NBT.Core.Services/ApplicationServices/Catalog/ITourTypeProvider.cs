@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NBT.Core.Services.ApplicationServices.Catalog
 {
-    public interface ITourTypeService
+    public interface ITourTypeProvider
     {
         IEnumerable<TourType> GetAll();
     }

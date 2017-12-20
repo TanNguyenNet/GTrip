@@ -13,7 +13,7 @@
         $scope.totalCount = 0;
         $scope.filter = '';
 
-        $scope.filterCountry = {};
+        $scope.condition = {};
         $scope.data = [];
 
         $scope.search = search;
@@ -41,8 +41,9 @@
             var config = {
                 params: {
                     filter: $scope.filter,
-                    countryRegionId: $scope.filterCountry.countryRegionId,
-                    stateProvinceId: $scope.filterCountry.stateProvinceId,
+                    countryRegionId: $scope.condition.countryRegionId,
+                    stateProvinceId: $scope.condition.stateProvinceId,
+                    tourType: $scope.condition.tourType,
                     page: page,
                     pageSize: $scope.pageSize
                 }
@@ -78,6 +79,15 @@
             });
         }
 
+        function loadTourTypes() {
+            apiService.get('api/tourTypes/getAll', null, function (result) {
+                $scope.tourTypes = result.data;
+            }, function () {
+                console.log('Cannot get data');
+            });
+        }
+
+        loadTourTypes();
         loadCountryRegions();
         loadStateProvinces();
         $scope.search();

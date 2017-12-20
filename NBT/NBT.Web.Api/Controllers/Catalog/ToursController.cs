@@ -38,12 +38,12 @@ namespace NBT.Web.Api.Controllers.Catalog
         [HttpGet]
         //[Authorize(Roles = nameof(PermissionProvider.ViewProduct))]
         public HttpResponseMessage getAll(HttpRequestMessage request,
-            int page = 0, int pageSize = 20, string filter = "", int stateProvinceId = 0, int countryRegionId = 0)
+            int page = 0, int pageSize = 20, string filter = "", int stateProvinceId = 0, int countryRegionId = 0, int tourType = 0)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var model = _tourService.GetAll(page + 1, pageSize, filter, stateProvinceId, countryRegionId);
+                var model = _tourService.GetAll(page + 1, pageSize, filter, stateProvinceId, countryRegionId, tourType);
                 PaginationSet<Tour> pagedSet = new PaginationSet<Tour>()
                 {
                     Page = page,
@@ -89,7 +89,7 @@ namespace NBT.Web.Api.Controllers.Catalog
                 else
                 {
                     this.msg = "Trùng code";
-                    if(_tourService.CheckCode(tourDto.Code))
+                    if (_tourService.CheckCode(tourDto.Code))
                         reponse = request.CreateResponse(HttpStatusCode.BadRequest, msg);
                     var modelTour = Mapper.Map<Tour>(tourDto);
                     modelTour.Code = modelTour.Code.Trim().ToUpper();

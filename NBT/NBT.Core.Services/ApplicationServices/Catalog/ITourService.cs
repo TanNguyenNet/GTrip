@@ -13,8 +13,8 @@ namespace NBT.Core.Services.ApplicationServices.Catalog
     {
         TourDto GetById(long id);
         TourDto GetByAlias(string alias);
-        IPagedList<Tour> GetAll(int pageIndex =1, int pageSize=20, string filter ="", int stateProvinceId=0, int countryRegionId=0);
-        IPagedList<TourDto> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", int stateProvinceId = 0, int countryRegionId = 0,bool? isShow=null);
+        IPagedList<Tour> GetAll(int pageIndex =1, int pageSize=20, string filter ="", int stateProvinceId=0, int countryRegionId=0,int tourType=0);
+        IPagedList<TourDto> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", int stateProvinceId = 0, int countryRegionId = 0,bool? isShow=null, int tourType = 0);
         void DeleteById(long id);
         bool CheckCode(string code);
 
