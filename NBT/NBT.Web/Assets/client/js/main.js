@@ -167,5 +167,36 @@ $(document).ready(function() {
         email: "Vui lòng nhập chính xác email"
       }
     });
+
+  //social links
+    $(".share_social i").click(function () {
+        var linkSocical = $(this).attr("class");
+        var href = "";
+        var faceShare = "https://www.facebook.com/sharer/sharer.php?u=";
+        var googPlusShare = "https://plus.google.com/share?url=";
+        var url = $(".social-share").attr("data-href");
+        var pintShare = "https://pinterest.com/pin/create/button/?url=&media=&description=";
+        var vimeoSahre = "http://www.vimeo.com/api/oembed.json?url="
+        var twitter = "https://twitter.com/intent/tweet?url=";
+        switch (linkSocical) {
+            case "fa-facebook":
+                href = faceShare + url;
+                break;
+            case "fa-twitter":
+                href = pintShare + url;
+                break;
+            case "fa-google-plus":
+                href = googPlusShare + url;
+                break;
+        }
+
+        winOpen(href);
+    });
+    function winOpen(href) {
+        var leftPop = ($(window).width() / 2) - (900 / 2);
+        var topPop = ($(window).height() / 2) - (600 / 2);
+        window.open(href, "_brank", "scrollbars=1,resizable=1,height=600,width=900,top=" + topPop + ", left=" + leftPop + "");
+    }
+
 });
 
