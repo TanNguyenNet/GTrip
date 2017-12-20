@@ -6225,7 +6225,9 @@
     <Content Include="images\eiffel-tower-seine-river-1.jpg" />
     <Content Include="images\Header-PK-2.jpg" />
     <Content Include="images\hero-article-index.jpg" />
+    <Content Include="images\icon\angle-arrow-down.png" />
     <Content Include="images\icon\bus.png" />
+    <Content Include="images\icon\down-arrow.png" />
     <Content Include="images\icon\earth.png" />
     <Content Include="images\icon\flags\Afghanistan.png" />
     <Content Include="images\icon\flags\African Union.png" />
@@ -6425,8 +6427,8 @@
     <Content Include="images\icon\flags\Solomon Islands.png" />
     <Content Include="images\icon\flags\Somalia.png" />
     <Content Include="images\icon\flags\Somaliland.png" />
-    <Content Include="images\icon\flags\South Africa.png" />
-    <Content Include="images\icon\flags\South Korea.png" />
+    <Content Include="images\icon\flags\South_Africa.png" />
+    <Content Include="images\icon\flags\South_Korea.png" />
     <Content Include="images\icon\flags\Spain.png" />
     <Content Include="images\icon\flags\Sri Lanka.png" />
     <Content Include="images\icon\flags\St Kitts &amp; Nevis.png" />
