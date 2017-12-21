@@ -19,8 +19,7 @@
         };
 
         function addValue(item) {
-            if (item.Checked)
-            {
+            if (item.Checked) {
                 for (var i in $scope.data.TourAttr) {
                     if ($scope.data.TourAttr[i].TourAttributeId === item.Id) {
                         $scope.data.TourAttr[i].Value = item.Value;
@@ -66,7 +65,11 @@
 
         function chooseImage(item) {
             var finder = new CKFinder();
-            finder.selectActionFunction = function (fileUrl) {
+            finder.selectActionFunction = function (fileUrl, fileSize) {
+                if (fileSize > 4096) {
+                    notificationService.displayError("File lớn hơn 4 MB");
+                    return;
+                }
                 $scope.$apply(function () {
                     switch (item) {
                         case 1:
@@ -112,8 +115,16 @@
             });
         }
 
-        loadTourTypes();
+        function loadAreas() {
+            apiService.get('api/areas/getAll', null, function (result) {
+                $scope.areas = result.data;
+            }, function () {
+                console.log('no load data');
+            });
+        }
 
+        loadAreas();
+        loadTourTypes();
         loadCountryRegions();
         loadStateProvinces();
         loadTourAttr();

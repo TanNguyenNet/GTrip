@@ -81,6 +81,7 @@
     <Compile Include="Blog\BlogPostAboutService.cs" />
     <Compile Include="Blog\BlogPostService.cs" />
     <Compile Include="Blog\BlogPostTypeProvider.cs" />
+    <Compile Include="Catalog\AreaService.cs" />
     <Compile Include="Catalog\ContinentService.cs" />
     <Compile Include="Catalog\CountryRegionService.cs" />
     <Compile Include="Catalog\StateProvinceService.cs" />

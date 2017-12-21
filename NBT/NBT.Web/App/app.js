@@ -9,6 +9,7 @@
             'nbtapp.common',
             'nbtapp.countryRegions',
             'nbtapp.stateProvinces',
+            'nbtapp.areas',
             'nbtapp.tourAttributes',
             'nbtapp.tours',
             'nbtapp.visas',

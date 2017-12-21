@@ -60,6 +60,7 @@
     <Compile Include="Blog\BlogPostAbout.cs" />
     <Compile Include="Blog\BlogPostTag.cs" />
     <Compile Include="Blog\BlogPostType.cs" />
+    <Compile Include="Catalog\Area.cs" />
     <Compile Include="Catalog\Continent.cs" />
     <Compile Include="Catalog\CountryRegion.cs" />
     <Compile Include="Catalog\Dto\TourAttributeValueDto.cs" />

@@ -47,6 +47,7 @@
     <Compile Include="ApplicationServices\Blog\IBlogPostAboutService.cs" />
     <Compile Include="ApplicationServices\Blog\IBlogPostService.cs" />
     <Compile Include="ApplicationServices\Blog\IBlogPostTypeProvider.cs" />
+    <Compile Include="ApplicationServices\Catalog\IAreaService.cs" />
     <Compile Include="ApplicationServices\Catalog\IContinentService.cs" />
     <Compile Include="ApplicationServices\Catalog\ICountryRegionService.cs" />
     <Compile Include="ApplicationServices\Catalog\IStateProvinceService.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="DomainServices\Blog\IBlogPostAboutRepository.cs" />
     <Compile Include="DomainServices\Blog\IBlogPostRepository.cs" />
+    <Compile Include="DomainServices\Catalog\IAreaRepository.cs" />
     <Compile Include="DomainServices\Catalog\IContinentRepository.cs" />
     <Compile Include="DomainServices\Catalog\ICountryRegionRepository.cs" />
     <Compile Include="DomainServices\Catalog\IStateProvinceRepository.cs" />

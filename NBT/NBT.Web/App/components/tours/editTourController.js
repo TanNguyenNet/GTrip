@@ -64,7 +64,11 @@
 
         function chooseImage(item) {
             var finder = new CKFinder();
-            finder.selectActionFunction = function (fileUrl) {
+            finder.selectActionFunction = function (fileUrl, fileSize) {
+                if (fileSize > 4096) {
+                    notificationService.displayError("File lớn hơn 4 MB");
+                    return;
+                }
                 $scope.$apply(function () {
                     switch (item) {
                         case 1:
@@ -131,6 +135,15 @@
             });
         }
 
+        function loadAreas() {
+            apiService.get('api/areas/getAll', null, function (result) {
+                $scope.areas = result.data;
+            }, function () {
+                console.log('no load data');
+            });
+        }
+
+        loadAreas();
         loadTourTypes();
         loadCountryRegions();
         loadStateProvinces();

@@ -218,6 +218,12 @@
     <Content Include="App\components\appUsers\appUsersController.js" />
     <Content Include="App\components\appUsers\appUsersView.html" />
     <Content Include="App\components\appUsers\appUserView.html" />
+    <Content Include="App\components\areas\addAreaController.js" />
+    <Content Include="App\components\areas\areas.module.js" />
+    <Content Include="App\components\areas\areasController.js" />
+    <Content Include="App\components\areas\areasView.html" />
+    <Content Include="App\components\areas\areaView.html" />
+    <Content Include="App\components\areas\editAreaController.js" />
     <Content Include="App\components\blogPosts\addBlogPostController.js" />
     <Content Include="App\components\blogPosts\blogPosts.module.js" />
     <Content Include="App\components\blogPosts\blogPostsController.js" />

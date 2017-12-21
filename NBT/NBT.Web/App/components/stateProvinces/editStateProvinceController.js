@@ -55,6 +55,15 @@
             });
         }
 
+        function loadAreas() {
+            apiService.get('api/areas/getAll', null, function (result) {
+                $scope.areas = result.data;
+            }, function () {
+                console.log('no load data');
+            });
+        }
+
+        loadAreas();
         loadCountryRegions();
         loadDetail();
     }

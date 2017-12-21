@@ -54,14 +54,11 @@
                                             <h5><a href="/tour/detail/@item.Alias">@item.Name</a></h5>
                                             <div class="tour-price">
                                                 <span class="pull-left">Thời gian</span>
-                                                <span class="pull-right">Giá từ @item.Price.ToString("n0")</span>
+                                                <span class="pull-right">Giá từ</span>
                                             </div>
                                             <div class="tour-price">
                                                 <span class="pull-left blue">
-                                                    <i class="fa fa-calendar" aria-hidden="true"></i>@item.TotalDays Ngày @if (item.TotalDays > 1)
-                                                    {
-                                                        @(item.TotalDays - 1);@:đêm" }
-                                                    }
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i> @item.TotalDays Ngày
                                                 </span>
                                                 <span class="pull-right green">@item.Price.ToString("n0") vnđ</span>
                                             </div>

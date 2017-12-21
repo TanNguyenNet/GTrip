@@ -14,6 +14,7 @@ namespace NBT.Core.Domain.Catalog
         [MaxLength(128)]
         public string Code { set; get; }
         public int CountryRegionId { set; get; }
+        public int AreaId { set; get; }
         public bool IsShow { set; get; }
         [MaxLength(512)]
         public string Image { set; get; }
