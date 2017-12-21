@@ -250,6 +250,7 @@
     <Content Include="App\components\stateProvinces\stateProvincesController.js" />
     <Content Include="App\components\stateProvinces\stateProvincesView.html" />
     <Content Include="App\components\stateProvinces\stateProvinceView.html" />
+    <Content Include="App\components\systems\systems.module.js" />
     <Content Include="App\components\tourAttributes\addTourAttributesController.js" />
     <Content Include="App\components\tourAttributes\tourAttributesController.js" />
     <Content Include="App\components\tourAttributes\editTourAttributesController.js" />

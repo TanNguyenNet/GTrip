@@ -82,7 +82,9 @@
     <Compile Include="Repositories\Security\AppRoleRepository.cs" />
     <Compile Include="Repositories\Security\AppUserGroupRepository.cs" />
     <Compile Include="Repositories\Security\AppUserRepository.cs" />
+    <Compile Include="Repositories\System\ConverseRepository.cs" />
     <Compile Include="Repositories\System\ErrorRepository.cs" />
+    <Compile Include="Repositories\System\SettingsRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

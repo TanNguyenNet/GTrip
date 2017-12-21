@@ -19,7 +19,7 @@ namespace NBT.Core.Services.ApplicationServices.Security
 
         void InsertRoleFromSystem();
 
-        void Update(AppRole AppRole);
+        //void Update(AppRole AppRole);
 
         void Delete(string id);
 

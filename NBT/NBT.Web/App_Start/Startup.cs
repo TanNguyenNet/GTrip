@@ -29,6 +29,7 @@ using NBT.Infra.Services.Catalog;
 using NBT.Core.Services.ApplicationServices.Catalog;
 using NBT.Core.Services.ApplicationServices.Blog;
 using NBT.Infra.Services.Blog;
+using NBT.Core.Services.ApplicationServices.System;
 
 [assembly: OwinStartup(typeof(NBT.Web.App_Start.Startup))]
 
@@ -60,6 +61,7 @@ namespace NBT.Web.App_Start
             builder.RegisterType<PermissionProvider>().As<IPermissionProvider>().InstancePerRequest();
             builder.RegisterType<TourTypeProvider>().As<ITourTypeProvider>().InstancePerRequest();
             builder.RegisterType<BlogPostTypeProvider>().As<IBlogPostTypeProvider>().InstancePerRequest();
+            builder.RegisterType<SettingsProvider>().As<ISettingsProvider>().InstancePerRequest();
 
             builder.RegisterType<RoleStore<AppRole>>().As<IRoleStore<AppRole, string>>();
             builder.RegisterType<ApplicationUserStore>().As<IUserStore<AppUser>>().InstancePerRequest();

@@ -11,6 +11,7 @@ using NBT.Core.Domain.Catalog;
 using NBT.Core.Domain.Immigrant;
 using NBT.Core.Domain.Blog;
 using NBT.Core.Domain.Orders;
+using NBT.Core.Domain.System;
 
 namespace NBT.Core.Datas
 {
@@ -34,6 +35,8 @@ namespace NBT.Core.Datas
         public DbSet<BlogPostTag> BlogPostTags { set; get; }
         public DbSet<Order> Orders { set; get; }
         public DbSet<OrderItem> OrderItems { set; get; }
+        public DbSet<Settings> Settings { set; get; }
+        public DbSet<Converse> Converses { set; get; }
 
         //Identity///////////////////////////////////////////////////////////////////////////////////
         public DbSet<AppUserGroup> AppUserGroups { set; get; }

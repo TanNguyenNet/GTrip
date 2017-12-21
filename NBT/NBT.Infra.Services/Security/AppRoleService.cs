@@ -99,11 +99,11 @@ namespace NBT.Infra.Services.Security
 
         }
 
-        public void Update(AppRole AppRole)
+        public override AppRole Update(AppRole AppRole)
         {
             if (_appRoleRepo.CheckContains(x => x.Description == AppRole.Description && x.Id != AppRole.Id))
                 throw new NameDuplicatedException("Tên không được trùng");
-            _appRoleRepo.Update(AppRole);
+            return _appRoleRepo.Update(AppRole);
         }
     }
 }
