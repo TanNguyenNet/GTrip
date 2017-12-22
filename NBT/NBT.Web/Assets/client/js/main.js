@@ -198,5 +198,8 @@ $(document).ready(function() {
         window.open(href, "_brank", "scrollbars=1,resizable=1,height=600,width=900,top=" + topPop + ", left=" + leftPop + "");
     }
 
+    //select2
+    $('.tour-wrapper .tour-filter .country').select2();
+    $('.tour-wrapper .tour-filter .duration').select2();
 });
 
