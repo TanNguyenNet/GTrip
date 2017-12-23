@@ -1,5 +1,6 @@
 ﻿using NBT.Core.Domain.Blog;
 using NBT.Core.Services.ApplicationServices.Blog;
+using NBT.Infra.Services.Blog;
 using NBT.Web.Framework.Core;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,27 @@ namespace NBT.Web.Controllers
         {
             var model = _blogPostService.GetByAlias(alias);
             return View(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult HomeBlog()
+        {
+            var model = _blogPostService.GetAllHomeTop(3, true, blogPostType: BlogPostTypeProvider.Blog.Id);
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult ServicesSpecial()
+        {
+            var model = _blogPostService.GetAllHomeTop(5, blogPostType: BlogPostTypeProvider.ServiceSpecialBlog.Id);
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult EventSpecial()
+        {
+            var model = _blogPostService.GetAllHomeTop(10, blogPostType: BlogPostTypeProvider.EventSpecialBlog.Id);
+            return PartialView(model);
         }
     }
 }

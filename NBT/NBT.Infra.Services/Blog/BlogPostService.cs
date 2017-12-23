@@ -19,7 +19,7 @@ namespace NBT.Infra.Services.Blog
             _blogPostRepo = blogPostRepo;
         }
 
-        public IPagedList<BlogPost> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", bool? isShow = null, int blogPostType=0)
+        public IPagedList<BlogPost> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", bool? isShow = null, int blogPostType = 0)
         {
             var query = _blogPostRepo.TableNoTracking.Where(x => x.IsDel == false);
 
@@ -31,6 +31,17 @@ namespace NBT.Infra.Services.Blog
                 query = query.Where(x => x.IsShow == isShow.Value);
 
             return query.OrderByDescending(x => x.CreatedDate).ThenBy(x => x.Title).ToPagedList(pageIndex, pageSize);
+        }
+
+        public IEnumerable<BlogPost> GetAllHomeTop(int top = 1, bool? isHome = null, int blogPostType = 0)
+        {
+            var query = _blogPostRepo.TableNoTracking.Where(x => x.IsDel == false && x.IsShow == true);
+            if (isHome != null)
+                query = query.Where(x => x.IsHome == isHome.Value);
+            if (blogPostType != 0)
+                query = query.Where(x => x.BlogPostType == blogPostType);
+
+            return query.OrderBy(x => x.Title).Take(top).ToList();
         }
 
         public BlogPost GetByAlias(string alias)

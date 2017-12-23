@@ -12,5 +12,6 @@ namespace NBT.Core.Services.ApplicationServices.Blog
     {
         IPagedList<BlogPost> GetAll(int pageIndex = 1, int pageSize = 20, string filter = "", bool? isShow = null,int blogPostType =0);
         BlogPost GetByAlias(string alias);
+        IEnumerable<BlogPost> GetAllHomeTop(int top=1, bool? isHome = null,int blogPostType = 0);
     }
 }

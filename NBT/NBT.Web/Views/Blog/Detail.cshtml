@@ -1,6 +1,8 @@
 ﻿@model NBT.Core.Domain.Blog.BlogPost
 @{
-    ViewBag.Title = "index";
+    ViewBag.Title = Model.TitleSeo;
+    ViewBag.Keyword = Model.KeywordSeo;
+    ViewBag.Description = Model.DescriptionSeo;
     ViewBag.StyleHeader = "header header-style-2";
     Layout = "~/Views/Shared/Layouts.cshtml";
 }

@@ -1,5 +1,5 @@
-﻿@{
-
+﻿@model IEnumerable<NBT.Core.Domain.Catalog.Tour>
+@{
     Layout = "~/Views/Shared/Layouts.cshtml";
     ViewBag.StyleHeader = "header header-style-1";
 }
@@ -33,15 +33,19 @@
     <div class="div-box">
         <div class="swiper-container main-slider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="/images/eiffel-tower-seine-river-1.jpg" alt="">
-                    <div class="slider-content">
-                        <h2>Big deal for summer</h2>
-                        <h1>FRANCE - ITALIA - GERMANY</h1>
-                        <h5>20 days - 15.000.000 VNĐ</h5>
-                        <div class="btn-container"><a href="#" class="button sweep-to-right">Chi Tiết</a></div>
+                @foreach (var item in Model)
+                {
+                    <div class="swiper-slide">
+                        <img src="@item.LargeImage" style="width:1519px;height:1003.83px" alt="@item.Name">
+                        <div class="slider-content">
+                            <h2>@item.EventTitle</h2>
+                            <h1>@item.Name</h1>
+                            <h5>@item.TotalDays - @item.Price.ToString("n0") VNĐ</h5>
+                            <div class="btn-container"><a href="/tour/detail/@item.Alias" class="button sweep-to-right">Chi Tiết</a></div>
+                        </div>
                     </div>
-                </div>
+                }
+
                 <div class="swiper-slide">
                     <img src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
                     <div class="slider-content">
@@ -72,181 +76,14 @@
 
 
     <div class="div-box mb">
-        <div class="home-special-services">
-            <div class="container">
-                <h2 class="title-style text-center mb45">
-                    <span class="title-left">DỊCH VỤ </span><span class="title-right">ĐẶT BIỆT</span><span class="desc">lựa chọn tốt nhất</span>
-                </h2>
-                <div class="row">
-                    <div class="col-md-9 col-sm-9">
-                        <div class="special-services-wrap">
-                            <div class="col-md-4 col-sm-4 mb20">
-                                <div class="special-services-content">
-                                    <h5 class="special-services-title"><a href="">Du lịch tự túc thăm thân nhân</a></h5>
-                                    <img src="/images/back-packing-thailand.jpg.rend_.tccom_.1280.960.jpg" alt="Indoor" " class="img-responsive" />
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 mb20">
-                                <div class="special-services-content">
-                                    <h5 class="special-services-title"><a href="">Kết nối gia đình</a></h5>
-                                    <img src="/images/shutterstock-230116186.jpg" alt="Indoor" class="img-responsive" />
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 mb20">
-                                <div class="special-services-content">
-                                    <h5 class="special-services-title"><a href="">du lịch kết hợp chăm sóc sức khoẻ</a></h5>
-                                    <img src="/images/zen-resort-bali.jpg" alt="Indoor" class="img-responsive" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="special-services-wrap">
-                            <div class="col-md-6 col-sm-6 mb20">
-                                <div class="special-services-content">
-                                    <h5 class="special-services-title"><a href="">sự kiện nơi bí mật</a></h5>
-                                    <img src="/images/secret-place-ocean-view-wallpaper-6535.jpg" alt="Indoor" class="img-responsive" />
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="special-services-content">
-                                    <h5 class="special-services-title"><a href="">tổ chức team building</a></h5>
-                                    <img src="/images/team-building-don-vi-to-chuc-team-building-chuyen-nghiep-tai-ha-noi-tp-ho-chi-minh.jpg" alt="Indoor" class="img-responsive" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3">
-                        <div class="block-wrap">
-                            <div class="block-content b1 clearfix">
-                                <div class="information1 float-left">
-                                    <h5 class="block-country">Newyork USA</h5>
-                                    <span id="usa-date" class="block-time"></span>
-                                    <span class="block-gtm">GTM - 05</span>
-                                </div>
-                                <div class="block float-right">
-                                    <span id="usa-time" class="timing"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-wrap">
-                            <div class="block-content b2 clearfix">
-                                <div class="information1 float-left">
-                                    <h5 class="block-country">Sydney Aus</h5>
-                                    <span id="au-date" class="block-time"></span>
-                                    <span class="block-gtm">GTM + 11</span>
-                                </div>
-                                <div class="block float-right">
-                                    <span id="au-time" class="timing"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-wrap">
-                            <div class="block-content b3 clearfix">
-                                <div class="information1 float-left">
-                                    <h5 class="block-country">HK China</h5>
-                                    <span id="hk-date" class="block-time"></span>
-                                    <span class="block-gtm">GTM + 08</span>
-                                </div>
-                                <div class="block float-right">
-                                    <span id="hk-time" class="timing"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-wrap">
-                            <div class="block-content b4 clearfix">
-                                <div class="information1 float-left">
-                                    <h5 class="block-country">Tokyo Japan</h5>
-                                    <span id="jp-date" class="block-time"></span>
-                                    <span class="block-gtm">GTM + 09</span>
-                                </div>
-                                <div class="block float-right">
-                                    <span id="jp-time" class="timing"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @{Html.RenderAction("ServicesSpecial", "Blog");}
     </div>
 
     <div class="div-box mb">
-        <div class="home-special-event">
-            <div class="container">
-                <h2 class="title-style text-center mb45">
-                    <span class="title-left">Sự kiện </span><span class="title-right">ĐẶT BIỆT</span><span class="desc">lựa chọn tốt nhất</span>
-                </h2>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="swiper-container service-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="/images/slider.jpeg" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="/images/slider.jpeg" alt="">
-                                </div>
-                            </div>
-                            <!-- Add Arrows -->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @{Html.RenderAction("EventSpecial", "Blog");}
     </div>
 
     <div class="div-box mb">
-        <div class="home-blog">
-            <div class="container">
-                <h2 class="title-style text-center mb45">
-                    <span class="title-left">Tin tức </span><span class="title-right">du lịch</span><span class="desc">tin tức mới nhất</span>
-                </h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="blog-wrapper">
-                            <div class="blog-content">
-                                <img src="/images/0002700_chiang-mai.jpeg" alt="">
-                                <div class="blog-info">
-                                    <h3><a href="#">Lễ hội songra truyền thống Thái Lan tại bankok</a></h3>
-                                    <span><i class="fa fa-calendar" aria-hidden="true"></i> 15-02-2017</span>
-                                    <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
-                                    <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch… là những bãi biển đẹp như thiên đường ở Việt Nam mà nếu không đi…</p>
-                                    <a href="#" class="readmore">Đọc Thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-wrapper">
-                            <div class="blog-content">
-                                <img src="/images/0002701_pattaya.jpeg" alt="">
-                                <div class="blog-info">
-                                    <h3><a href="#">Lễ hội songra truyền thống Thái Lan tại bankok</a></h3>
-                                    <span><i class="fa fa-calendar" aria-hidden="true"></i> 15-02-2017</span>
-                                    <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
-                                    <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch… là những bãi biển đẹp như thiên đường ở Việt Nam mà nếu không đi…</p>
-                                    <a href="#" class="readmore">Đọc Thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-wrapper">
-                            <div class="blog-content">
-                                <img src="/images/0004965_hua-hin.jpeg" alt="">
-                                <div class="blog-info">
-                                    <h3><a href="#">Lễ hội songra truyền thống Thái Lan tại bankok</a></h3>
-                                    <span><i class="fa fa-calendar" aria-hidden="true"></i> 15-02-2017</span>
-                                    <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
-                                    <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch… là những bãi biển đẹp như thiên đường ở Việt Nam mà nếu không đi…</p>
-                                    <a href="#" class="readmore">Đọc Thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @{Html.RenderAction("HomeBlog", "Blog");}
     </div>
 </div>

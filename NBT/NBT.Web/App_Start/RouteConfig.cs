@@ -32,6 +32,12 @@ namespace NBT.Web
                 namespaces: new string[] { "NBT.Web.Controllers" }
             );
             routes.MapRoute(
+                name: "TicketDetail",
+                url: "ticket/detail/{alias}",
+                defaults: new { controller = "Ticket", action = "Detail", alias = UrlParameter.Optional },
+                namespaces: new string[] { "NBT.Web.Controllers" }
+            );
+            routes.MapRoute(
                 name: "BlogDetail",
                 url: "blog/detail/{alias}",
                 defaults: new { controller = "Blog", action = "Detail", alias = UrlParameter.Optional },

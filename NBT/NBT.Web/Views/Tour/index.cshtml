@@ -1,8 +1,9 @@
 ﻿@model NBT.Web.Framework.Core.PaginationSet<NBT.Core.Domain.Catalog.Dto.TourDto>
 @{
-    ViewBag.Title = "index";
+    ViewBag.Title = "Tour";
     ViewBag.StyleHeader = "header header-style-2";
     Layout = "~/Views/Shared/Layouts.cshtml";
+    var modelCountry = ViewBag.countryRegions as IEnumerable<NBT.Core.Domain.Catalog.CountryRegion>;
 }
 
 <div id="example-wrapper">
@@ -17,32 +18,23 @@
                         <div class="mt40-1 mb20 clearfix">
                             <div class="col-md-5 col-xs-5">
                                 <div class="tour-filter">
-                                    <select class="country" name="states[]" multiple="multiple">
-                                        <optgroup label="Alaskan/Hawaiian Time Zone">
-                                        <option value="AK">Alaska</option>
-                                        <option value="HI">Hawaii</option>
-                                      </optgroup>
-                                      <optgroup label="Pacific Time Zone">
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                        <option value="WA">Washington</option>
-                                      </optgroup>
+                                    <select class="duration" name="country">
+                                        @foreach (var item in modelCountry)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-5 col-xs-5">
                                 <div class="tour-filter">
-                                    <select class="duration" name="state">
-                                        <option value="1">12 ngay</option>
-                                        <option value="WY">1 ngay</option>
-                                    </select>
+                                    <input  type="number" name="totalDays" value="" min="1" max="30" />
                                 </div>
                             </div>
                             <div class="col-md-2 col-xs-2">
                                 <button class="bttn-filter">Tìm</button>
                             </div>
-                          </div>
+                        </div>
                         <div class="tour-wrap">
                             <div class="tour-content">
                                 @foreach (var item in Model.Items)
@@ -78,24 +70,24 @@
                                         var endPageIndex = Math.Min(Model.TotalPages, Model.Page + 5 / 2);
                                         if (Model.Page > 1)
                                         {
-                                            <li><a href="?pageIndex=@(Model.Page-1)&pageSize=@Model.PageSize"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                            <li><a href="?pageIndex=@(Model.Page-1)&pageSize=@Model.PageSize@ViewBag.queryParams"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
 
                                         }
                                         for (int i = startPageIndex; i <= endPageIndex; i++)
                                         {
                                             if (Model.Page == i)
                                             {
-                                                <li class="active"><a href="?pageIndex=@i&pageSize=@Model.PageSize">@i</a></li>
+                                                <li class="active"><a href="?pageIndex=@i&pageSize=@Model.PageSize@ViewBag.queryParams">@i</a></li>
                                             }
                                             else
                                             {
-                                                <li><a href="?pageIndex=@i&pageSize=@Model.PageSize">@i</a></li>
+                                                <li><a href="?pageIndex=@i&pageSize=@Model.PageSize@ViewBag.queryParams">@i</a></li>
                                             }
                                         }
                                         if (Model.Page < Model.TotalPages)
                                         {
 
-                                            <li><a href="?pageIndex=@(Model.Page+1)&pageSize=@Model.PageSize"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                            <li><a href="?pageIndex=@(Model.Page+1)&pageSize=@Model.PageSize@ViewBag.queryParams"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                                         }
                                     }
                                 </ul>

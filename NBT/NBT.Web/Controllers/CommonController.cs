@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace NBT.Web.Controllers
 {
-    public class CommonController : Controller
+    public class CommonController : BaseController
     {
         // GET: Common
         public ActionResult Index()
@@ -14,15 +14,17 @@ namespace NBT.Web.Controllers
             return View();
         }
         [ChildActionOnly]
-        public ActionResult Header()
+        public ActionResult Header(string style)
         {
-            return PartialView();
+            ViewBag.StyleHeader = style;
+            return PartialView(this.webSettingsVm);
         }
 
         [ChildActionOnly]
         public ActionResult Footer()
         {
-            return PartialView();
+            
+            return PartialView(this.webSettingsVm);
         }
 
         [ChildActionOnly]

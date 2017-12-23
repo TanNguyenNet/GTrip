@@ -11,6 +11,8 @@ namespace NBT.Core.Domain.Catalog
     {
         [MaxLength(128)]
         public string Name { set; get; }
+        [MaxLength(128)]
+        public string EventTitle { set; get; }
         public int TourType { set; get; }
         public decimal Price { set; get; }
         [MaxLength(128)]

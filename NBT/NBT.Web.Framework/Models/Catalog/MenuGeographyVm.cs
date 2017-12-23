@@ -10,11 +10,13 @@ namespace NBT.Web.Framework.Models.Catalog
         public List<ContinentVm> Continents { set; get; }
         public List<CountryRegionVm> CountryRegions { set; get; }
         public List<StateProvinceVm> StateProvinces { set; get; }
+        public List<AreaVm> Areas { set; get; }
         public MenuGeographyVm()
         {
             Continents = new List<ContinentVm>();
             CountryRegions = new List<CountryRegionVm>();
             StateProvinces = new List<StateProvinceVm>();
+            Areas = new List<AreaVm>();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace NBT.Web.Framework.Models.Catalog
         public int Id { set; get; }
         public string Name { set; get; }
         public string Code { set; get; }
+        public int AreaId { set; get; }
         public int CountryRegionId { set; get; }
         public bool IsShow { set; get; }
         public string Image { set; get; }

@@ -310,8 +310,7 @@ select {
       font-size: 1rem;
       font-weight: 700;
       color: #fff; }
-      .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li > a{
-        padding: 10px 8px;}
+      .main-nav-wrapper .main-nav > ul.nav > li a { padding: 10px 8px; }
       .main-nav-wrapper .main-nav > ul.nav > li.active, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li.active, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li.active {
         color: #6ebb43 !important; }
       .main-nav-wrapper .main-nav > ul.nav > li a:hover, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:hover, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:hover, .main-nav-wrapper .main-nav > ul.nav > li a:active, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:active, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:active, .main-nav-wrapper .main-nav > ul.nav > li a:focus, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li a:focus, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li a:focus {
@@ -1443,11 +1442,17 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     -webkit-transform: translateX(0px);
             transform: translateX(0px); }
   .tour-filter {
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     width: 100%;
     overflow: hidden;
-    background: url("/images/icon/angle-arrow-down.png") no-repeat 95% 65%;
+   /* background: url("/images/icon/angle-arrow-down.png") no-repeat 95% 65%;*/
   }
+.tour-filter input {
+    /*border: 1px solid #ccc;*/
+    width: 100%;
+    overflow: hidden;
+    /* background: url("/images/icon/angle-arrow-down.png") no-repeat 95% 65%;*/
+}
 
   .tour-filter select {
       padding: 5px 8px;
@@ -1492,11 +1497,18 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
         top: 5px;
         right: -5px; }
   .main-nav-wrapper .main-nav > ul.nav > li > a, .main-nav-wrapper .nav-side-menu .main-nav > li.nav > li > a, .nav-side-menu .main-nav-wrapper .main-nav > li.nav > li > a {
-    padding: 10px 5px; } }
+    padding: 10px 5px; }
+    .main-nav-wrapper .main-nav > ul.nav > li a {
+        font-size: 12px;
+    }
+  }
   @media only screen and (max-width: 991px) {
   .mobile-menu {
     display: none; } }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .main-nav-wrapper .main-nav > ul.nav > li a {
+        font-size: 12px;
+    }
   #text-6 {
     display: none; }
   .header-logo {

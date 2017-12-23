@@ -13,7 +13,9 @@
             'nbtapp.tourAttributes',
             'nbtapp.tours',
             'nbtapp.visas',
-            'nbtapp.blogPosts'
+            'nbtapp.blogPosts',
+            'nbtapp.systems',
+            'nbtapp.contacts'
         ])
         .config(config)
         .config(configAuthentication);

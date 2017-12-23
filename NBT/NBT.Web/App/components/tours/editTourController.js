@@ -38,7 +38,7 @@
             } else {
                 for (var i in $scope.data.TourAttr) {
                     if ($scope.data.TourAttr[i].TourAttributeId === item.Id) {
-                        cart.Carts.splice(i, 1);
+                        $scope.data.TourAttr.splice(i, 1);
                         break;
                     }
                 }
@@ -48,9 +48,10 @@
 
         function save() {
             $("input").prop('disabled', true);
-
-            $scope.data.ToDate = moment($scope.data.ToDate, "DD/MM/YYYY").format();
-            $scope.data.FromDate = moment($scope.data.FromDate, "DD/MM/YYYY").format();
+            if ($scope.data.AreaId == null)
+                $scope.data.AreaId = 0;
+            //$scope.data.ToDate = moment($scope.data.ToDate, "DD/MM/YYYY").format();
+            //$scope.data.FromDate = moment($scope.data.FromDate, "DD/MM/YYYY").format();
 
             apiService.put('api/tours/update', $scope.data,
                 function (result) {
@@ -120,8 +121,8 @@
             apiService.get('api/tours/getbyid/' + $stateParams.id, null, function (result) {
                 $scope.data = result.data;
                 loadTourAttr();
-                $scope.data.ToDate = moment($scope.data.ToDate).format('DD/MM/YYYY');
-                $scope.data.FromDate = moment($scope.data.FromDate).format('DD/MM/YYYY');
+                //$scope.data.ToDate = moment($scope.data.ToDate).format('DD/MM/YYYY');
+                //$scope.data.FromDate = moment($scope.data.FromDate).format('DD/MM/YYYY');
             }, function (error) {
                 notificationService.displayError(error.data);
             });
@@ -148,9 +149,9 @@
         loadCountryRegions();
         loadStateProvinces();
         
-        $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
-        $('#datemask2').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
-        $('[data-mask]').inputmask();
+        //$('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
+        //$('#datemask2').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
+        //$('[data-mask]').inputmask();
     }
 
 })(angular.module('nbtapp.tours'));

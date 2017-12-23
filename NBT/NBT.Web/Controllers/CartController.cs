@@ -87,10 +87,19 @@ namespace NBT.Web.Controllers
                 var newOrderItem = Mapper.Map<List<OrderItem>>(listItems);
                 var newOrder = new Order();
                 newOrder.UpdateOrder(order);
+
+                foreach (var item in newOrderItem)
+                {
+                    item.FromDate = item.FromDate.UtcDateTime;
+                    item.ToDate = item.ToDate.UtcDateTime;
+                }
+
                 _uow.BeginTran();
                 _orderService.Add(newOrder);
                 _orderItemService.Add(newOrderItem);
                 _uow.CommitTran();
+                cartCookie.Expires = DateTime.Now.AddDays(-180);
+                Response.Cookies.Add(cartCookie);
                 return RedirectToAction("Index", "Tour");
             }
             return RedirectToAction("Index", "Tour");

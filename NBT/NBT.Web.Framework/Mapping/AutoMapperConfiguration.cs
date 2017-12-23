@@ -35,6 +35,7 @@ namespace NBT.Web.Framework.Mapping
                 cfg.CreateMap<Continent, ContinentVm>();
                 cfg.CreateMap<CountryRegion, CountryRegionVm>();
                 cfg.CreateMap<StateProvince, StateProvinceVm>();
+                cfg.CreateMap<Area, AreaVm>();
             });
         }
     }

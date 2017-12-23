@@ -117,10 +117,12 @@
   <ItemGroup>
     <Compile Include="Core\PaginationSet.cs" />
     <Compile Include="Core\ServiceFactory.cs" />
+    <Compile Include="Core\WebSettings.cs" />
     <Compile Include="Extensions\EntityExtensions.cs" />
     <Compile Include="Mapping\AutoMapperConfiguration.cs" />
     <Compile Include="Models\Cart\OrderItemVm.cs" />
     <Compile Include="Models\Cart\OrderVm.cs" />
+    <Compile Include="Models\Catalog\AreaVm.cs" />
     <Compile Include="Models\Catalog\ContinentVm.cs" />
     <Compile Include="Models\Catalog\CountryRegionVm.cs" />
     <Compile Include="Models\Catalog\MenuGeographyVm.cs" />
@@ -131,6 +133,7 @@
     <Compile Include="Models\Security\AppUserVm.cs" />
     <Compile Include="Models\Security\LoginVm.cs" />
     <Compile Include="Models\Security\PasswordVm.cs" />
+    <Compile Include="Models\WebSettingsVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

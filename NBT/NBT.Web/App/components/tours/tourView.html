@@ -16,7 +16,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Quốc gia</label>
                                 <div class="col-sm-10">
-                                    <ui-select ng-required="true" ng-model="data.CountryRegionId" name="CountryRegion" theme="bootstrap" style="min-width: 300px;" title="Chọn quốc gia">
+                                    <ui-select ng-required="true" ng-model="data.CountryRegionId"  name="CountryRegion" theme="bootstrap" style="min-width: 300px;" title="Chọn quốc gia">
                                         <ui-select-match allow-clear="true" placeholder="Chọn quốc gia">{{$select.selected.Name}}</ui-select-match>
                                         <ui-select-choices repeat="item.Id as item in countryRegions | filter: $select.search">
                                             <div ng-bind-html="item.Name | highlight: $select.search"></div>
@@ -65,6 +65,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Tiêu đề sự kiện</label>
+                                <div class="col-sm-10">
+                                    <input type="text" maxlength="128" class="form-control" name="EventTitle" ng-model="data.EventTitle">
+                                    <span ng-show="frm.EventTitle.$invalid" class="help-block">Nhập tiêu đề sự kiện</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Mã tour</label>
                                 <div class="col-sm-10">
                                     <input type="text" maxlength="128" class="form-control" name="code" required ng-model="data.Code">
@@ -103,7 +110,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Ngày khởi hành</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name="dayBegin" required ng-model="data.DayBegin" ng-init="data.TotalDays = 1" ng-maxlength="128">
+                                    <input type="text" class="form-control" name="dayBegin" required ng-model="data.DayBegin" ng-init="data.TotalDays = 1" ng-maxlength="128">
                                     <span ng-show="frm.dayBegin.$invalid" class="help-block">Nhập ngày khởi hành</span>
                                 </div>
                             </div>

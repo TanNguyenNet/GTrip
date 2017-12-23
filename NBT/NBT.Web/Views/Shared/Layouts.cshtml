@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>@ViewBag.Title</title>
+    <meta id="metaKeywords" name="keywords" content="@ViewBag.Keyword" />
+    <meta id="metaDescription" name="description" content="@ViewBag.Description" />
+    <meta name="author" content="Global Trip">
 
     <!-- Favicon-->
     <link rel="shortcut icon" href="/images/icon/favicon.png" type="image/x-icon">
@@ -21,9 +22,8 @@
     <link href="~/Assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 
     <link href="~/Assets/accordion-menu/css/style.css" rel="stylesheet" />
-    <link href="~/Assets/libs/selects2/style.css" rel="stylesheet" />
 
-
+    <link href="~/Assets/libs/selects2/select2.min.css" rel="stylesheet" />
     <!-- Template CSS-->
     <link href="~/Assets/client/css/style.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
@@ -40,9 +40,9 @@
     <script src="~/Assets/libs/selects2/select2.min.js"></script>
 </head>
 <body class="home main-home">
-    @Html.Partial("Header")
+    @{Html.RenderAction("Header", "Common", new { style = ViewBag.StyleHeader });}
     @RenderBody()
-    @Html.Partial("Footer")
+    @{Html.RenderAction("Footer", "Common");}
 
     <!-- .mv-site-->
     <div><a class="skype" href="skype:hophamthuytien87?chat"></a></div>

@@ -4,7 +4,31 @@
 }
 <div class="col-md-3 col-sm-3">
     <div class="tour-category-wrapper">
+
         <div class="tour-category-content">
+            <div class="tour-title"><span class="country">Du lịch trong nước</span></div>
+            <ul class="cd-accordion-menu1 animated">
+                @foreach (var item in Model.Areas)
+                {
+                    <li class="has-children">
+                        <input type="checkbox" name="groups-@item.Id" id="groups-@item.Id">
+                        <label for="groups-@item.Id">@item.Name</label>
+                        @if (Model.StateProvinces.Where(x => x.AreaId == item.Id).Count() > 0)
+                        {
+                            <ul>
+                                @foreach (var state in Model.StateProvinces.Where(x => x.AreaId == item.Id))
+                                {
+                                    <li><a href="/tour/?stateProvinceId=@state.Id">@state.Name</a></li>
+                                }
+
+                            </ul>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="tour-category-content mt20">
             <div class="tour-title"><span class="country">Du lịch nước ngoài</span></div>
             <ul class="cd-accordion-menu animated">
                 @foreach (var itemContinent in Model.Continents)
@@ -15,7 +39,7 @@
                         @if (Model.CountryRegions.Where(x => x.ContinentId == itemContinent.Id).Count() > 0)
                         {
                             <ul>
-                                @foreach (var itemCountry in Model.CountryRegions.Where(x => x.ContinentId == itemContinent.Id))
+                                @foreach (var itemCountry in Model.CountryRegions.Where(x => x.ContinentId == itemContinent.Id && x.Domestic==false))
                                 {
                                     <li class="has-children">
                                         <input type="checkbox" name="sub-group-@itemCountry.Id" id="sub-group-@itemCountry.Id">
@@ -25,7 +49,7 @@
                                             <ul>
                                                 @foreach (var itemState in Model.StateProvinces.Where(x => x.CountryRegionId == itemCountry.Id))
                                                 {
-                                                    <li><a href="#0">@itemState.Name</a></li>
+                                                    <li><a href="/tour/?stateProvinceId=@itemState.Id">@itemState.Name</a></li>
                                                 }
                                             </ul>
                                         }
@@ -37,52 +61,7 @@
                 }
             </ul> <!-- cd-accordion-menu -->
         </div>
-       
-        @*<div class="tour-category-content mt20">
-            <div class="tour-title"><span class="country">du lịch ngoài nước</span></div>
-            <ul class="cd-accordion-menu1 animated">
-                <li class="has-children">
-                    <input type="checkbox" name="groups-1" id="groups-1" checked>
-                    <label for="groups-1">Miền Bắc</label>
-                    <ul>
-                        <li class="has-children">
-                            <input type="checkbox" name="sub-groups-1" id="sub-groups-1">
-                            <label for="sub-groups-1">Sub Groups 1</label>
-                            <ul>
-                                <li><a href="#0">Image</a></li>
-                                <li><a href="#0">Image</a></li>
-                                <li><a href="#0">Image</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-children">
-                            <input type="checkbox" name="sub-groups-2" id="sub-groups-2">
-                            <label for="sub-groups-2">Sub Groups 2</label>
-                            <ul>
-                                <li><a href="#0">Image</a></li>
-                                <li><a href="#0">Image</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#0">Vịnh Hạ Long</a></li>
-                        <li><a href="#0">Sapa</a></li>
-                    </ul>
-                </li>
-                <li class="has-children">
-                    <input type="checkbox" name="groups-2" id="groups-2">
-                    <label for="groups-2">Miền Trung - Tây Nguyên</label>
-                    <ul>
-                        <li><a href="#0">Kontum</a></li>
-                        <li><a href="#0">Huế</a></li>
-                    </ul>
-                </li>
-                <li class="has-children">
-                    <input type="checkbox" name="groups-2" id="groups-2">
-                    <label for="groups-2">Miền Nam</label>
-                    <ul>
-                        <li><a href="#0">Cà Mau</a></li>
-                        <li><a href="#0">Đồng Nai</a></li>
-                    </ul>
-                </li>
-            </ul> 
-        </div>*@
+
+
     </div>
 </div>

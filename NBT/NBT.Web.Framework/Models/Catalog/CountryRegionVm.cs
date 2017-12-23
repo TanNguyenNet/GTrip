@@ -13,5 +13,6 @@ namespace NBT.Web.Framework.Models.Catalog
         public int ContinentId { set; get; }
         public string Image { set; get; }
         public bool IsShow { set; get; }
+        public bool Domestic { set; get; }
     }
 }

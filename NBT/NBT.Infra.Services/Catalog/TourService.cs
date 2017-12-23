@@ -68,7 +68,8 @@ namespace NBT.Infra.Services.Catalog
                              LargeImage = t.LargeImage,
                              TourType = t.TourType,
                              DayBegin = t.DayBegin,
-                             AreaId = t.AreaId
+                             AreaId = t.AreaId,
+                             EventTitle = t.EventTitle
                          }).FirstOrDefault();
             var modelAttr = from attr in _tourAttributeValueRepository.TableNoTracking.Where(x => x.TourId == id)
                             join attrs in _tourAttributeRepository.TableNoTracking on attr.TourAttributeId equals attrs.Id
@@ -87,7 +88,7 @@ namespace NBT.Infra.Services.Catalog
         {
             var query = _tourRepo.TableNoTracking.Where(x => x.IsDel == false);
             if (tourType != 0)
-                query = query.Where(x=>x.TourType == tourType);
+                query = query.Where(x => x.TourType == tourType);
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter) || x.Code.Contains(filter));
             if (stateProvinceId != 0)
@@ -114,7 +115,7 @@ namespace NBT.Infra.Services.Catalog
 
         public IPagedList<TourDto> GetAll(int pageIndex = 1, int pageSize = 20, string filter = ""
             , int stateProvinceId = 0, int countryRegionId = 0
-            , bool? isShow = null, int tourType = 0)
+            , bool? isShow = null, int tourType = 0, int areaId = 0)
         {
             var query = _tourRepo.TableNoTracking.Where(x => x.IsDel == false);
             if (tourType != 0)
@@ -124,9 +125,11 @@ namespace NBT.Infra.Services.Catalog
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter));
             if (stateProvinceId != 0)
-                query = query.Where(x=>x.StateProvinceId ==stateProvinceId);
+                query = query.Where(x => x.StateProvinceId == stateProvinceId);
             if (countryRegionId != 0)
                 query = query.Where(x => x.CountryRegionId == countryRegionId);
+            if (areaId != 0)
+                query = query.Where(x => x.AreaId == areaId);
             var queryResult = from t in query
                               join c in _countryRegionRepository.TableNoTracking on t.CountryRegionId equals c.Id
                               join s in _stateProvinceRepository.TableNoTracking on t.StateProvinceId equals s.Id
@@ -161,7 +164,8 @@ namespace NBT.Infra.Services.Catalog
                                   LargeImage = t.LargeImage,
                                   TourType = t.TourType,
                                   DayBegin = t.DayBegin,
-                                  AreaId = t.AreaId
+                                  AreaId = t.AreaId,
+                                  EventTitle = t.EventTitle
                               };
             return queryResult.OrderByDescending(x => x.DisplayOrder)
                 .ThenByDescending(x => x.CreatedDate)
@@ -204,7 +208,8 @@ namespace NBT.Infra.Services.Catalog
                              LargeImage = t.LargeImage,
                              TourType = t.TourType,
                              DayBegin = t.DayBegin,
-                             AreaId = t.AreaId
+                             AreaId = t.AreaId,
+                             EventTitle = t.EventTitle
                          }).FirstOrDefault();
             var modelAttr = from attr in _tourAttributeValueRepository.TableNoTracking.Where(x => x.TourId == query.Id)
                             join attrs in _tourAttributeRepository.TableNoTracking on attr.TourAttributeId equals attrs.Id
@@ -225,6 +230,12 @@ namespace NBT.Infra.Services.Catalog
             code = code.Trim().ToUpper();
             var query = _tourRepo.TableNoTracking.Where(x => x.Code == code).ToList();
             return query.Count > 0;
+        }
+
+        public IEnumerable<Tour> GetHomeTop(int top = 1)
+        {
+            var query = _tourRepo.TableNoTracking.Where(x => x.IsDel == false && x.IsShow == true && x.IsHot == true);
+            return query.OrderBy(x => x.Name).Take(top);
         }
     }
 }

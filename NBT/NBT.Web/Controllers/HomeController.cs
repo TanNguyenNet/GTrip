@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NBT.Core.Services.ApplicationServices.Catalog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +9,16 @@ namespace NBT.Web.Controllers
 {
     public class HomeController : Controller
     {
+        ITourService _tourService;
+        public HomeController(ITourService tourService)
+        {
+            _tourService = tourService;
+        }
         public ActionResult Index()
         {
-            return View();
+            var model = _tourService.GetHomeTop(10);
+            return View(model);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

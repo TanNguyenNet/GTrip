@@ -39,7 +39,7 @@
             } else {
                 for (var i in $scope.data.TourAttr) {
                     if ($scope.data.TourAttr[i].TourAttributeId === item.Id) {
-                        cart.Carts.splice(i, 1);
+                        $scope.data.TourAttr.splice(i, 1);
                         break;
                     }
                 }
@@ -50,9 +50,11 @@
         function save() {
             $("input").prop('disabled', true);
 
-            $scope.data.ToDate = moment($scope.data.ToDate, "DD/MM/YYYY").format();
-            $scope.data.FromDate = moment($scope.data.FromDate, "DD/MM/YYYY").format();
+            //$scope.data.ToDate = moment($scope.data.ToDate, "DD/MM/YYYY").format();
+            //$scope.data.FromDate = moment($scope.data.FromDate, "DD/MM/YYYY").format();
 
+            if ($scope.data.AreaId == null)
+                $scope.data.AreaId = 0;
             apiService.post('api/tours/create', $scope.data,
                 function (result) {
                     notificationService.displaySuccess($scope.data.Name + ' đã được thêm mới.');
@@ -129,9 +131,9 @@
         loadStateProvinces();
         loadTourAttr();
 
-        $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
-        $('#datemask2').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
-        $('[data-mask]').inputmask();
+        //$('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
+        //$('#datemask2').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
+        //$('[data-mask]').inputmask();
     }
 
 })(angular.module('nbtapp.tours'));

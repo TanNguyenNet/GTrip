@@ -188,11 +188,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\TourController.cs" />
     <Compile Include="Controllers\VisaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -230,6 +232,12 @@
     <Content Include="App\components\blogPosts\blogPostsView.html" />
     <Content Include="App\components\blogPosts\blogPostView.html" />
     <Content Include="App\components\blogPosts\editBlogPostController.js" />
+    <Content Include="App\components\contacts\addContactController.js" />
+    <Content Include="App\components\contacts\contacts.module.js" />
+    <Content Include="App\components\contacts\contactsController.js" />
+    <Content Include="App\components\contacts\contactsView.html" />
+    <Content Include="App\components\contacts\contactView.html" />
+    <Content Include="App\components\contacts\editContactController.js" />
     <Content Include="App\components\continents\addContinentController.js" />
     <Content Include="App\components\continents\continents.module.js" />
     <Content Include="App\components\continents\continentsController.js" />
@@ -250,6 +258,8 @@
     <Content Include="App\components\stateProvinces\stateProvincesController.js" />
     <Content Include="App\components\stateProvinces\stateProvincesView.html" />
     <Content Include="App\components\stateProvinces\stateProvinceView.html" />
+    <Content Include="App\components\systems\settingsController.js" />
+    <Content Include="App\components\systems\settingsView.html" />
     <Content Include="App\components\systems\systems.module.js" />
     <Content Include="App\components\tourAttributes\addTourAttributesController.js" />
     <Content Include="App\components\tourAttributes\tourAttributesController.js" />
@@ -6207,6 +6217,8 @@
     <Content Include="Assets\libs\ngBootbox\examples\index.html" />
     <Content Include="Assets\libs\ngBootbox\gulpfile.js" />
     <Content Include="Assets\libs\ngBootbox\ngBootbox.js" />
+    <Content Include="Assets\libs\selects2\select2.min.css" />
+    <Content Include="Assets\libs\selects2\select2.min.js" />
     <Content Include="Assets\libs\toastr\toastr.css" />
     <Content Include="Assets\libs\toastr\toastr.js" />
     <Content Include="Assets\libs\toastr\toastr.min.css" />
@@ -6232,7 +6244,6 @@
     <Content Include="images\eiffel-tower-seine-river-1.jpg" />
     <Content Include="images\Header-PK-2.jpg" />
     <Content Include="images\hero-article-index.jpg" />
-    <Content Include="images\icon\angle-arrow-down.png" />
     <Content Include="images\icon\bus.png" />
     <Content Include="images\icon\down-arrow.png" />
     <Content Include="images\icon\earth.png" />
@@ -6509,6 +6520,7 @@
     <Folder Include="Assets\libs\ngBootbox\typings\angularjs\" />
     <Folder Include="Assets\libs\ngBootbox\typings\jquery\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\BaseController\" />
     <Folder Include="Views\Common\" />
   </ItemGroup>
   <ItemGroup>
@@ -6976,6 +6988,13 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Visa\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Views\Blog\HomeBlog.cshtml" />
+    <Content Include="Views\Blog\ServicesSpecial.cshtml" />
+    <Content Include="Views\Blog\EventSpecial.cshtml" />
+    <Content Include="Views\Ticket\Detail.cshtml" />
+    <Content Include="Views\Ticket\ForeignCategory.cshtml" />
+    <Content Include="Views\Ticket\index.cshtml" />
+    <Content Include="Views\Blog\BlogPostNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NBT.Core.Common\NBT.Core.Common.csproj">

@@ -13,6 +13,12 @@ namespace NBT.Core.Domain.System
         public string TypeConverse { set; get; }
         [MaxLength(256)]
         public string NickName { set; get; }
+        [MaxLength(256)]
+        public string Phone { set; get; }
+        [MaxLength(256)]
+        public string FullName { set; get; }
+        [MaxLength(256)]
+        public string Email { set; get; }
         public bool IsShow { set; get; }
 
     }

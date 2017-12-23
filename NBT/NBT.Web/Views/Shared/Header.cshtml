@@ -1,14 +1,16 @@
 ﻿ <!-- <div id="timing">asdasd</div> -->
+@model  NBT.Web.Framework.Models.WebSettingsVm
 <div id="preloaderKDZ"></div>
 <div class="gtrip-site">
-    <header class="@ViewBag.StyleHeader"><!--style-2-->
+    <header class="@ViewBag.StyleHeader">
+        <!--style-2-->
         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="top-sidebar top-bar-left col-md-8">
                         <aside id="text-11" class="widget widget_text">
                             <div class="textwidget">
-                                <i class="fa fa-envelope" aria-hidden="true"></i> info@globalopentrip.com <i style="margin-left: 15px" class="fa fa-phone" aria-hidden="true"></i> +(84) 985-011-402
+                                <i class="fa fa-envelope" aria-hidden="true"></i> @Model.CompanyEmail<i style="margin-left: 15px" class="fa fa-phone" aria-hidden="true"></i> @Model.Phone
                             </div>
                         </aside>
                     </div>
@@ -50,7 +52,7 @@
                                         <a href="/visa">Dịch Vụ Visa</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="/contact">Tham Quan</a>
+                                        <a href="/ticket">Tham Quan</a>
                                     </li>
                                     <li class="menu-item">
                                         <a href="/contact">Liên Hệ</a>
@@ -80,10 +82,8 @@
             <div class="col-3 text-right">
                 <div class="header-right">
                     <div class="search-button-wrapper header-customize-item style-default">
-                        <div class="shopping-cart-icon">
-                            <div class="widget_shopping_cart_content">
-                                <div class="widget_shopping_cart_icon"><a href="/cart/index"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></a></div>
-                            </div>
+                        <div class="icon-search-menu">
+                            <div class="widget_shopping_cart_icon"><a href="/cart/index"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></a></div>
                         </div>
                     </div>
                 </div>
@@ -91,16 +91,22 @@
         </div>
         <nav id="my-menu">
             <ul>
-                <li><a href="/home">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>
                     <a href="/tour">Tour</a>
-                    <ul>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="">Dich Vu</a></li>
-                        <li><a href="/visa">Visa</a></li>
-                    </ul>
                 </li>
-                <li><a href="contact.html">Lien He</a></li>
+                <li>
+                    <a href="/blog">Blog</a>
+                </li>
+                <li>
+                    <a href="/visa">Dịch Vụ Visa</a>
+                </li>
+                <li>
+                    <a href="/ticket">Tham Quan</a>
+                </li>
+                <li>
+                    <a href="/contact">Liên Hệ</a>
+                </li>
             </ul>
         </nav>
     </header>

@@ -1,9 +1,11 @@
 ﻿@model IEnumerable<NBT.Core.Domain.Immigrant.Visa>
 @{
-    ViewBag.Title = "index";
+    var visa = ViewBag.Visa as NBT.Core.Domain.Immigrant.Visa;
+    ViewBag.Title = visa.TitleSeo;
+    ViewBag.Keyword = visa.KeywordSeo;
+    ViewBag.Description = visa.DescriptionSeo;
     ViewBag.StyleHeader = "header header-style-2";
     Layout = "~/Views/Shared/Layouts.cshtml";
-    var visa = ViewBag.Visa as NBT.Core.Domain.Immigrant.Visa;
 }
 
 <div id="example-wrapper">
