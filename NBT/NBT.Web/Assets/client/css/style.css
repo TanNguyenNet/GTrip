@@ -1726,6 +1726,9 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .swiper-slide .slider-content {
     top: 30%;
     left: 15%; }
+    .swiper-slide .slider-content h1 {
+      text-transform: uppercase;
+     }
   .button {
     padding: 20px 40px;
     font-size: 1rem; }
