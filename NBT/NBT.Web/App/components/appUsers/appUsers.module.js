@@ -25,10 +25,10 @@
                 controller: "appUserEditController",
                 parent: 'base',
             })
-            .state('changePasswordAppUser', {
-                url: "/changePasswordAppUser",
-                templateUrl: "/app/components/appUsers/UserChangePassView.html",
-                controller: "UserChangePassController",
+            .state('changePass', {
+                url: "/changePass",
+                templateUrl: "/app/components/appUsers/changePassView.html",
+                controller: "changePassController",
                 parent: 'base',
             });
     }

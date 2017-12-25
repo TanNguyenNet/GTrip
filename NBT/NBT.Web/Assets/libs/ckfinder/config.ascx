@@ -18,8 +18,8 @@
         // ... where Session[ "IsAuthorized" ] is set to "true" as soon as the
         // user logs on your system.
 
-        return true;
-        //return ( Session["IsAuthorized"] != null && (bool)Session["IsAuthorized"] == true );
+        //return true;
+        return ( Session["IsAuthorized"] != null && (bool)Session["IsAuthorized"] == true );
     }
 
     /**
@@ -176,7 +176,7 @@
         type = ResourceType.Add( "Images" );
         type.Url = BaseUrl + "images/";
         type.Dir = BaseDir == "" ? "" : BaseDir + "images/";
-        type.MaxSize = 4096;
+        type.MaxSize = 4096000;
         type.AllowedExtensions = new string[] { "bmp", "gif", "jpeg", "jpg", "png" };
         type.DeniedExtensions = new string[] { };
 

@@ -19,7 +19,7 @@ namespace NBT.Web.Controllers
         public ActionResult Index()
         {
             var model = _converseService.GetAll(true);
-            ViewBag.WebSettings = this.webSettingsVm;
+            ViewBag.WebSettings = this.WebSetting;
             return View(model);
         }
     }

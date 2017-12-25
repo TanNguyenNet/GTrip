@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using NBT.Core.Domain.System;
 using NBT.Core.Services.ApplicationServices.System;
+using NBT.Infra.Services.Identity;
 
 namespace NBT.Web.Api.Controllers.System
 {
@@ -22,7 +23,7 @@ namespace NBT.Web.Api.Controllers.System
 
         [Route("getAll")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ViewProduct))]
+        [Authorize(Roles = nameof(PermissionProvider.Settings))]
         public HttpResponseMessage getAll(HttpRequestMessage request,
             int page = 0, int pageSize = 20, string filter = "")
         {
@@ -40,7 +41,7 @@ namespace NBT.Web.Api.Controllers.System
 
         [Route("update")]
         [HttpPut]
-        //[Authorize(Roles = nameof(PermissionProvider.AddArea))]
+        [Authorize(Roles = nameof(PermissionProvider.Settings))]
         public HttpResponseMessage Update(HttpRequestMessage request, List<Settings> settings)
         {
             return CreateHttpResponse(request, () =>

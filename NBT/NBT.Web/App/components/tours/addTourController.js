@@ -15,7 +15,7 @@
         $scope.addValue = addValue;
 
         $scope.ckeditorOptions = function () {
-
+            
         };
 
         function addValue(item) {

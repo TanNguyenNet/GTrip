@@ -6,10 +6,12 @@
     function rootController($state, $scope, $window, apiService) {
 
         $scope.authentication = {};
+        $scope.logOut = logOut;
 
-        $scope.logOut = function () {
-            //loginService.logOut();
-            //$window.location.href = '/login';
+
+
+        function logOut () {
+            $window.location.href = '/account/LogOutAdmin';
         };
 
         function loadInfoUser() {

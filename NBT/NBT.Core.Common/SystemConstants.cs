@@ -10,5 +10,8 @@ namespace NBT.Core.Common
     {
         public const int ExpireTime = 120;
         public const string Cart = "Cart";
+
+        public const int Hour = 3600;
+        public const int Day = 86400;
     }
 }

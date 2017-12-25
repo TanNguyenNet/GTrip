@@ -26,6 +26,20 @@ namespace NBT.Web
             //bundles.Add(new StyleBundle("~/Content/css").Include(
             //          "~/Content/bootstrap.css",
             //          "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/footers").Include(
+                        "~/Assets/bootstrap/dist/js/bootstrap.min.js",
+                        "~/Assets/libs/moment/moment.js",
+                        "~/Assets/libs/moment/moment-timezone.min.js",
+                        "~/Assets/libs/moment/moment-timezone-with-data.min.js",
+                        "~/Assets/jquery/jquery.validate.min.js",
+                        "~/Assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js",
+                        "~/Assets/client/js/main.js"));
+#if DEBUG
+            BundleTable.EnableOptimizations = false;
+#else
+            BundleTable.EnableOptimizations = true;
+#endif
         }
     }
 }

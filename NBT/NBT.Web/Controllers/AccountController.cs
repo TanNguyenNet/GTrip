@@ -202,6 +202,14 @@ namespace NBT.Web.Controllers
         }
 
         [HttpGet]
+        public ActionResult LogOutAdmin()
+        {
+            IAuthenticationManager authenticationManager = HttpContext.GetOwinContext().Authentication;
+            authenticationManager.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
         public ActionResult Register()
         {
             return View();

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using NBT.Core.Common;
+using NBT.Core.Common.Helper;
 using NBT.Core.Domain.Orders;
 using NBT.Core.Services.ApplicationServices.Orders;
 using NBT.Core.Services.Data;
@@ -14,7 +15,7 @@ using System.Web.Mvc;
 
 namespace NBT.Web.Controllers
 {
-    public class CartController : Controller
+    public class CartController : BaseController
     {
         IOrderService _orderService;
         IOrderItemService _orderItemService;
@@ -100,6 +101,11 @@ namespace NBT.Web.Controllers
                 _uow.CommitTran();
                 cartCookie.Expires = DateTime.Now.AddDays(-180);
                 Response.Cookies.Add(cartCookie);
+                if (!string.IsNullOrEmpty(order.CustomerEmail))
+                    MailHelper.SendMail(order.CustomerEmail, "Đặt chỗ tại Global Trip", "Cám ơn bạn đã đặt chỗ, chúng tôi sẽ liên lạc trong thời gian sớm nhất"
+                        , this.WebSetting.EmailAdmin
+                        , this.WebSetting.PasswordEmail
+                        , "CTY Global Trip");
                 return RedirectToAction("Index", "Tour");
             }
             return RedirectToAction("Index", "Tour");

@@ -19,6 +19,7 @@ namespace NBT.Web.Controllers
         }
         public async Task<ActionResult> Index()
         {
+            Session["IsAuthorized"] = true;
             //var user = await _userManager.FindByIdAsync(User.Identity.GetUserId());
             //if (!user.IsSystemAccount)
             //    return RedirectToAction("Index", "Home");

@@ -26,7 +26,8 @@
                                         <span>
                                             <i class="fa fa-calculator" aria-hidden="true"></i> <strong>Thời Gian:</strong> @Model.TotalDays Ngày @if (Model.TotalDays > 1)
                                             {
-                                                @(Model.TotalDays - 1);}
+                                                @(Model.TotalDays - 1);
+                                            }
                                             }
                                         </span>
                                     </div>
@@ -69,7 +70,9 @@
                                     </form>
                                 </div>
                                 <div class="tour-detail-desc">
-                                    @Html.Raw(Model.FullDescription)
+                                    <article id="reset-this-root">
+                                        <div>@Html.Raw(HttpUtility.HtmlDecode(Model.FullDescription))</div>
+                                    </article>
                                 </div>
                             </div>
                         </div>

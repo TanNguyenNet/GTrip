@@ -11,6 +11,7 @@ namespace NBT.Core.Domain.Orders
     {
         public long OrderId { set; get; }
         public long CodeId { set; get; }
+        public string Code { set; get; }
         [MaxLength(128)]
         public string Name { set; get; }
         public decimal Quantity { set; get; }

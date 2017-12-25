@@ -9,20 +9,20 @@ namespace NBT.Core.Common.Helper
 {
     public static class MailHelper
     {
-        public static bool SendMail(string toEmail, string subject, string content)
+        public static bool SendMail(string toEmail, string subject, string content,string userName, string passWord, string fromName)
         {
             try
             {
                 var host = ConfigHelper.GetByKey("SMTPHost");
                 var port = int.Parse(ConfigHelper.GetByKey("SMTPPort"));
-                var fromEmail = ConfigHelper.GetByKey("FromEmailAddress");
-                var password = ConfigHelper.GetByKey("FromEmailPassword");
-                var fromName = ConfigHelper.GetByKey("FromName");
+                //var fromEmail = ConfigHelper.GetByKey("FromEmailAddress");
+                //var password = ConfigHelper.GetByKey("FromEmailPassword");
+                //var fromName = FromName;
 
                 var smtpClient = new SmtpClient(host, port)
                 {
                     UseDefaultCredentials = false,
-                    Credentials = new System.Net.NetworkCredential(fromEmail, password),
+                    Credentials = new System.Net.NetworkCredential(userName, passWord),
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     EnableSsl = true,
                     Timeout = 100000
@@ -32,7 +32,7 @@ namespace NBT.Core.Common.Helper
                 {
                     Body = content,
                     Subject = subject,
-                    From = new MailAddress(fromEmail, fromName)
+                    From = new MailAddress(userName, fromName)
                 };
 
                 mail.To.Add(new MailAddress(toEmail));

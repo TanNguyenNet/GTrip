@@ -13,39 +13,52 @@ namespace NBT.Web.Controllers
 {
     public class BaseController : Controller
     {
-        protected WebSettingsVm webSettingsVm { set; get; }
+        protected WebSettingsVm _webSettings;
         public BaseController()
         {
-            if (string.IsNullOrEmpty(WebSettings.CompanyName))
-                LoadSettings();
-            UpdateWebSettings();
+
         }
 
         private void UpdateWebSettings()
         {
-            webSettingsVm = new WebSettingsVm();
-            webSettingsVm.Address = WebSettings.Address;
-            webSettingsVm.Address1 = WebSettings.Address1;
-            webSettingsVm.CompanyEmail = WebSettings.CompanyEmail;
-            webSettingsVm.CompanyEmail1 = WebSettings.CompanyEmail1;
-            webSettingsVm.CompanyName = WebSettings.CompanyName;
-            webSettingsVm.CompanyName1 = WebSettings.CompanyName1;
-            webSettingsVm.EmailAdmin = WebSettings.EmailAdmin;
-            webSettingsVm.EmailNoti = WebSettings.EmailNoti;
-            webSettingsVm.Facebook = WebSettings.Facebook;
-            webSettingsVm.Instagram = WebSettings.Instagram;
-            webSettingsVm.MetaDescription = WebSettings.MetaDescription;
-            webSettingsVm.MetaKeyword = WebSettings.MetaKeyword;
-            webSettingsVm.MetaTitle = WebSettings.MetaTitle;
-            webSettingsVm.PasswordEmail = WebSettings.PasswordEmail;
-            webSettingsVm.Phone = WebSettings.Phone;
-            webSettingsVm.Phone1 = WebSettings.Phone1;
-            webSettingsVm.Twitter = WebSettings.Twitter;
+            _webSettings = new WebSettingsVm();
+            _webSettings.Address = WebSettings.Address;
+            _webSettings.Address1 = WebSettings.Address1;
+            _webSettings.CompanyEmail = WebSettings.CompanyEmail;
+            _webSettings.CompanyEmail1 = WebSettings.CompanyEmail1;
+            _webSettings.CompanyName = WebSettings.CompanyName;
+            _webSettings.CompanyName1 = WebSettings.CompanyName1;
+            _webSettings.EmailAdmin = WebSettings.EmailAdmin;
+            _webSettings.EmailNoti = WebSettings.EmailNoti;
+            _webSettings.Facebook = WebSettings.Facebook;
+            _webSettings.Instagram = WebSettings.Instagram;
+            _webSettings.MetaDescription = WebSettings.MetaDescription;
+            _webSettings.MetaKeyword = WebSettings.MetaKeyword;
+            _webSettings.MetaTitle = WebSettings.MetaTitle;
+            _webSettings.PasswordEmail = WebSettings.PasswordEmail;
+            _webSettings.Phone = WebSettings.Phone;
+            _webSettings.Phone1 = WebSettings.Phone1;
+            _webSettings.Twitter = WebSettings.Twitter;
+        }
+
+        protected WebSettingsVm WebSetting
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(WebSettings.Address))
+                    LoadSettings();
+                if (object.ReferenceEquals(_webSettings, null))
+                    UpdateWebSettings();
+                return _webSettings;
+
+            }
         }
 
         private void LoadSettings()
         {
+
             var settings = ServiceFactory.Get<ISettingsService>().GetAll();
+
             WebSettings.Address = settings.First(x => x.Id == SettingsProvider.Address.Id).Value;
             WebSettings.Address1 = settings.First(x => x.Id == SettingsProvider.Address1.Id).Value;
             WebSettings.CompanyEmail = settings.First(x => x.Id == SettingsProvider.CompanyEmail.Id).Value;

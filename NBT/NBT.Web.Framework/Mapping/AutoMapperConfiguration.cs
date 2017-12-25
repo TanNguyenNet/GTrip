@@ -31,6 +31,7 @@ namespace NBT.Web.Framework.Mapping
                 .ForMember(x => x.Price, mo => mo.MapFrom(src => src.Price))
                 .ForMember(x => x.FromDate, mo => mo.MapFrom(src => src.FromDate))
                 .ForMember(x => x.ToDate, mo => mo.MapFrom(src => src.ToDate))
+                .ForMember(x => x.Code, mo => mo.MapFrom(src => src.Code))
                 ;
                 cfg.CreateMap<Continent, ContinentVm>();
                 cfg.CreateMap<CountryRegion, CountryRegionVm>();

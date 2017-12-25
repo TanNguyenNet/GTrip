@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace NBT.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         ITourService _tourService;
         public HomeController(ITourService tourService)
@@ -17,6 +17,10 @@ namespace NBT.Web.Controllers
         public ActionResult Index()
         {
             var model = _tourService.GetHomeTop(10);
+            var webSetting = this.WebSetting;
+            ViewBag.Title = webSetting.MetaTitle;
+            ViewBag.Keyword = webSetting.MetaKeyword;
+            ViewBag.Description = webSetting.MetaDescription;
             return View(model);
         }
 

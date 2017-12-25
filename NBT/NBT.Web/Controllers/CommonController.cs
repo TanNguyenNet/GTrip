@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NBT.Core.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,20 +15,23 @@ namespace NBT.Web.Controllers
             return View();
         }
         [ChildActionOnly]
+        [OutputCache(Duration = SystemConstants.Hour)]
         public ActionResult Header(string style)
         {
             ViewBag.StyleHeader = style;
-            return PartialView(this.webSettingsVm);
+            return PartialView(this.WebSetting);
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration = SystemConstants.Hour)]
         public ActionResult Footer()
         {
             
-            return PartialView(this.webSettingsVm);
+            return PartialView(this.WebSetting);
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration = SystemConstants.Hour)]
         public ActionResult Navigation()
         {
             return PartialView();

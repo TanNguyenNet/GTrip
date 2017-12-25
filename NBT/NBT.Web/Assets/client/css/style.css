@@ -2,14 +2,15 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, .nav-side-menu li, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
@@ -17,7 +18,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   line-height: 1; }
 
-ol, ul, .nav-side-menu li {
+ul, .nav-side-menu li {
   list-style: none; }
 
 blockquote, q {
@@ -51,15 +52,12 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased; }
-  body * {
-    margin: 0;
-    padding: 0; }
 
 img {
   max-width: 100%;
   height: auto; }
 
-ul, .nav-side-menu li {
+.nav-side-menu li {
   padding: 0; }
   ul li, .nav-side-menu li li {
     list-style: none; }
@@ -67,7 +65,15 @@ ul, .nav-side-menu li {
 textarea {
   height: auto;
   padding-top: 15px; }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 body a:focus,
 body a:hover {
   outline: medium none transparent;
@@ -1455,6 +1461,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     /*border: 1px solid #ccc;*/
     width: 100%;
     overflow: hidden;
+    padding-left: 10px;
     /* background: url("/images/icon/angle-arrow-down.png") no-repeat 95% 65%;*/
 }
 
@@ -1471,11 +1478,12 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .tour-filter select:focus {
       outline: none;
   }
-  .bttn-filter {
-    padding: 5px 8px;
+.bttn-filter {
     background-color: transparent;
     width: 100%;
-  }
+    outline: none;
+    border: 1px solid #bdbaba;
+}
   .bttn-filter:hover {
     background-color: #6ebb43;
     color: #fff;
