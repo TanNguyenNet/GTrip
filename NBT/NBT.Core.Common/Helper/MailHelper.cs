@@ -24,7 +24,7 @@ namespace NBT.Core.Common.Helper
                     UseDefaultCredentials = false,
                     Credentials = new System.Net.NetworkCredential(userName, passWord),
                     DeliveryMethod = SmtpDeliveryMethod.Network,
-                    EnableSsl = true,
+                    //EnableSsl = true,
                     Timeout = 100000
                 };
 

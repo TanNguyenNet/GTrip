@@ -102,10 +102,16 @@ namespace NBT.Web.Controllers
                 cartCookie.Expires = DateTime.Now.AddDays(-180);
                 Response.Cookies.Add(cartCookie);
                 if (!string.IsNullOrEmpty(order.CustomerEmail))
+                {
                     MailHelper.SendMail(order.CustomerEmail, "Đặt chỗ tại Global Trip", "Cám ơn bạn đã đặt chỗ, chúng tôi sẽ liên lạc trong thời gian sớm nhất"
                         , this.WebSetting.EmailAdmin
                         , this.WebSetting.PasswordEmail
                         , "CTY Global Trip");
+                    MailHelper.SendMail(this.WebSetting.EmailAdmin, "Đặt chỗ trên web Global Trip", "Khách hàng " + order.CustomerName + " đã đặt chỗ"
+                        , this.WebSetting.EmailAdmin
+                        , this.WebSetting.PasswordEmail
+                        , "CTY Global Trip");
+                }
                 return RedirectToAction("Index", "Tour");
             }
             return RedirectToAction("Index", "Tour");
