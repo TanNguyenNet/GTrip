@@ -1641,6 +1641,9 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
           font-size: 0.75rem;
           line-height: 25px; } }
   @media only screen and (max-width: 767px) {
+    h2 {
+      font-size: 2rem;
+    }
   .block-content.b1 {
     margin-top: 20px; }
   .mb40-1 {
