@@ -384,7 +384,7 @@ select {
     left: 15%;
     color: #fff; }
     .swiper-slide .slider-content .btn-container {
-      margin-top: 25px; }
+      margin-top: 30px; }
     .swiper-slide .slider-content h2 {
       font-size: 3.4vw; }
     .swiper-slide .slider-content h1 {
@@ -1746,6 +1746,8 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     left: 15%; }
     .swiper-slide .slider-content h1 {
       text-transform: uppercase;
+      padding-top: 10px;
+      padding-bottom: 10px;
      }
   .button {
     padding: 20px 40px;
