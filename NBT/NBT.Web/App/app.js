@@ -15,7 +15,8 @@
             'nbtapp.visas',
             'nbtapp.blogPosts',
             'nbtapp.systems',
-            'nbtapp.contacts'
+            'nbtapp.contacts',
+            'nbtapp.orders'
         ])
         .config(config)
         .config(configAuthentication);

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/Assets/Ionicons/css/ionicons.min.css">
     <link href="~/Assets/libs/angular-ui-select/dist/select.min.css" rel="stylesheet" />
     <link href="~/Assets/libs/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/Assets/libs/datepicker/datepicker3.css" rel="stylesheet" />
     <link rel="stylesheet" href="/Assets/css/AdminLTE.min.css">
     <link rel="stylesheet" href="/Assets/css/skins/_all-skins.min.css">
 
@@ -37,13 +38,13 @@
                 display: none;
             }
     </style>
-    <script src="/Assets/jquery/dist/jquery.min.js"></script>
-    <script src="/Assets/js/adminlte.min.js"></script>
-    <script src="/Assets/js/demo.js"></script>
+    
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng-app="nbtapp" ng-controller="rootController">
     <!-- Site wrapper -->
     <div ui-view></div>
+    <script src="/Assets/jquery/dist/jquery.min.js"></script>
+
     <script src="/Assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/Assets/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <script src="/Assets/fastclick/lib/fastclick.js"></script>
@@ -51,6 +52,7 @@
     <script src="~/Assets/libs/input-mask/jquery.inputmask.date.extensions.js"></script>
     <script src="~/Assets/libs/input-mask/jquery.inputmask.extensions.js"></script>
     <script src="~/Assets/libs/moment/min/moment.min.js"></script>
+    <script src="~/Assets/libs/datepicker/bootstrap-datepicker.js"></script>
     <!--Angular-->
     <script src="~/Assets/libs/angular/angular.min.js"></script>
     <script src="~/App/app.js"></script>
@@ -86,6 +88,7 @@
     <script src="~/App/components/areas/areas.module.js"></script>
     <script src="~/App/components/systems/systems.module.js"></script>
     <script src="~/App/components/contacts/contacts.module.js"></script>
+    <script src="~/App/components/orders/orders.module.js"></script>
 
 
     <script src="~/App/components/home/rootController.js"></script>
@@ -138,5 +141,10 @@
     <script src="~/App/components/contacts/contactsController.js"></script>
     <script src="~/App/components/contacts/addContactController.js"></script>
     <script src="~/App/components/contacts/editContactController.js"></script>
+
+    <script src="~/App/components/orders/ordersController.js"></script>
+    <script src="~/App/components/orders/orderDetailController.js"></script>
+
+    <script src="/Assets/js/adminlte.min.js"></script>
 </body>
 </html>
