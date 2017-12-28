@@ -1031,7 +1031,12 @@ select {
 .tour-category-content {
   border: 1px solid #dedede;
   padding: 15px 15px; }
-
+.tour-category-content ul {
+  padding-left: 0;
+}
+.tour-category-content ul li label {
+  font-weight: 400;
+}
 .tour-title {
   font-size: 1rem;
   margin-bottom: 10px;
