@@ -44,6 +44,8 @@ namespace NBT.Web.Controllers
         public ActionResult Order(OrderItemVm item)
         {
             var cartCookie = CheckCart();
+            if(item.FromDate < DateTime.Now || item.ToDate < DateTime.Now)
+                return RedirectToAction("Index", "Tour");
             if (cartCookie.Value != "")
             {
                 var listItems = JsonConvert.DeserializeObject<List<OrderItemVm>>(cartCookie.Value);
@@ -88,7 +90,7 @@ namespace NBT.Web.Controllers
                 var newOrderItem = Mapper.Map<List<OrderItem>>(listItems);
                 var newOrder = new Order();
                 newOrder.UpdateOrder(order);
-
+                newOrder.CreatedDate = DateTimeOffset.UtcNow;
                 foreach (var item in newOrderItem)
                 {
                     item.FromDate = item.FromDate.UtcDateTime;
@@ -103,13 +105,14 @@ namespace NBT.Web.Controllers
                 Response.Cookies.Add(cartCookie);
                 if (!string.IsNullOrEmpty(order.CustomerEmail))
                 {
+                    var settings = this.WebSetting;
                     MailHelper.SendMail(order.CustomerEmail, "Đặt chỗ tại Global Trip", "Cám ơn bạn đã đặt chỗ, chúng tôi sẽ liên lạc trong thời gian sớm nhất"
-                        , this.WebSetting.EmailAdmin
-                        , this.WebSetting.PasswordEmail
+                        , settings.EmailAdmin
+                        , settings.PasswordEmail
                         , "CTY Global Trip");
                     MailHelper.SendMail(this.WebSetting.EmailAdmin, "Đặt chỗ trên web Global Trip", "Khách hàng " + order.CustomerName + " đã đặt chỗ"
-                        , this.WebSetting.EmailAdmin
-                        , this.WebSetting.PasswordEmail
+                        , settings.EmailAdmin
+                        , settings.PasswordEmail
                         , "CTY Global Trip");
                 }
                 return RedirectToAction("Index", "Tour");

@@ -255,7 +255,10 @@
     <Content Include="App\components\home\homeController.js" />
     <Content Include="App\components\home\homeView.html" />
     <Content Include="App\components\home\rootController.js" />
+    <Content Include="App\components\orders\orderDetailController.js" />
+    <Content Include="App\components\orders\orderDetailView.html" />
     <Content Include="App\components\orders\orders.module.js" />
+    <Content Include="App\components\orders\ordersController.js" />
     <Content Include="App\components\orders\ordersView.html" />
     <Content Include="App\components\stateProvinces\addStateProvinceController.js" />
     <Content Include="App\components\stateProvinces\editStateProvinceController.js" />
@@ -5515,6 +5518,9 @@
     <Content Include="Assets\libs\ckfinder\skins\v1\skin.js" />
     <Content Include="Assets\libs\ckfinder\skins\v1\uipanel.css" />
     <Content Include="Assets\libs\ckfinder\translations.txt" />
+    <Content Include="Assets\libs\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Assets\libs\datepicker\datepicker3.css" />
+    <Content Include="Assets\libs\datepicker\locales\bootstrap-datepicker.vi.js" />
     <Content Include="Assets\libs\input-mask\jquery.inputmask.date.extensions.js" />
     <Content Include="Assets\libs\input-mask\jquery.inputmask.extensions.js" />
     <Content Include="Assets\libs\input-mask\jquery.inputmask.js" />
