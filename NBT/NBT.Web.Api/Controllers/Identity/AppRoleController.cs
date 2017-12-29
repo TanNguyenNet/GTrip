@@ -29,7 +29,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("getlistpaging")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ViewPermission))]
+        [Authorize(Roles = nameof(PermissionProvider.ViewPermission))]
         public HttpResponseMessage GetListPaging(HttpRequestMessage request, int page, int pageSize, string filter = null)
         {
             return CreateHttpResponse(request, () =>
@@ -56,7 +56,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("getlistall")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ViewPermission))]
+        [Authorize(Roles = nameof(PermissionProvider.ViewPermission))]
         public HttpResponseMessage GetAll(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>

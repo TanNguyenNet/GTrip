@@ -50,7 +50,7 @@
                                     }
                                 </div>
                                 <div class="tour-detail-date">
-                                    <form action="/cart/order" method="post">
+                                    <form id="frmOrder" action="/cart/order" method="post">
                                         @Html.AntiForgeryToken()
                                         <h4>Chọn Ngày Sử Dụng Tour</h4>
                                         <span>Ngày đi và ngày về:</span>
@@ -81,5 +81,7 @@
             </div>
         </div>
     </div>
-
 </div>
+@section footerJS{
+    <script src="~/Assets/client/js/cartController.js"></script>
+}

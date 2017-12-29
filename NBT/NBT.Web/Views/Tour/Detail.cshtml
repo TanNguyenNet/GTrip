@@ -49,27 +49,27 @@
                                     }
                                 </div>
                                 <div class="tour-detail-date">
-                                    <form action="/cart/order" method="post">
+                                    <form id="frmOrder" action="/cart/order" method="post">
                                         @Html.AntiForgeryToken()
                                         <h4>Chọn Ngày Sử Dụng Tour</h4>
                                         <span>Ngày đi và ngày về:</span>
                                         <div class="start-date">
                                             <input type='text' class="form-control" id='datetimepicker4' name="FromDate" /><i class="fa fa-calendar" aria-hidden="true"></i>
-                                            @Html.Hidden("Alias", Model.Alias)
-                                            @Html.Hidden("Name", Model.Name)
-                                            @Html.Hidden("Code", Model.Code)
-                                            @Html.Hidden("Image", Model.Image)
-                                            @Html.Hidden("Price", Model.Price)
-                                            @Html.Hidden("Id", Model.Id)
                                         </div>
                                         <div class="end-date">
                                             <input type='text' class="form-control" id='datetimepicker5' name="ToDate" /><i class="fa fa-calendar" aria-hidden="true"></i>
                                         </div>
+                                        @Html.Hidden("Alias", Model.Alias)
+                                        @Html.Hidden("Name", Model.Name)
+                                        @Html.Hidden("Code", Model.Code)
+                                        @Html.Hidden("Image", Model.Image)
+                                        @Html.Hidden("Price", Model.Price)
+                                        @Html.Hidden("Id", Model.Id)
                                         <div class="tour-btn"><button type="submit">Đặt tour</button></div>
                                     </form>
                                 </div>
                                 <div class="tour-detail-desc">
-                                    @Html.Raw(Model.FullDescription)
+                                    @Html.Raw(HttpUtility.HtmlDecode(Model.FullDescription))
                                 </div>
                             </div>
                         </div>
@@ -78,5 +78,8 @@
             </div>
         </div>
     </div>
-
 </div>
+
+@section footerJS{
+    <script src="~/Assets/client/js/cartController.js"></script>
+}

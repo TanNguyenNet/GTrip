@@ -29,5 +29,10 @@ namespace NBT.Infra.Services.Orders
                 throw;
             }
         }
+
+        public IEnumerable<OrderItem> GetByOrderId(long id)
+        {
+            return _orderItemRepo.GetMulti(x => x.OrderId == id).ToList();
+        }
     }
 }

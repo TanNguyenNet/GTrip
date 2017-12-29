@@ -19,6 +19,14 @@ namespace NBT.Web.Controllers
 
         }
 
+        protected void LoadDefaultMetaSEO()
+        {
+            var webSetting = this.WebSetting;
+            ViewBag.Title = webSetting.MetaTitle;
+            ViewBag.Keyword = webSetting.MetaKeyword;
+            ViewBag.Description = webSetting.MetaDescription;
+        }
+
         private void UpdateWebSettings()
         {
             _webSettings = new WebSettingsVm();

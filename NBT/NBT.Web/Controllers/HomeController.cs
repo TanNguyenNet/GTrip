@@ -16,11 +16,8 @@ namespace NBT.Web.Controllers
         }
         public ActionResult Index()
         {
+            this.LoadDefaultMetaSEO();
             var model = _tourService.GetHomeTop(10);
-            var webSetting = this.WebSetting;
-            ViewBag.Title = webSetting.MetaTitle;
-            ViewBag.Keyword = webSetting.MetaKeyword;
-            ViewBag.Description = webSetting.MetaDescription;
             return View(model);
         }
 

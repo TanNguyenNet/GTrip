@@ -38,7 +38,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("getlistpaging")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ViewGroup))]
+        [Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
         public HttpResponseMessage GetListPaging(HttpRequestMessage request, int page, int pageSize, string filter = null)
         {
             return CreateHttpResponse(request, () =>
@@ -64,7 +64,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("getlistall")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ViewGroup))]
+        [Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
         public HttpResponseMessage GetAll(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
@@ -81,7 +81,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("detail/{id:int}")]
         [HttpGet]
-        //[Authorize(Roles = nameof(PermissionProvider.ViewGroup))]
+        [Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
         public HttpResponseMessage Details(HttpRequestMessage request, int id)
         {
             if (id == 0)
@@ -101,7 +101,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("create")]
         [HttpPost]
-        //[Authorize(Roles = nameof(PermissionProvider.AddGroup))]
+        [Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
         public HttpResponseMessage Create(HttpRequestMessage request, AppGroupVm appGroupViewModel)
         {
             if (ModelState.IsValid)
@@ -141,7 +141,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [HttpPut]
         [Route("update")]
-        //[Authorize(Roles = nameof(PermissionProvider.EditGroup))]
+        [Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
         public async Task<HttpResponseMessage> Update(HttpRequestMessage request, AppGroupVm appGroupViewModel)
         {
             if (ModelState.IsValid)
@@ -151,8 +151,6 @@ namespace NBT.Web.Api.Controllers.Identity
                 {
                     appGroup.UpdateAppGroup(appGroupViewModel);
                     _appGroupService.Update(appGroup);
-                    //_appGroupService.Save();
-
                     //save group
                     var listRoleGroup = new List<AppRoleGroup>();
                     foreach (var role in appGroupViewModel.Roles)
@@ -164,7 +162,6 @@ namespace NBT.Web.Api.Controllers.Identity
                         });
                     }
                     _appRoleService.AddRolesToGroup(listRoleGroup, appGroup.Id);
-                    //_appRoleService.Save();
 
                     //add role to user
                     var listRole = _appRoleService.GetListRoleByGroupId(appGroup.Id);
@@ -193,7 +190,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [HttpDelete]
         [Route("delete")]
-        //[Authorize(Roles = nameof(PermissionProvider.DelGroup))]
+        [Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
             var appGroup = _appGroupService.Delete(id);
@@ -202,7 +199,7 @@ namespace NBT.Web.Api.Controllers.Identity
 
         [Route("deletemulti")]
         [HttpDelete]
-        //[Authorize(Roles = nameof(PermissionProvider.DelGroup))]
+        [Authorize(Roles = nameof(PermissionProvider.ManageGroup))]
         public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string checkedList)
         {
             return CreateHttpResponse(request, () =>

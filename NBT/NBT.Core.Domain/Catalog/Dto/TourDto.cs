@@ -39,7 +39,9 @@ namespace NBT.Core.Domain.Catalog.Dto
         public int TotalDays { set; get; }
         [MaxLength(256)]
         public string DayBegin { set; get; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTimeOffset FromDate { set; get; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTimeOffset ToDate { set; get; }
         public bool IsShow { set; get; }
         public bool IsHot { set; get; }

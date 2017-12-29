@@ -35,12 +35,12 @@ namespace NBT.Infra.Services.Orders
             if (fromDate != null)
             {
                 fromDate = DateTimeHelper.FromDate(fromDate.Value);
-                query = query.Where(x => x.CreatedDate >= fromDate);
+                query = query.Where(x => x.CreatedDate >= fromDate.Value);
             }
             if (toDate != null)
             {
                 toDate = DateTimeHelper.ToDate(toDate.Value);
-                query = query.Where(x => x.CreatedDate <= toDate);
+                query = query.Where(x => x.CreatedDate <= toDate.Value);
             }
 
             return query.OrderByDescending(x => x.CreatedDate).ThenBy(x => x.CustomerName).ToPagedList(pageIndex, pageSize);

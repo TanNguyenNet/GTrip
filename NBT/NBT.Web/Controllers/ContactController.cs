@@ -18,6 +18,7 @@ namespace NBT.Web.Controllers
 
         public ActionResult Index()
         {
+            this.LoadDefaultMetaSEO();
             var model = _converseService.GetAll(true);
             ViewBag.WebSettings = this.WebSetting;
             return View(model);

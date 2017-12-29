@@ -18,6 +18,7 @@ namespace NBT.Infra.Services.Identity
         public static readonly string DelUser;
 
         public static readonly string Settings;
+        public static readonly string ManageGroup;
 
         public static readonly AppRole ViewPermissionRecord = new AppRole { Name = nameof(ViewPermission), Description = "Xem quyền" };
 
@@ -25,6 +26,8 @@ namespace NBT.Infra.Services.Identity
         public static readonly AppRole AddUserRecord = new AppRole { Name = nameof(AddUser), Description = "Thêm user" };
         public static readonly AppRole EditUserRecord = new AppRole { Name = nameof(EditUser), Description = "Chỉnh sửa user" };
         public static readonly AppRole DelUserRecord = new AppRole { Name = nameof(DelUser), Description = "Xóa user" };
+
+        public static readonly AppRole ManageGroupRecord = new AppRole { Name = nameof(ManageGroup), Description = "Quản lý nhóm quyền" };
 
         public static readonly AppRole SettingsRecord = new AppRole { Name = nameof(Settings), Description = "Cấu hình website" };
         public IEnumerable<AppRole> GetPermissions()
@@ -38,6 +41,7 @@ namespace NBT.Infra.Services.Identity
                 EditUserRecord,
                 DelUserRecord,
 
+                ManageGroupRecord,
                 SettingsRecord
             };
         }

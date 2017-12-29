@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace NBT.Web.Controllers
 {
-    public class BlogController : Controller
+    public class BlogController : BaseController
     {
         IBlogPostService _blogPostService;
         public BlogController(IBlogPostService blogPostService)
@@ -20,7 +20,9 @@ namespace NBT.Web.Controllers
         // GET: Blog
         public ActionResult Index(int pageIndex = 1, int pageSize = 12, string filter = "")
         {
+
             var model = _blogPostService.GetAll(pageIndex = 1, pageSize = 12, filter = "", true);
+
             PaginationSet<BlogPost> pagedSet = new PaginationSet<BlogPost>()
             {
                 Page = pageIndex,
@@ -28,6 +30,7 @@ namespace NBT.Web.Controllers
                 TotalPages = (int)Math.Ceiling((decimal)model.TotalItemCount / pageSize),
                 Items = model
             };
+            this.LoadDefaultMetaSEO();
             return View(pagedSet);
         }
 

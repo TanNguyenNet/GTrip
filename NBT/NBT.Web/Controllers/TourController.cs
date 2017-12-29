@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace NBT.Web.Controllers
 {
-    public class TourController : Controller
+    public class TourController : BaseController
     {
         IContinentService _continentService;
         ICountryRegionService _countryRegionService;
@@ -55,6 +55,7 @@ namespace NBT.Web.Controllers
                 TotalPages = (int)Math.Ceiling((decimal)model.TotalItemCount / pageSize),
                 Items = model
             };
+            this.LoadDefaultMetaSEO();
             return View(pagedSet);
         }
         public ActionResult Detail(string alias)

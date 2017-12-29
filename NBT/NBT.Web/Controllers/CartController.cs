@@ -37,6 +37,7 @@ namespace NBT.Web.Controllers
                 var listItems = JsonConvert.DeserializeObject<List<OrderItemVm>>(cartCookie.Value);
                 return View(listItems);
             }
+            this.LoadDefaultMetaSEO();
             return RedirectToAction("Index", "Tour");
         }
         [HttpPost]
@@ -44,8 +45,11 @@ namespace NBT.Web.Controllers
         public ActionResult Order(OrderItemVm item)
         {
             var cartCookie = CheckCart();
-            if(item.FromDate < DateTime.Now || item.ToDate < DateTime.Now)
-                return RedirectToAction("Index", "Tour");
+            if (item.FromDate < DateTime.Now || item.ToDate < DateTime.Now)
+                return Json(new
+                {
+                    Status = false
+                });
             if (cartCookie.Value != "")
             {
                 var listItems = JsonConvert.DeserializeObject<List<OrderItemVm>>(cartCookie.Value);
@@ -72,7 +76,10 @@ namespace NBT.Web.Controllers
                 cartCookie.Expires = DateTime.Now.AddDays(30);
                 Response.Cookies.Add(cartCookie);
             }
-            return RedirectToAction("Index", "Cart");
+            return Json(new
+            {
+                Status = true
+            });
         }
 
         [HttpPost]
@@ -91,14 +98,16 @@ namespace NBT.Web.Controllers
                 var newOrder = new Order();
                 newOrder.UpdateOrder(order);
                 newOrder.CreatedDate = DateTimeOffset.UtcNow;
-                foreach (var item in newOrderItem)
-                {
-                    item.FromDate = item.FromDate.UtcDateTime;
-                    item.ToDate = item.ToDate.UtcDateTime;
-                }
+
 
                 _uow.BeginTran();
                 _orderService.Add(newOrder);
+                foreach (var item in newOrderItem)
+                {
+                    item.FromDate = item.FromDate.Date;
+                    item.ToDate = item.ToDate.Date;
+                    item.OrderId = newOrder.Id;
+                }
                 _orderItemService.Add(newOrderItem);
                 _uow.CommitTran();
                 cartCookie.Expires = DateTime.Now.AddDays(-180);
@@ -128,6 +137,21 @@ namespace NBT.Web.Controllers
             {
                 var model = new OrderVm();
                 return View(model);
+            }
+            return RedirectToAction("Index", "Tour");
+        }
+
+        public ActionResult DeleteItem(long id)
+        {
+            var cartCookie = CheckCart();
+            if (cartCookie.Value != "")
+            {
+                var listItems = JsonConvert.DeserializeObject<List<OrderItemVm>>(cartCookie.Value);
+                var item = listItems.Where(x => x.Id == id).First();
+                listItems.Remove(item);
+                if (listItems.Count > 0)
+                    return RedirectToAction("Index");
+                return RedirectToAction("Index", "Tour");
             }
             return RedirectToAction("Index", "Tour");
         }

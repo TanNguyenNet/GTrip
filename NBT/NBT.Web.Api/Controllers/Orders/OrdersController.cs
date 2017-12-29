@@ -48,5 +48,28 @@ namespace NBT.Web.Api.Controllers.Orders
             });
         }
 
+        [Route("Update")]
+        [HttpPut]
+        //[Authorize(Roles = nameof(PermissionProvider.AddArea))]
+        public HttpResponseMessage Update(HttpRequestMessage request, Order order)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage reponse = null;
+                if (!ModelState.IsValid)
+                {
+                    reponse = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    _orderService.Update(order);
+
+                    reponse = request.CreateResponse(HttpStatusCode.OK, order);
+                }
+                return reponse;
+
+            });
+        }
+
     }
 }

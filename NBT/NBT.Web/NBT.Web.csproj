@@ -390,6 +390,7 @@
     <Content Include="Assets\client\css\libs\font-awesome\HELP-US-OUT.txt" />
     <Content Include="Assets\client\css\reset.css" />
     <Content Include="Assets\client\css\style.css" />
+    <Content Include="Assets\client\js\cartController.js" />
     <Content Include="Assets\client\js\main.js" />
     <Content Include="Assets\css\AdminLTE.css" />
     <Content Include="Assets\css\AdminLTE.min.css" />
