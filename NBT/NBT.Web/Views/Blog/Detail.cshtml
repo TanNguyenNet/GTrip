@@ -5,8 +5,18 @@
     ViewBag.Description = Model.DescriptionSeo;
     ViewBag.StyleHeader = "header header-style-2";
     Layout = "~/Views/Shared/Layouts.cshtml";
-}
 
+    var baseUrl = "http://{0}";
+    baseUrl = string.Format(baseUrl, HttpContext.Current.Request.Url.Host);
+    var urlShare = HttpContext.Current.Request.Url.OriginalString;
+}
+@section Metaog{
+    <meta property="og:image" content="@baseUrl@Model.Image" />
+    @*<meta property="og:image:secure_url" content="@baseUrl@Model.product.ImageAvatar" />*@
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+}
 <div id="example-wrapper">
     @Html.Partial("Navigation")
 
@@ -16,44 +26,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-3">
                         <div class="blog-wrap">
-                            <div class="blog-content">
-                                <div class="blog-cate-title"><h3>Bài viết mới</h3></div>
-                                <div class="new-blog">
-                                    <a href="">
-                                        <img class="img-responsive" src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
-                                        <h5><a href="#">Nước áo xinh đẹp và thanh bình</a></h5>
-                                    </a>
-                                </div>
-                                <div class="next-blog">
-                                    <div class="next-blog-content">
-                                        <div class="next-blog-img">
-                                            <a href="">
-                                                <img class="img-responsive" src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="next-blog-info">
-                                            <h5><a href="">nước áo xinh đẹp</a></h5>
-                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>15-06-2017</span>
-                                            <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch…</p>
-                                        </div>
-                                    </div>
-                                    <div class="next-blog-content">
-                                        <div class="next-blog-img">
-                                            <a href="">
-                                                <img class="img-responsive" src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="next-blog-info">
-                                            <h5><a href="">nước áo xinh đẹp</a></h5>
-                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>15-06-2017</span>
-                                            <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch…</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="promotion">
-                                    <img class="img-responsive" src="../images/poster-quang-cao-du-lich-01.jpg" alt="">
-                                </div>
-                            </div>
+                            @{Html.RenderAction("BlogPostNews", "Blog");}
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9">
@@ -69,7 +42,7 @@
                                 </div>
                                 <div class="social-wrapper">
                                     <div class="social-share"
-                                        data-href="*" >
+                                         data-href="@urlShare">
                                     </div>
                                     <ul class="share_social">
                                         Chia sẽ:

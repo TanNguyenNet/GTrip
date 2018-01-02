@@ -41,7 +41,7 @@ namespace NBT.Infra.Services.Blog
             if (blogPostType != 0)
                 query = query.Where(x => x.BlogPostType == blogPostType);
 
-            return query.OrderBy(x => x.Title).Take(top).ToList();
+            return query.OrderBy(x => x.Title).ThenByDescending(x => x.CreatedDate).Take(top).ToList();
         }
 
         public BlogPost GetByAlias(string alias)

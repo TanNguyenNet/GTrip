@@ -45,7 +45,7 @@ namespace NBT.Web.Controllers
         public ActionResult Order(OrderItemVm item)
         {
             var cartCookie = CheckCart();
-            if (item.FromDate < DateTime.Now || item.ToDate < DateTime.Now)
+            if (item.FromDate.Date < DateTime.Now.Date || item.ToDate < DateTime.Now)
                 return Json(new
                 {
                     Status = false
@@ -61,6 +61,7 @@ namespace NBT.Web.Controllers
                 else
                 {
                     item.Quantity = 1;
+                    item.Guid = Guid.NewGuid().ToString();
                     listItems.Add(item);
                 }
                 cartCookie.Value = JsonConvert.SerializeObject(listItems);
@@ -71,6 +72,7 @@ namespace NBT.Web.Controllers
             {
                 var listItems = new List<OrderItemVm>();
                 item.Quantity = 1;
+                item.Guid = Guid.NewGuid().ToString();
                 listItems.Add(item);
                 cartCookie.Value = JsonConvert.SerializeObject(listItems);
                 cartCookie.Expires = DateTime.Now.AddDays(30);
@@ -119,7 +121,7 @@ namespace NBT.Web.Controllers
                         , settings.EmailAdmin
                         , settings.PasswordEmail
                         , "CTY Global Trip");
-                    MailHelper.SendMail(this.WebSetting.EmailAdmin, "Đặt chỗ trên web Global Trip", "Khách hàng " + order.CustomerName + " đã đặt chỗ"
+                    MailHelper.SendMail(this.WebSetting.EmailAdmin, "Đặt chỗ trên web Global Trip", "Khách hàng " + order.CustomerName + " đã đặt chỗ."
                         , settings.EmailAdmin
                         , settings.PasswordEmail
                         , "CTY Global Trip");
@@ -135,25 +137,70 @@ namespace NBT.Web.Controllers
             var cartCookie = CheckCart();
             if (cartCookie.Value != "")
             {
+                this.LoadDefaultMetaSEO();
                 var model = new OrderVm();
                 return View(model);
             }
             return RedirectToAction("Index", "Tour");
         }
 
-        public ActionResult DeleteItem(long id)
+        [HttpDelete]
+        public ActionResult DeleteItem(string id)
         {
             var cartCookie = CheckCart();
             if (cartCookie.Value != "")
             {
                 var listItems = JsonConvert.DeserializeObject<List<OrderItemVm>>(cartCookie.Value);
-                var item = listItems.Where(x => x.Id == id).First();
+                var item = listItems.Where(x => x.Guid == id).First();
                 listItems.Remove(item);
+                
                 if (listItems.Count > 0)
-                    return RedirectToAction("Index");
-                return RedirectToAction("Index", "Tour");
+                {
+                    cartCookie.Value = JsonConvert.SerializeObject(listItems);
+                    cartCookie.Expires = DateTime.Now.AddDays(30);
+                    Response.Cookies.Set(cartCookie);
+                    return Json(new
+                    {
+                        Status = true
+                    });
+                }
+                cartCookie.Expires = DateTime.Now.AddDays(-180);
+                Response.Cookies.Add(cartCookie);
+                
             }
-            return RedirectToAction("Index", "Tour");
+            return Json(new
+            {
+                Status = false
+            });
+        }
+
+        [HttpPut]
+        public ActionResult RefreshItem(OrderItemVm item)
+        {
+            var cartCookie = CheckCart();
+            if (cartCookie.Value != "")
+            {
+                var listItems = JsonConvert.DeserializeObject<List<OrderItemVm>>(cartCookie.Value);
+                listItems.Where(x => x.Guid == item.Guid).First().Quantity = item.Quantity;
+
+                if (listItems.Count > 0)
+                {
+                    cartCookie.Value = JsonConvert.SerializeObject(listItems);
+                    cartCookie.Expires = DateTime.Now.AddDays(30);
+                    Response.Cookies.Set(cartCookie);
+                    return Json(new
+                    {
+                        Status = true
+                    });
+                }
+                cartCookie.Expires = DateTime.Now.AddDays(-180);
+                Response.Cookies.Add(cartCookie);
+                
+            }
+            return Json(new
+            {
+                Status = false
+            });
         }
 
         private HttpCookie CheckCart()

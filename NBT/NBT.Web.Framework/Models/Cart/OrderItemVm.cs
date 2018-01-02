@@ -8,6 +8,7 @@ namespace NBT.Web.Framework.Models.Cart
 {
     public class OrderItemVm
     {
+        public string Guid { set; get; }
         public long Id { set; get; }
         public string Code { set; get; }
         public string Alias { set; get; }

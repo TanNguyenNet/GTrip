@@ -29,6 +29,7 @@
                                         <th>Giá</th>
                                         <th>Số lượng chỗ</th>
                                         <th>Tổng tiền</th>
+                                        <th>Cập nhật</th>
                                         <th>Xóa</th>
                                     </tr>
                                     @foreach (var item in Model)
@@ -40,7 +41,7 @@
                                             <td data-title="Name"><a href="#" class="name-product">@item.ToDate.ToString("dd-MM-yyyy")</a></td>
                                             <td data-title="Price" style="text-align:right"><span class="price">@item.Price.ToString("n0") vnđ</span></td>
                                             <td data-title="Quantity">
-                                                <input type="number" value="@item.Quantity" min="0" />
+                                                <input type="number" value="@item.Quantity" id="qty-@item.Guid" min="1" max="30" />
                                             </td>
 
                                             <td data-title="Total" style="text-align:right">
@@ -51,7 +52,8 @@
                                                     @totalItem.ToString("n0") vnđ
                                                 </span>
                                             </td>
-                                            <td data-title="Remove"><i class="fa fa-times"><a href="/cart/deleteItem/@item.Id"></a></i></td>
+                                            <td data-title="Remove"><a href="#" onclick="refreshItem('@item.Guid');"><i class="fa fa-refresh"></i></a></td>
+                                            <td data-title="Remove"><a href="#" onclick="removeItem('@item.Guid');"><i class="fa fa-times"></i></a></td>
                                         </tr>
                                     }
                                 </table>
@@ -59,7 +61,10 @@
                                     <div class="button-cart-left">
                                         <input type="text" placeholder="Coupon code" /><a href="#" class="coupon">Nhập mã khuyến mãi</a>
                                     </div>
-                                    <div class="button-cart-right"><a href="#" class="update-cart">Cập nhật</a><a href="/cart/Checkout" class="process">Đặt vé</a></div>
+                                    <div class="button-cart-right">
+                                        <a href="#" class="update-cart">Cập nhật</a>
+                                        <a href="/cart/Checkout" class="process">Đặt vé</a>
+                                    </div>
                                 </div>
                             </form>
                             <div class="row">
@@ -86,3 +91,39 @@
         </div>
     </div>
 </div>
+@section footerJS{
+    <script>
+        function removeItem(id) {
+            $.ajax({
+                url: '/Cart/DeleteItem',
+                type: 'Delete',
+                data: {
+                    id: id
+                },
+                success: function (result) {
+                    window.location.href = '/Cart/Index';
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+
+        function refreshItem(id) {
+            $.ajax({
+                url: '/Cart/RefreshItem',
+                type: 'Put',
+                data: {
+                    Guid: id,
+                    Quantity: $('#qty-' + id).val()
+                },
+                success: function (result) {
+                    window.location.href = '/Cart/Index';
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    </script>
+}

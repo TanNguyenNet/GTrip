@@ -14,44 +14,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-3">
                         <div class="blog-wrap">
-                            <div class="blog-content">
-                                <div class="blog-cate-title"><h3>Bài viết mới</h3></div>
-                                <div class="new-blog">
-                                    <a href="blog_detail.html">
-                                        <img class="img-responsive" src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
-                                        <h5><a href="#">Nước áo xinh đẹp và thanh bình</a></h5>
-                                    </a>
-                                </div>
-                                <div class="next-blog">
-                                    <div class="next-blog-content">
-                                        <div class="next-blog-img">
-                                            <a href="blog_detail.html">
-                                                <img class="img-responsive" src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="next-blog-info">
-                                            <h5><a href="blog_detail.html">nước áo xinh đẹp</a></h5>
-                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>15-06-2017</span>
-                                            <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch…</p>
-                                        </div>
-                                    </div>
-                                    <div class="next-blog-content">
-                                        <div class="next-blog-img">
-                                            <a href="blog_detail.html">
-                                                <img class="img-responsive" src="/images/8a7b777960b4b7c2ed819cbe2b205434.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="next-blog-info">
-                                            <h5><a href="blog_detail.html">nước áo xinh đẹp</a></h5>
-                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>15-06-2017</span>
-                                            <p>Lý Sơn, Quy Nhơn, Nam Du, Bình Ba, Bình Lập hay Cổ Thạch…</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="promotion">
-                                    <img class="img-responsive" src="/images/poster-quang-cao-du-lich-01.jpg" alt="">
-                                </div>
-                            </div>
+                            @{Html.RenderAction("BlogPostNews", "Blog");}
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9">
@@ -59,7 +22,7 @@
                             @foreach (var item in Model.Items)
                             {
                                 <div class="blog-inner">
-                                    <a href="/blog/detail/@item.Alias"><img class="img-responsive" src="@item.Image" alt="@item.Title" style="width:848px; height:318px" ></a>
+                                    <a href="/blog/detail/@item.Alias"><img class="img-responsive" src="@item.Image" alt="@item.Title" style="width:848px; height:318px"></a>
                                     <div class="blog-info">
                                         <div class="blog-title">
                                             <h3><a href="/blog/detail/@item.Alias">@item.Title</a></h3>
@@ -70,7 +33,7 @@
                                         <div class="link float-right">
                                             <a href="/blog/detail/@item.Alias" class="button1">Đọc Thêm</a>
                                             <div class="social-share"
-                                                data-href="*" >
+                                                 data-href="*">
                                             </div>
                                             <ul class="share_social">
                                                 Chia sẽ:

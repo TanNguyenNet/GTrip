@@ -1,4 +1,5 @@
-﻿using NBT.Core.Domain.Blog;
+﻿using NBT.Core.Common;
+using NBT.Core.Domain.Blog;
 using NBT.Core.Services.ApplicationServices.Blog;
 using NBT.Infra.Services.Blog;
 using NBT.Web.Framework.Core;
@@ -41,6 +42,15 @@ namespace NBT.Web.Controllers
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration = SystemConstants.Hour)]
+        public ActionResult BlogPostNews()
+        {
+            var model = _blogPostService.GetAllHomeTop(3,blogPostType: BlogPostTypeProvider.Blog.Id);
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        [OutputCache(Duration = SystemConstants.Hour)]
         public ActionResult HomeBlog()
         {
             var model = _blogPostService.GetAllHomeTop(3, true, blogPostType: BlogPostTypeProvider.Blog.Id);
@@ -48,6 +58,7 @@ namespace NBT.Web.Controllers
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration = SystemConstants.Hour)]
         public ActionResult ServicesSpecial()
         {
             var model = _blogPostService.GetAllHomeTop(5, blogPostType: BlogPostTypeProvider.ServiceSpecialBlog.Id);
@@ -55,6 +66,7 @@ namespace NBT.Web.Controllers
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration = SystemConstants.Hour)]
         public ActionResult EventSpecial()
         {
             var model = _blogPostService.GetAllHomeTop(10, blogPostType: BlogPostTypeProvider.EventSpecialBlog.Id);
