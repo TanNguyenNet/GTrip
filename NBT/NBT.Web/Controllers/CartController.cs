@@ -45,7 +45,7 @@ namespace NBT.Web.Controllers
         public ActionResult Order(OrderItemVm item)
         {
             var cartCookie = CheckCart();
-            if (item.FromDate.Date < DateTime.Now.Date || item.ToDate < DateTime.Now)
+            if (item.FromDate.Date < DateTime.Now.Date)
                 return Json(new
                 {
                     Status = false
@@ -54,9 +54,9 @@ namespace NBT.Web.Controllers
             {
                 var listItems = JsonConvert.DeserializeObject<List<OrderItemVm>>(cartCookie.Value);
 
-                if (listItems.Any(x => x.Alias == item.Alias && x.FromDate == item.FromDate && x.ToDate == item.ToDate))
+                if (listItems.Any(x => x.Alias == item.Alias && x.FromDate == item.FromDate))
                 {
-                    listItems.First(x => x.Alias == item.Alias && x.FromDate == item.FromDate && x.ToDate == item.ToDate).Quantity++;
+                    listItems.First(x => x.Alias == item.Alias && x.FromDate == item.FromDate).Quantity++;
                 }
                 else
                 {
@@ -107,7 +107,7 @@ namespace NBT.Web.Controllers
                 foreach (var item in newOrderItem)
                 {
                     item.FromDate = item.FromDate.Date;
-                    item.ToDate = item.ToDate.Date;
+                    //item.ToDate = item.ToDate.Date;
                     item.OrderId = newOrder.Id;
                 }
                 _orderItemService.Add(newOrderItem);

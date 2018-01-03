@@ -52,13 +52,13 @@
                                     <form id="frmOrder" action="/cart/order" method="post">
                                         @Html.AntiForgeryToken()
                                         <h4>Chọn Ngày Sử Dụng Tour</h4>
-                                        <span>Ngày đi và ngày về:</span>
+                                        <span>Ngày khởi hành</span>
                                         <div class="start-date">
                                             <input type='text' class="form-control" id='datetimepicker4' name="FromDate" /><i class="fa fa-calendar" aria-hidden="true"></i>
                                         </div>
-                                        <div class="end-date">
+                                        @*<div class="end-date">
                                             <input type='text' class="form-control" id='datetimepicker5' name="ToDate" /><i class="fa fa-calendar" aria-hidden="true"></i>
-                                        </div>
+                                        </div>*@
                                         @Html.Hidden("Alias", Model.Alias)
                                         @Html.Hidden("Name", Model.Name)
                                         @Html.Hidden("Code", Model.Code)

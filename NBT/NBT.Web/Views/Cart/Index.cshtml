@@ -24,8 +24,7 @@
                                     <tr>
                                         <th>Hình</th>
                                         <th>Tên</th>
-                                        <th>Ngày đi</th>
-                                        <th>Ngày về</th>
+                                        <th>Ngày khởi hành</th>
                                         <th>Giá</th>
                                         <th>Số lượng chỗ</th>
                                         <th>Tổng tiền</th>
@@ -35,16 +34,15 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td data-title="Product"><a href="#" class="image-product"><img class="img-responsive" src="@item.Image" alt="@item.Name" width="180" height="220" /></a></td>
-                                            <td data-title="Name"><a href="#" class="name-product">@item.Name</a></td>
-                                            <td data-title="Name"><a href="#" class="name-product">@item.FromDate.ToString("dd-MM-yyyy")</a></td>
-                                            <td data-title="Name"><a href="#" class="name-product">@item.ToDate.ToString("dd-MM-yyyy")</a></td>
-                                            <td data-title="Price" style="text-align:right"><span class="price">@item.Price.ToString("n0") vnđ</span></td>
-                                            <td data-title="Quantity">
+                                            <td data-title="Hình"><a href="#" class="image-product"><img class="img-responsive" src="@item.Image" alt="@item.Name" width="180" height="220" /></a></td>
+                                            <td data-title="Tên"><a href="#" class="name-product">@item.Name</a></td>
+                                            <td data-title="Ngày khởi hành"><a href="#" class="name-product">@item.FromDate.ToString("dd-MM-yyyy")</a></td>
+                                            <td data-title="Giá" style="text-align:right"><span class="price">@item.Price.ToString("n0") vnđ</span></td>
+                                            <td data-title="Số lượng">
                                                 <input type="number" value="@item.Quantity" id="qty-@item.Guid" min="1" max="30" />
                                             </td>
 
-                                            <td data-title="Total" style="text-align:right">
+                                            <td data-title="Tổng" style="text-align:right">
                                                 <span class="total">
                                                     @{
                                                         totalItem = item.Quantity * item.Price;
@@ -52,8 +50,8 @@
                                                     @totalItem.ToString("n0") vnđ
                                                 </span>
                                             </td>
-                                            <td data-title="Remove"><a href="#" onclick="refreshItem('@item.Guid');"><i class="fa fa-refresh"></i></a></td>
-                                            <td data-title="Remove"><a href="#" onclick="removeItem('@item.Guid');"><i class="fa fa-times"></i></a></td>
+                                            <td data-title="Cập nhật"><a href="#" onclick="refreshItem('@item.Guid');"><i class="fa fa-refresh"></i></a></td>
+                                            <td data-title="Xóa"><a href="#" onclick="removeItem('@item.Guid');"><i class="fa fa-times"></i></a></td>
                                         </tr>
                                     }
                                 </table>

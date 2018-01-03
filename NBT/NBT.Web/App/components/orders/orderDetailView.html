@@ -65,7 +65,7 @@
                         <tr>
                             <th>Mã tour</th>
                             <th>Chương trình</th>
-                            <th style="width: 20%">Ngày đi - ngày về</th>
+                            <th style="width: 20%">Ngày khởi hành</th>
                             <th style="width: 10%">Số lượng chỗ</th>
                         </tr>
                         <tr ng-repeat="item in data">
@@ -76,7 +76,7 @@
                                 {{item.Name}}
                             </td>
                             <td>
-                                {{item.FromDate | date: 'dd-MM-yyyy'}} - {{item.ToDate | date: 'dd-MM-yyyy'}}
+                                {{item.FromDate | date: 'dd-MM-yyyy'}}
                             </td>
                             <td>
                                 {{item.Quantity}}
