@@ -24,10 +24,7 @@
                                     <div class="tour-category-list"><span><i class="fa fa-calendar" aria-hidden="true"></i> <strong>Ngày khởi hành:</strong> @Model.DayBegin</span></div>
                                     <div class="tour-category-list">
                                         <span>
-                                            <i class="fa fa-calculator" aria-hidden="true"></i> <strong>Thời Gian:</strong> @Model.TotalDays Ngày @if (Model.TotalDays > 1)
-                                            {
-                                                @(Model.TotalDays - 1);
-                                            }
+                                            <i class="fa fa-calculator" aria-hidden="true"></i> <strong>Thời Gian:</strong> @Model.TotalDays Ngày
                                         </span>
                                     </div>
                                     <div class="tour-category-list"><span><i class="fa fa-money" aria-hidden="true"></i> <strong>Giá:</strong> @Model.Price.ToString("n0") x 1</span></div>

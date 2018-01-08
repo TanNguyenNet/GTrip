@@ -4,6 +4,7 @@
     ViewBag.StyleHeader = "header header-style-2";
     Layout = "~/Views/Shared/Layouts.cshtml";
     var modelCountry = ViewBag.countryRegions as IEnumerable<NBT.Core.Domain.Catalog.CountryRegion>;
+    var dot = "...";
 }
 
 <div id="example-wrapper">
@@ -28,7 +29,7 @@
                             </div>
                             <div class="col-md-5 col-xs-5">
                                 <div class="tour-filter">
-                                    <input  type="number" name="totalDays" value="" min="1" max="30" />
+                                    <input type="number" name="totalDays" value="" min="1" max="30" />
                                 </div>
                             </div>
                             <div class="col-md-2 col-xs-2">
@@ -45,7 +46,18 @@
                                             <div class="country-title foldtl"><i class="fa fa-map-marker" aria-hidden="true"></i> @item.CountryRegionName, @item.StateProvinceName <span class="cut-edges"></span></div>
                                         </div>
                                         <div class="tour-info">
-                                            <h5><a href="/tour/detail/@item.Alias">@item.Name</a></h5>
+                                            <h5>
+                                                <a href="/tour/detail/@item.Alias">
+                                                    @if (item.Name.Count() <= 50)
+                                                    {
+                                                        @item.Name
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.Name.Substring(0, 50);@dot
+                                                    }
+                                                </a>
+                                            </h5>
                                             <div class="tour-price">
                                                 <span class="pull-left">Thời gian</span>
                                                 <span class="pull-right">Giá từ</span>

@@ -174,18 +174,18 @@ $(document).ready(function() {
         var href = "";
         var faceShare = "https://www.facebook.com/sharer/sharer.php?u=";
         var googPlusShare = "https://plus.google.com/share?url=";
-        var url = $(".social-share").attr("data-href");
+        var url = $(".share_social").attr("data-href");
         var pintShare = "https://pinterest.com/pin/create/button/?url=&media=&description=";
         var vimeoSahre = "http://www.vimeo.com/api/oembed.json?url="
         var twitter = "https://twitter.com/intent/tweet?url=";
         switch (linkSocical) {
-            case "fa-facebook":
+            case "fa fa-facebook":
                 href = faceShare + url;
                 break;
-            case "fa-twitter":
+            case "fa fa-twitter":
                 href = pintShare + url;
                 break;
-            case "fa-google-plus":
+            case "fa fa-google-plus":
                 href = googPlusShare + url;
                 break;
         }
