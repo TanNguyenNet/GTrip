@@ -1016,7 +1016,8 @@ select {
   .tour-content .tour-info h5 {
     font-weight: 500;
     line-height: 20px;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    height: 40px; }
     .tour-content .tour-info h5 a:hover {
       color: #6ebb43; }
   .tour-content .tour-info .tour-price {

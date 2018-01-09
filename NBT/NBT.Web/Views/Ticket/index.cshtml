@@ -48,6 +48,7 @@
                                         <div class="tour-info">
                                             <h5>
                                                 <a href="/ticket/detail/@item.Alias">
+                                                    <abbr title="World Health Organization">
                                                     @if (item.Name.Count() <= 50)
                                                     {
                                                         @item.Name
@@ -56,6 +57,7 @@
                                                     {
                                                         @item.Name.Substring(0, 50); @dot
                                                     }
+                                                    </abbr>
                                                 </a>
                                             </h5>
                                             <div class="tour-price">
