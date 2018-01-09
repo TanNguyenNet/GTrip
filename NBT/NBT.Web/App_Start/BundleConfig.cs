@@ -28,13 +28,17 @@ namespace NBT.Web
             //          "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/Scripts/footers").Include(
-                        "~/Assets/bootstrap/dist/js/bootstrap.min.js",
-                        "~/Assets/libs/moment/moment.js",
-                        "~/Assets/libs/moment/moment-timezone.min.js",
-                        "~/Assets/libs/moment/moment-timezone-with-data.min.js",
-                        "~/Assets/jquery/jquery.validate.min.js",
-                        "~/Assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js",
-                        "~/Assets/client/js/main.js"));
+                "~/Assets/Swiper-4.0.6/dist/js/swiper.min.js",
+                "~/Assets/jquery/dist/jquery.min.js",
+                "~/Assets/jquery.mmenu/jquery.mmenu.js",
+                "~/Assets/libs/selects2/select2.min.js",
+                "~/Assets/bootstrap/dist/js/bootstrap.min.js",
+                "~/Assets/libs/moment/moment.js",
+                "~/Assets/libs/moment/moment-timezone.min.js",
+                "~/Assets/libs/moment/moment-timezone-with-data.min.js",
+                "~/Assets/jquery/jquery.validate.min.js",
+                "~/Assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js",
+                "~/Assets/client/js/main.js"));
 #if DEBUG
             BundleTable.EnableOptimizations = false;
 #else
