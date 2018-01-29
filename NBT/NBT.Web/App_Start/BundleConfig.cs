@@ -29,7 +29,7 @@ namespace NBT.Web
 
             bundles.Add(new ScriptBundle("~/Scripts/footers").Include(
                 "~/Assets/Swiper-4.0.6/dist/js/swiper.min.js",
-                "~/Assets/jquery/dist/jquery.min.js",
+                //"~/Assets/jquery/dist/jquery.min.js",
                 "~/Assets/jquery.mmenu/jquery.mmenu.js",
                 "~/Assets/libs/selects2/select2.min.js",
                 "~/Assets/bootstrap/dist/js/bootstrap.min.js",

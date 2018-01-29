@@ -797,7 +797,7 @@ select {
     color: #808c99;
     padding-right: 5px; }
 .article-content {
-  font-family: cambria, serif;
+    font-family: "Cambria", serif;
 }
 .social-wrapper {
   border-top: 1px solid #dedede;
@@ -964,7 +964,7 @@ select {
       top: 20px;
       right: 8px; }
   .tour-detail-content .tour-detail-desc {
-      font-family: cambria, serif;
+      font-family: "Cambria", serif;
   }
 
 .tour-detail-category-content {

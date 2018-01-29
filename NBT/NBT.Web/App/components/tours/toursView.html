@@ -36,7 +36,7 @@
                             <div class="input-group-sm">
                                 <ui-select ng-required="true" ng-model="condition.stateProvinceId" name="stateProvince" theme="bootstrap" style="min-width: 300px;" title="Chọn Tp">
                                     <ui-select-match allow-clear="true" placeholder="Chọn Tp">{{$select.selected.Name}}</ui-select-match>
-                                    <ui-select-choices repeat="item.Id as item in stateProvinces | filter: {CountryRegionId: filterCountry.countryRegionId}">
+                                    <ui-select-choices repeat="item.Id as item in stateProvinces | filter: {CountryRegionId: condition.countryRegionId}">
                                         <div ng-bind-html="item.Name | highlight: $select.search"></div>
                                     </ui-select-choices>
                                 </ui-select>

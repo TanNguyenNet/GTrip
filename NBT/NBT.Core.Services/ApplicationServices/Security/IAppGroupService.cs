@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NBT.Core.Services.ApplicationServices.Security
 {
-    public interface IAppGroupService
+    public interface IAppGroupService:IService<AppGroup>
     {
         AppGroup GetDetail(int id);
 
@@ -17,7 +17,6 @@ namespace NBT.Core.Services.ApplicationServices.Security
 
         AppGroup Insert(AppGroup appGroup);
 
-        void Update(AppGroup appGroup);
 
         AppGroup Delete(int id);
 

@@ -79,11 +79,11 @@ namespace NBT.Infra.Services.Security
             return _appGroupRepo.Insert(appGroup);
         }
 
-        public void Update(AppGroup appGroup)
+        public override AppGroup Update(AppGroup appGroup)
         {
             if (_appGroupRepo.CheckContains(x => x.Name == appGroup.Name && x.Id != appGroup.Id))
                 throw new NameDuplicatedException("Tên không được trùng");
-            _appGroupRepo.Update(appGroup);
+            return _appGroupRepo.Update(appGroup);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace NBT.Core.Datas.Repositories.Security
                         on g.Id equals ug.GroupId
                         where ug.UserId == userId
                         select g;
-            return query;
+            return query.ToList();
         }
 
         public IEnumerable<AppUser> GetListUserByGroupId(int groupId)
@@ -35,7 +35,7 @@ namespace NBT.Core.Datas.Repositories.Security
                         on ug.UserId equals u.Id
                         where ug.GroupId == groupId
                         select u;
-            return query;
+            return query.ToList();
         }
     }
 }
