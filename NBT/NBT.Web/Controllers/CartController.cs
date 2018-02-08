@@ -120,7 +120,7 @@ namespace NBT.Web.Controllers
                     MailHelper.SendMail(order.CustomerEmail, "Đặt chỗ tại Global Trip", "Cám ơn bạn đã đặt chỗ, chúng tôi sẽ liên lạc trong thời gian sớm nhất"
                         , settings.EmailAdmin
                         , settings.PasswordEmail
-                        , "CTY Global Trip");
+                        , "CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ DU LỊCH LỮ HÀNH TOÀN CẦU");
                     MailHelper.SendMail(this.WebSetting.EmailAdmin, "Đặt chỗ trên web Global Trip", "Khách hàng " + order.CustomerName + " đã đặt chỗ."
                         , settings.EmailAdmin
                         , settings.PasswordEmail

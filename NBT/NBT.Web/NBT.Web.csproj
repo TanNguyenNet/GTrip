@@ -7156,6 +7156,7 @@
     <Content Include="Views\Ticket\ForeignCategory.cshtml" />
     <Content Include="Views\Ticket\index.cshtml" />
     <Content Include="Views\Blog\BlogPostNews.cshtml" />
+    <Content Include="Views\Contact\ContactForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NBT.Core.Common\NBT.Core.Common.csproj">

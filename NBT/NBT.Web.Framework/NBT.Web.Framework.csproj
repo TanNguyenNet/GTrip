@@ -127,6 +127,7 @@
     <Compile Include="Models\Catalog\CountryRegionVm.cs" />
     <Compile Include="Models\Catalog\MenuGeographyVm.cs" />
     <Compile Include="Models\Catalog\StateProvinceVm.cs" />
+    <Compile Include="Models\Contact\ContactFormVm.cs" />
     <Compile Include="Models\Customers\CustomerVm.cs" />
     <Compile Include="Models\Security\AppGroupVm.cs" />
     <Compile Include="Models\Security\AppRoleVm.cs" />

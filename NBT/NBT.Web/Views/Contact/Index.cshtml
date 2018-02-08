@@ -70,35 +70,7 @@
             </div>
         </div>
     </div>
-    <div class="div-box mb">
-        <div class="form-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="contact-wrap-form">
-                            <div class="contact-form">
-                                <h2>Gửi mail để được hỗ trợ</h2>
-                                <p>Để giúp quý khách có được những cảm nhận và phục vụ tốt nhất. Vui lòng liên hệ chúng tôi.</p>
-                                <div class="it-text">
-                                    <form action="">
-                                        <div class="col-md-6">
-                                            <input name="Name" type="text" maxlength="64" placeholder="Tên*">
-                                            <input required="" name="Email" type="email" maxlength="64" placeholder="Email*">
-                                            <input name="Title" type="text" maxlength="128" placeholder="Tiêu đề*">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <textarea name="MessageBox" placeholder="Tin nhắn" maxlength="1024"></textarea>
-                                            <button type="submit" class="hbtn1">Gửi</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @{Html.RenderAction("ContactForm", "Contact");}
 
     <div class="div-box">
         <div id="map"></div>
