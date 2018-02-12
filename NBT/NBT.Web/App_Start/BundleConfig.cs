@@ -27,6 +27,17 @@ namespace NBT.Web
             //          "~/Content/bootstrap.css",
             //          "~/Content/site.css"));
 
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Assets/bootstrap/dist/css/bootstrap.min.css",
+                "~/Assets/jquery.mmenu/jquery.mmenu.css",
+                "~/Assets/font-awesome/css/font-awesome.min.css",
+                "~/Assets/Swiper-4.0.6/dist/css/swiper.min.css",
+                "~/Assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css",
+                "~/Assets/accordion-menu/css/style.css",
+                "~/Assets/libs/selects2/select2.min.css",
+                "~/Assets/client/css/style.css"
+                ));
+
             bundles.Add(new ScriptBundle("~/Scripts/footers").Include(
                 "~/Assets/Swiper-4.0.6/dist/js/swiper.min.js",
                 //"~/Assets/jquery/dist/jquery.min.js",

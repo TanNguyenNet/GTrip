@@ -60,7 +60,7 @@ Main Components
   background-repeat: no-repeat;
 }*/
 .cd-accordion-menu label::before {
-  background-image: url(../img/cd-icons.svg);
+  background-image: url(/Assets/accordion-menu/img/cd-icons.svg);
   background-repeat: no-repeat;
 }
 .cd-accordion-menu label::before {
@@ -258,7 +258,7 @@ Main Components
   background-repeat: no-repeat;
 }*/
 .cd-accordion-menu1 label::before {
-  background-image: url(../img/cd-icons.svg);
+  background-image: url(/Assets/accordion-menu/img/cd-icons.svg);
   background-repeat: no-repeat;
 }
 .cd-accordion-menu1 label::before {
