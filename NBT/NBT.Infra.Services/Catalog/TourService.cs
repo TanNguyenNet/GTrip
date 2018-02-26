@@ -115,9 +115,12 @@ namespace NBT.Infra.Services.Catalog
 
         public IPagedList<TourDto> GetAll(int pageIndex = 1, int pageSize = 20, string filter = ""
             , int stateProvinceId = 0, int countryRegionId = 0
-            , bool? isShow = null, int tourType = 0, int areaId = 0)
+            , bool? isShow = null, int tourType = 0, int areaId = 0, bool? isDomestic = null)
         {
             var query = _tourRepo.TableNoTracking.Where(x => x.IsDel == false);
+            var queryCountryRegion = _countryRegionRepository.TableNoTracking;
+            if (isDomestic != null)
+                queryCountryRegion = _countryRegionRepository.TableNoTracking.Where(x => x.Domestic == isDomestic);
             if (tourType != 0)
                 query = query.Where(x => x.TourType == tourType);
             if (isShow != null)
@@ -131,7 +134,7 @@ namespace NBT.Infra.Services.Catalog
             if (areaId != 0)
                 query = query.Where(x => x.AreaId == areaId);
             var queryResult = from t in query
-                              join c in _countryRegionRepository.TableNoTracking on t.CountryRegionId equals c.Id
+                              join c in queryCountryRegion on t.CountryRegionId equals c.Id
                               join s in _stateProvinceRepository.TableNoTracking on t.StateProvinceId equals s.Id
                               select new TourDto
                               {

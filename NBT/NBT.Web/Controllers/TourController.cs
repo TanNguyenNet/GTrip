@@ -33,9 +33,9 @@ namespace NBT.Web.Controllers
             _areaService = areaService;
             _tourService = tourService;
         }
-        public ActionResult Index(int pageIndex = 1, int pageSize = 12, string filter = "", int stateProvinceId = 0, int countryRegionId = 0, int areaId = 0)
+        public ActionResult Index(int pageIndex = 1, int pageSize = 12, string filter = "", int stateProvinceId = 0, int countryRegionId = 0, int areaId = 0, bool? domestic = null)
         {
-            var model = _tourService.GetAll(pageIndex, pageSize, filter, stateProvinceId, countryRegionId, true, TourTypeProvider.TravelTour.Id, areaId);
+            var model = _tourService.GetAll(pageIndex, pageSize, filter, stateProvinceId, countryRegionId, true, TourTypeProvider.TravelTour.Id, areaId, isDomestic: domestic);
 
             string queryParams = "";
             if (!string.IsNullOrWhiteSpace(filter))
@@ -46,6 +46,8 @@ namespace NBT.Web.Controllers
                 queryParams += "&countryRegionId=" + countryRegionId;
             if (areaId != 0)
                 queryParams += "&areaId=" + areaId;
+            if (domestic != null)
+                queryParams += "&domestic=" + domestic;
             ViewBag.queryParams = queryParams;
             ViewBag.countryRegions = _countryRegionService.GetAll(true);
             PaginationSet<TourDto> pagedSet = new PaginationSet<TourDto>()
