@@ -84,24 +84,24 @@
                                         var endPageIndex = Math.Min(Model.TotalPages, Model.Page + 5 / 2);
                                         if (Model.Page > 1)
                                         {
-                                            <li><a href="?pageIndex=@(Model.Page-1)&pageSize=@Model.PageSize@ViewBag.queryParams"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                            <li><a href="?pageIndex=@(Model.Page-1)@ViewBag.queryParams"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
 
                                         }
                                         for (int i = startPageIndex; i <= endPageIndex; i++)
                                         {
                                             if (Model.Page == i)
                                             {
-                                                <li class="active"><a href="?pageIndex=@i&pageSize=@Model.PageSize@ViewBag.queryParams">@i</a></li>
+                                                <li class="active"><a href="?pageIndex=@i@ViewBag.queryParams">@i</a></li>
                                             }
                                             else
                                             {
-                                                <li><a href="?pageIndex=@i&pageSize=@Model.PageSize@ViewBag.queryParams">@i</a></li>
+                                                <li><a href="?pageIndex=@i@ViewBag.queryParams">@i</a></li>
                                             }
                                         }
                                         if (Model.Page < Model.TotalPages)
                                         {
 
-                                            <li><a href="?pageIndex=@(Model.Page+1)&pageSize=@Model.PageSize@ViewBag.queryParams"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                            <li><a href="?pageIndex=@(Model.Page+1)@ViewBag.queryParams"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                                         }
                                     }
                                 </ul>

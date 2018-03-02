@@ -30,7 +30,7 @@ namespace NBT.Infra.Services.Blog
             if (isShow != null)
                 query = query.Where(x => x.IsShow == isShow.Value);
 
-            return query.OrderByDescending(x => x.CreatedDate).ThenBy(x => x.Title).ToPagedList(pageIndex, pageSize);
+            return query.OrderByDescending(x => x.CreatedDate).ToPagedList(pageIndex, pageSize);
         }
 
         public IEnumerable<BlogPost> GetAllHomeTop(int top = 1, bool? isHome = null, int blogPostType = 0)

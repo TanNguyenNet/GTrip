@@ -22,7 +22,7 @@ namespace NBT.Web.Controllers
         public ActionResult Index(int pageIndex = 1, int pageSize = 12, string filter = "")
         {
 
-            var model = _blogPostService.GetAll(pageIndex = 1, pageSize = 12, filter = "", true);
+            var model = _blogPostService.GetAll(pageIndex, pageSize, filter = "", true);
 
             PaginationSet<BlogPost> pagedSet = new PaginationSet<BlogPost>()
             {
