@@ -181,7 +181,7 @@ select {
 
 .title-style .title-right, .title-style .title-left {
     display: inline-block;
-    font-family: 'Itim', cursive;
+    /*font-family: 'Itim', cursive;*/
     font-weight: 700;
     text-transform: uppercase;
     font-weight: 700;
@@ -563,7 +563,7 @@ select {
     background-color: rgba(83, 83, 83, 0.5);
     border: solid 0.5px #808c99;
     padding: 10px 5px;
-    font-family: 'Itim', cursive;
+    /*font-family: 'Itim', cursive;*/
     font-weight: 700;
     text-transform: capitalize;
     color: #fff; }
@@ -607,7 +607,7 @@ select {
 .blog-info {
   padding: 10px 10px 0px 10px; }
   .blog-info h3 {
-    font-family: 'Itim', cursive;
+    /*font-family: 'Itim', cursive;*/
     font-weight: 700;
     line-height: 30px;
     font-size: 1.7rem; }
@@ -639,7 +639,7 @@ select {
   .contact-wrapper .contact-content h2 {
     text-align: center;
     color: #6ebb43;
-    font-family: 'Itim', cursive;
+    /*font-family: 'Itim', cursive;*/
     font-weight: 700;
     margin-bottom: 15px; }
   .contact-wrapper .contact-content .skype-info {
@@ -683,7 +683,8 @@ select {
 .contact-form h2 {
   text-align: center;
   color: #6ebb43;
-  font-family: 'Itim', cursive; }
+  /*font-family: 'Itim', cursive; */
+}
 
 .contact-form p {
   margin: 5px 0px 90px;
@@ -724,7 +725,8 @@ select {
 .blog-cate-title h3 {
   text-align: center;
   color: #6ebb43;
-  font-family: 'Itim', cursive; }
+  /*font-family: 'Itim', cursive;*/
+   }
 
 .new-blog {
   position: relative; }
@@ -737,7 +739,7 @@ select {
     background-color: rgba(83, 83, 83, 0.5);
     border: solid 0.5px #808c99;
     padding: 10px 5px;
-    font-family: 'Itim', cursive;
+    /*font-family: 'Itim', cursive;*/
     font-weight: 700;
     text-transform: capitalize;
     color: #fff; }
@@ -753,7 +755,7 @@ select {
     .next-blog .next-blog-content .next-blog-info {
       margin-left: 130px; }
       .next-blog .next-blog-content .next-blog-info h5 {
-        font-family: 'Itim', cursive;
+        /*font-family: 'Itim', cursive;*/
         font-weight: 700;
         text-transform: capitalize; }
       .next-blog .next-blog-content .next-blog-info span {
@@ -789,7 +791,7 @@ select {
 .article-head {
   margin-bottom: 10px; }
   .article-head h3 {
-    font-family: 'Itim', cursive;
+    /*font-family: 'Itim', cursive;*/
     font-weight: 700;
     line-height: 30px; }
   .article-head span {
@@ -1500,7 +1502,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
   .bttn-filter:hover {
     background-color: #6ebb43;
     color: #fff;
-    font-family: 'Itim', cursive;
+    /*font-family: 'Itim', cursive;*/
   }
   @media only screen and (max-width: 1200px) {
   .block-content {
@@ -1701,7 +1703,8 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     .mobile-menu .text-center {
       text-align: center; }
       .mobile-menu .text-center .logo {
-        height: 80px }
+        height: 80px
+        padding-top: 8px;}
     .mobile-menu .text-right {
       text-align: right; }
       .mobile-menu .text-right div {
