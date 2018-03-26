@@ -1703,7 +1703,7 @@ ul.sub-menu1, .nav-side-menu li.sub-menu1 {
     .mobile-menu .text-center {
       text-align: center; }
       .mobile-menu .text-center .logo {
-        height: 80px
+        height: 80px;
         padding-top: 8px;}
     .mobile-menu .text-right {
       text-align: right; }
