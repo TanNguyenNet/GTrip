@@ -36,12 +36,13 @@
                 @foreach (var item in Model)
                 {
                     <div class="swiper-slide">
-                        <img src="@item.LargeImage" alt="@item.Name">
+                        <a href="/tour/detail/@item.Alias" class="button sweep-to-right"><img src="@item.LargeImage" alt="@item.Name"></a>
+
                         <div class="slider-content">
-                            <h2>@item.EventTitle</h2>
-                            <h1>@item.Name</h1>
-                            <h5>@item.TotalDays Ngày - @item.Price.ToString("n0") VNĐ</h5>
-                            <div class="btn-container"><a href="/tour/detail/@item.Alias" class="button sweep-to-right">Chi Tiết</a></div>
+                            @*<h2>@item.EventTitle</h2>
+                                <h1>@item.Name</h1>
+                                <h5>@item.TotalDays Ngày - @item.Price.ToString("n0") VNĐ</h5>
+                                <div class="btn-container"><a href="/tour/detail/@item.Alias" class="button sweep-to-right">Chi Tiết</a></div>*@
                         </div>
                     </div>
                 }
