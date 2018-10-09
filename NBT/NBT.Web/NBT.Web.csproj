@@ -7159,6 +7159,7 @@
     <Content Include="Views\Blog\BlogPostNews.cshtml" />
     <Content Include="Views\Contact\ContactForm.cshtml" />
     <Content Include="Views\Fight\Index.cshtml" />
+    <Content Include="Views\Fight\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NBT.Core.Common\NBT.Core.Common.csproj">
