@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = "~/Views/Shared/Layouts.cshtml";
+    ViewBag.Title = "Vé máy bay";
+    ViewBag.StyleHeader = "header header-style-2";
+}
+<div id="example-wrapper">
+    @Html.Partial("Navigation")
+
+    <div class="div-box mb">
+        <div class="tour-wrapper">
+            <div class="container">
+                <div class="row">
+                    @{Html.RenderAction("ForeignCategory", "Tour");}
+                    <div class="col-md-9 col-sm-9">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -193,6 +193,7 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\FightController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\TourController.cs" />
@@ -7157,6 +7158,7 @@
     <Content Include="Views\Ticket\index.cshtml" />
     <Content Include="Views\Blog\BlogPostNews.cshtml" />
     <Content Include="Views\Contact\ContactForm.cshtml" />
+    <Content Include="Views\Fight\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NBT.Core.Common\NBT.Core.Common.csproj">
